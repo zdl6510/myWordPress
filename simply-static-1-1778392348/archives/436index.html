@@ -1,0 +1,2530 @@
+<!DOCTYPE html>
+<html lang="zh-Hans" itemscope itemtype="http://schema.org/WebPage">
+<head><meta charset="UTF-8">
+	
+	<link rel="profile" href="http://gmpg.org/xfn/11">
+	<title>Vue3必学的12个JS前置知识，零基础也能懂 – 每天一步，见证成长</title>
+<meta name="robots" content="max-image-preview:large">
+<meta name="viewport" content="width=device-width, initial-scale=1"><link rel="dns-prefetch" href="//fonts.googleapis.com">
+<link rel="alternate" type="application/rss+xml" title="每天一步，见证成长 » Feed" href="/feed">
+<link rel="alternate" type="application/rss+xml" title="每天一步，见证成长 » 评论 Feed" href="/comments/feed">
+<link rel="alternate" type="application/rss+xml" title="每天一步，见证成长 » Vue3必学的12个JS前置知识，零基础也能懂 评论 Feed" href="/archives/436/feed">
+<link rel="alternate" title="oEmbed (JSON)" type="application/json+oembed" href="/wp-json/oembed/1.0/embed?url=%2Farchives%2F436">
+<link rel="alternate" title="oEmbed (XML)" type="text/xml+oembed" href="/wp-json/oembed/1.0/embed?url=%2Farchives%2F436&amp;format=xml">
+<style id="wp-img-auto-sizes-contain-inline-css">
+img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
+/*# sourceURL=wp-img-auto-sizes-contain-inline-css */
+</style>
+<style id="wp-emoji-styles-inline-css">
+
+	img.wp-smiley, img.emoji {
+		display: inline !important;
+		border: none !important;
+		box-shadow: none !important;
+		height: 1em !important;
+		width: 1em !important;
+		margin: 0 0.07em !important;
+		vertical-align: -0.1em !important;
+		background: none !important;
+		padding: 0 !important;
+	}
+/*# sourceURL=wp-emoji-styles-inline-css */
+</style>
+<style id="wp-block-library-inline-css">
+:root{--wp-block-synced-color:#7a00df;--wp-block-synced-color--rgb:122,0,223;--wp-bound-block-color:var(--wp-block-synced-color);--wp-editor-canvas-background:#ddd;--wp-admin-theme-color:#007cba;--wp-admin-theme-color--rgb:0,124,186;--wp-admin-theme-color-darker-10:#006ba1;--wp-admin-theme-color-darker-10--rgb:0,107,160.5;--wp-admin-theme-color-darker-20:#005a87;--wp-admin-theme-color-darker-20--rgb:0,90,135;--wp-admin-border-width-focus:2px}@media (min-resolution:192dpi){:root{--wp-admin-border-width-focus:1.5px}}.wp-element-button{cursor:pointer}:root .has-very-light-gray-background-color{background-color:#eee}:root .has-very-dark-gray-background-color{background-color:#313131}:root .has-very-light-gray-color{color:#eee}:root .has-very-dark-gray-color{color:#313131}:root .has-vivid-green-cyan-to-vivid-cyan-blue-gradient-background{background:linear-gradient(135deg,#00d084,#0693e3)}:root .has-purple-crush-gradient-background{background:linear-gradient(135deg,#34e2e4,#4721fb 50%,#ab1dfe)}:root .has-hazy-dawn-gradient-background{background:linear-gradient(135deg,#faaca8,#dad0ec)}:root .has-subdued-olive-gradient-background{background:linear-gradient(135deg,#fafae1,#67a671)}:root .has-atomic-cream-gradient-background{background:linear-gradient(135deg,#fdd79a,#004a59)}:root .has-nightshade-gradient-background{background:linear-gradient(135deg,#330968,#31cdcf)}:root .has-midnight-gradient-background{background:linear-gradient(135deg,#020381,#2874fc)}:root{--wp--preset--font-size--normal:16px;--wp--preset--font-size--huge:42px}.has-regular-font-size{font-size:1em}.has-larger-font-size{font-size:2.625em}.has-normal-font-size{font-size:var(--wp--preset--font-size--normal)}.has-huge-font-size{font-size:var(--wp--preset--font-size--huge)}.has-text-align-center{text-align:center}.has-text-align-left{text-align:left}.has-text-align-right{text-align:right}.has-fit-text{white-space:nowrap!important}#end-resizable-editor-section{display:none}.aligncenter{clear:both}.items-justified-left{justify-content:flex-start}.items-justified-center{justify-content:center}.items-justified-right{justify-content:flex-end}.items-justified-space-between{justify-content:space-between}.screen-reader-text{border:0;clip-path:inset(50%);height:1px;margin:-1px;overflow:hidden;padding:0;position:absolute;width:1px;word-wrap:normal!important}.screen-reader-text:focus{background-color:#ddd;clip-path:none;color:#444;display:block;font-size:1em;height:auto;left:5px;line-height:normal;padding:15px 23px 14px;text-decoration:none;top:5px;width:auto;z-index:100000}html :where(.has-border-color){border-style:solid}html :where([style*=border-top-color]){border-top-style:solid}html :where([style*=border-right-color]){border-right-style:solid}html :where([style*=border-bottom-color]){border-bottom-style:solid}html :where([style*=border-left-color]){border-left-style:solid}html :where([style*=border-width]){border-style:solid}html :where([style*=border-top-width]){border-top-style:solid}html :where([style*=border-right-width]){border-right-style:solid}html :where([style*=border-bottom-width]){border-bottom-style:solid}html :where([style*=border-left-width]){border-left-style:solid}html :where(img[class*=wp-image-]){height:auto;max-width:100%}:where(figure){margin:0 0 1em}html :where(.is-position-sticky){--wp-admin--admin-bar--position-offset:var(--wp-admin--admin-bar--height,0px)}@media screen and (max-width:600px){html :where(.is-position-sticky){--wp-admin--admin-bar--position-offset:0px}}
+
+/*# sourceURL=wp-block-library-inline-css */
+</style>
+<style id="wp-block-heading-inline-css">
+h1:where(.wp-block-heading).has-background,h2:where(.wp-block-heading).has-background,h3:where(.wp-block-heading).has-background,h4:where(.wp-block-heading).has-background,h5:where(.wp-block-heading).has-background,h6:where(.wp-block-heading).has-background{padding:1.25em 2.375em}h1.has-text-align-left[style*=writing-mode]:where([style*=vertical-lr]),h1.has-text-align-right[style*=writing-mode]:where([style*=vertical-rl]),h2.has-text-align-left[style*=writing-mode]:where([style*=vertical-lr]),h2.has-text-align-right[style*=writing-mode]:where([style*=vertical-rl]),h3.has-text-align-left[style*=writing-mode]:where([style*=vertical-lr]),h3.has-text-align-right[style*=writing-mode]:where([style*=vertical-rl]),h4.has-text-align-left[style*=writing-mode]:where([style*=vertical-lr]),h4.has-text-align-right[style*=writing-mode]:where([style*=vertical-rl]),h5.has-text-align-left[style*=writing-mode]:where([style*=vertical-lr]),h5.has-text-align-right[style*=writing-mode]:where([style*=vertical-rl]),h6.has-text-align-left[style*=writing-mode]:where([style*=vertical-lr]),h6.has-text-align-right[style*=writing-mode]:where([style*=vertical-rl]){rotate:180deg}
+/*# sourceURL=/wp-includes/blocks/heading/style.min.css */
+</style>
+<style id="wp-block-list-inline-css">
+ol,ul{box-sizing:border-box}:root :where(.wp-block-list.has-background){padding:1.25em 2.375em}
+/*# sourceURL=/wp-includes/blocks/list/style.min.css */
+</style>
+<style id="wp-block-code-inline-css">
+.wp-block-code{box-sizing:border-box}.wp-block-code code{
+  /*!rtl:begin:ignore*/direction:ltr;display:block;font-family:inherit;overflow-wrap:break-word;text-align:initial;white-space:pre-wrap
+  /*!rtl:end:ignore*/}
+/*# sourceURL=/wp-includes/blocks/code/style.min.css */
+</style>
+<style id="wp-block-code-theme-inline-css">
+.wp-block-code{border:1px solid #ccc;border-radius:4px;font-family:Menlo,Consolas,monaco,monospace;padding:.8em 1em}
+/*# sourceURL=/wp-includes/blocks/code/theme.min.css */
+</style>
+<style id="wp-block-columns-inline-css">
+.wp-block-columns{box-sizing:border-box;display:flex;flex-wrap:wrap!important}@media (min-width:782px){.wp-block-columns{flex-wrap:nowrap!important}}.wp-block-columns{align-items:normal!important}.wp-block-columns.are-vertically-aligned-top{align-items:flex-start}.wp-block-columns.are-vertically-aligned-center{align-items:center}.wp-block-columns.are-vertically-aligned-bottom{align-items:flex-end}@media (max-width:781px){.wp-block-columns:not(.is-not-stacked-on-mobile)>.wp-block-column{flex-basis:100%!important}}@media (min-width:782px){.wp-block-columns:not(.is-not-stacked-on-mobile)>.wp-block-column{flex-basis:0;flex-grow:1}.wp-block-columns:not(.is-not-stacked-on-mobile)>.wp-block-column[style*=flex-basis]{flex-grow:0}}.wp-block-columns.is-not-stacked-on-mobile{flex-wrap:nowrap!important}.wp-block-columns.is-not-stacked-on-mobile>.wp-block-column{flex-basis:0;flex-grow:1}.wp-block-columns.is-not-stacked-on-mobile>.wp-block-column[style*=flex-basis]{flex-grow:0}:where(.wp-block-columns){margin-bottom:1.75em}:where(.wp-block-columns.has-background){padding:1.25em 2.375em}.wp-block-column{flex-grow:1;min-width:0;overflow-wrap:break-word;word-break:break-word}.wp-block-column.is-vertically-aligned-top{align-self:flex-start}.wp-block-column.is-vertically-aligned-center{align-self:center}.wp-block-column.is-vertically-aligned-bottom{align-self:flex-end}.wp-block-column.is-vertically-aligned-stretch{align-self:stretch}.wp-block-column.is-vertically-aligned-bottom,.wp-block-column.is-vertically-aligned-center,.wp-block-column.is-vertically-aligned-top{width:100%}
+/*# sourceURL=/wp-includes/blocks/columns/style.min.css */
+</style>
+<style id="wp-block-embed-inline-css">
+.wp-block-embed.alignleft,.wp-block-embed.alignright,.wp-block[data-align=left]>[data-type="core/embed"],.wp-block[data-align=right]>[data-type="core/embed"]{max-width:360px;width:100%}.wp-block-embed.alignleft .wp-block-embed__wrapper,.wp-block-embed.alignright .wp-block-embed__wrapper,.wp-block[data-align=left]>[data-type="core/embed"] .wp-block-embed__wrapper,.wp-block[data-align=right]>[data-type="core/embed"] .wp-block-embed__wrapper{min-width:280px}.wp-block-cover .wp-block-embed{min-height:240px;min-width:320px}.wp-block-embed{overflow-wrap:break-word}.wp-block-embed :where(figcaption){margin-bottom:1em;margin-top:.5em}.wp-block-embed iframe{max-width:100%}.wp-block-embed__wrapper{position:relative}.wp-embed-responsive .wp-has-aspect-ratio .wp-block-embed__wrapper:before{content:"";display:block;padding-top:50%}.wp-embed-responsive .wp-has-aspect-ratio iframe{bottom:0;height:100%;left:0;position:absolute;right:0;top:0;width:100%}.wp-embed-responsive .wp-embed-aspect-21-9 .wp-block-embed__wrapper:before{padding-top:42.85%}.wp-embed-responsive .wp-embed-aspect-18-9 .wp-block-embed__wrapper:before{padding-top:50%}.wp-embed-responsive .wp-embed-aspect-16-9 .wp-block-embed__wrapper:before{padding-top:56.25%}.wp-embed-responsive .wp-embed-aspect-4-3 .wp-block-embed__wrapper:before{padding-top:75%}.wp-embed-responsive .wp-embed-aspect-1-1 .wp-block-embed__wrapper:before{padding-top:100%}.wp-embed-responsive .wp-embed-aspect-9-16 .wp-block-embed__wrapper:before{padding-top:177.77%}.wp-embed-responsive .wp-embed-aspect-1-2 .wp-block-embed__wrapper:before{padding-top:200%}
+/*# sourceURL=/wp-includes/blocks/embed/style.min.css */
+</style>
+<style id="wp-block-embed-theme-inline-css">
+.wp-block-embed :where(figcaption){color:#555;font-size:13px;text-align:center}.is-dark-theme .wp-block-embed :where(figcaption){color:#ffffffa6}.wp-block-embed{margin:0 0 1em}
+/*# sourceURL=/wp-includes/blocks/embed/theme.min.css */
+</style>
+<style id="wp-block-group-inline-css">
+.wp-block-group{box-sizing:border-box}:where(.wp-block-group.wp-block-group-is-layout-constrained){position:relative}
+/*# sourceURL=/wp-includes/blocks/group/style.min.css */
+</style>
+<style id="wp-block-group-theme-inline-css">
+:where(.wp-block-group.has-background){padding:1.25em 2.375em}
+/*# sourceURL=/wp-includes/blocks/group/theme.min.css */
+</style>
+<style id="wp-block-paragraph-inline-css">
+.is-small-text{font-size:.875em}.is-regular-text{font-size:1em}.is-large-text{font-size:2.25em}.is-larger-text{font-size:3em}.has-drop-cap:not(:focus):first-letter{float:left;font-size:8.4em;font-style:normal;font-weight:100;line-height:.68;margin:.05em .1em 0 0;text-transform:uppercase}body.rtl .has-drop-cap:not(:focus):first-letter{float:none;margin-left:.1em}p.has-drop-cap.has-background{overflow:hidden}:root :where(p.has-background){padding:1.25em 2.375em}:where(p.has-text-color:not(.has-link-color)) a{color:inherit}p.has-text-align-left[style*="writing-mode:vertical-lr"],p.has-text-align-right[style*="writing-mode:vertical-rl"]{rotate:180deg}
+/*# sourceURL=/wp-includes/blocks/paragraph/style.min.css */
+</style>
+<style id="wp-block-separator-inline-css">
+@charset "UTF-8";.wp-block-separator{border:none;border-top:2px solid}:root :where(.wp-block-separator.is-style-dots){height:auto;line-height:1;text-align:center}:root :where(.wp-block-separator.is-style-dots):before{color:currentColor;content:"···";font-family:serif;font-size:1.5em;letter-spacing:2em;padding-left:2em}.wp-block-separator.is-style-dots{background:none!important;border:none!important}
+/*# sourceURL=/wp-includes/blocks/separator/style.min.css */
+</style>
+<style id="wp-block-separator-theme-inline-css">
+.wp-block-separator.has-css-opacity{opacity:.4}.wp-block-separator{border:none;border-bottom:2px solid;margin-left:auto;margin-right:auto}.wp-block-separator.has-alpha-channel-opacity{opacity:1}.wp-block-separator:not(.is-style-wide):not(.is-style-dots){width:100px}.wp-block-separator.has-background:not(.is-style-dots){border-bottom:none;height:1px}.wp-block-separator.has-background:not(.is-style-wide):not(.is-style-dots){height:2px}
+/*# sourceURL=/wp-includes/blocks/separator/theme.min.css */
+</style>
+<style id="wp-block-table-inline-css">
+.wp-block-table{overflow-x:auto}.wp-block-table table{border-collapse:collapse;width:100%}.wp-block-table thead{border-bottom:3px solid}.wp-block-table tfoot{border-top:3px solid}.wp-block-table td,.wp-block-table th{border:1px solid;padding:.5em}.wp-block-table .has-fixed-layout{table-layout:fixed;width:100%}.wp-block-table .has-fixed-layout td,.wp-block-table .has-fixed-layout th{word-break:break-word}.wp-block-table.aligncenter,.wp-block-table.alignleft,.wp-block-table.alignright{display:table;width:auto}.wp-block-table.aligncenter td,.wp-block-table.aligncenter th,.wp-block-table.alignleft td,.wp-block-table.alignleft th,.wp-block-table.alignright td,.wp-block-table.alignright th{word-break:break-word}.wp-block-table .has-subtle-light-gray-background-color{background-color:#f3f4f5}.wp-block-table .has-subtle-pale-green-background-color{background-color:#e9fbe5}.wp-block-table .has-subtle-pale-blue-background-color{background-color:#e7f5fe}.wp-block-table .has-subtle-pale-pink-background-color{background-color:#fcf0ef}.wp-block-table.is-style-stripes{background-color:initial;border-collapse:inherit;border-spacing:0}.wp-block-table.is-style-stripes tbody tr:nth-child(odd){background-color:#f0f0f0}.wp-block-table.is-style-stripes.has-subtle-light-gray-background-color tbody tr:nth-child(odd){background-color:#f3f4f5}.wp-block-table.is-style-stripes.has-subtle-pale-green-background-color tbody tr:nth-child(odd){background-color:#e9fbe5}.wp-block-table.is-style-stripes.has-subtle-pale-blue-background-color tbody tr:nth-child(odd){background-color:#e7f5fe}.wp-block-table.is-style-stripes.has-subtle-pale-pink-background-color tbody tr:nth-child(odd){background-color:#fcf0ef}.wp-block-table.is-style-stripes td,.wp-block-table.is-style-stripes th{border-color:#0000}.wp-block-table.is-style-stripes{border-bottom:1px solid #f0f0f0}.wp-block-table .has-border-color td,.wp-block-table .has-border-color th,.wp-block-table .has-border-color tr,.wp-block-table .has-border-color>*{border-color:inherit}.wp-block-table table[style*=border-top-color] tr:first-child,.wp-block-table table[style*=border-top-color] tr:first-child td,.wp-block-table table[style*=border-top-color] tr:first-child th,.wp-block-table table[style*=border-top-color]>*,.wp-block-table table[style*=border-top-color]>* td,.wp-block-table table[style*=border-top-color]>* th{border-top-color:inherit}.wp-block-table table[style*=border-top-color] tr:not(:first-child){border-top-color:initial}.wp-block-table table[style*=border-right-color] td:last-child,.wp-block-table table[style*=border-right-color] th,.wp-block-table table[style*=border-right-color] tr,.wp-block-table table[style*=border-right-color]>*{border-right-color:inherit}.wp-block-table table[style*=border-bottom-color] tr:last-child,.wp-block-table table[style*=border-bottom-color] tr:last-child td,.wp-block-table table[style*=border-bottom-color] tr:last-child th,.wp-block-table table[style*=border-bottom-color]>*,.wp-block-table table[style*=border-bottom-color]>* td,.wp-block-table table[style*=border-bottom-color]>* th{border-bottom-color:inherit}.wp-block-table table[style*=border-bottom-color] tr:not(:last-child){border-bottom-color:initial}.wp-block-table table[style*=border-left-color] td:first-child,.wp-block-table table[style*=border-left-color] th,.wp-block-table table[style*=border-left-color] tr,.wp-block-table table[style*=border-left-color]>*{border-left-color:inherit}.wp-block-table table[style*=border-style] td,.wp-block-table table[style*=border-style] th,.wp-block-table table[style*=border-style] tr,.wp-block-table table[style*=border-style]>*{border-style:inherit}.wp-block-table table[style*=border-width] td,.wp-block-table table[style*=border-width] th,.wp-block-table table[style*=border-width] tr,.wp-block-table table[style*=border-width]>*{border-style:inherit;border-width:inherit}
+/*# sourceURL=/wp-includes/blocks/table/style.min.css */
+</style>
+<style id="wp-block-table-theme-inline-css">
+.wp-block-table{margin:0 0 1em}.wp-block-table td,.wp-block-table th{word-break:normal}.wp-block-table :where(figcaption){color:#555;font-size:13px;text-align:center}.is-dark-theme .wp-block-table :where(figcaption){color:#ffffffa6}
+/*# sourceURL=/wp-includes/blocks/table/theme.min.css */
+</style>
+
+<style id="classic-theme-styles-inline-css">
+/*! This file is auto-generated */
+.wp-block-button__link{color:#fff;background-color:#32373c;border-radius:9999px;box-shadow:none;text-decoration:none;padding:calc(.667em + 2px) calc(1.333em + 2px);font-size:1.125em}.wp-block-file__button{background:#32373c;color:#fff;text-decoration:none}
+/*# sourceURL=/wp-includes/css/classic-themes.min.css */
+</style>
+<style id="global-styles-inline-css">
+:root{--wp--preset--aspect-ratio--square: 1;--wp--preset--aspect-ratio--4-3: 4/3;--wp--preset--aspect-ratio--3-4: 3/4;--wp--preset--aspect-ratio--3-2: 3/2;--wp--preset--aspect-ratio--2-3: 2/3;--wp--preset--aspect-ratio--16-9: 16/9;--wp--preset--aspect-ratio--9-16: 9/16;--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgb(6,147,227) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgb(252,185,0) 0%,rgb(255,105,0) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgb(255,105,0) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;--wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);--wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);--wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);--wp--preset--shadow--outlined: 6px 6px 0px -3px rgb(255, 255, 255), 6px 6px rgb(0, 0, 0);--wp--preset--shadow--crisp: 6px 6px 0px rgb(0, 0, 0);}:where(.is-layout-flex){gap: 0.5em;}:where(.is-layout-grid){gap: 0.5em;}body .is-layout-flex{display: flex;}.is-layout-flex{flex-wrap: wrap;align-items: center;}.is-layout-flex > :is(*, div){margin: 0;}body .is-layout-grid{display: grid;}.is-layout-grid > :is(*, div){margin: 0;}:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}
+/*# sourceURL=global-styles-inline-css */
+</style>
+
+<link rel="stylesheet" id="ansar-import-css" href="/wp-content/plugins/ansar-import/public/css/ansar-import-public.css?ver=2.1.0" media="all">
+<link rel="stylesheet" id="parent-style-css" href="/wp-content/themes/bloglo/style.css?ver=6.9.4" media="all">
+<link rel="stylesheet" id="child-style-css" href="/wp-content/themes/blogmate/style.css?ver=6.9.4" media="all">
+<link rel="stylesheet" id="FontAwesome-css" href="/wp-content/themes/bloglo/assets/css/all.min.css?ver=5.15.4" media="all">
+<link rel="stylesheet" id="bloglo-styles-css" href="/wp-content/themes/bloglo/assets/css/style.min.css?ver=1.1.23" media="all">
+<link rel="stylesheet" id="bloglo-google-fonts-css" href="//fonts.googleapis.com/css?family=Be+Vietnam+Pro%3A400%7CPlayfair+Display%3A400%2C400i%7CPlus+Jakarta+Sans%3A500&amp;display=swap&amp;subsets=latin&amp;ver=1.1.23" media="">
+<link rel="stylesheet" id="bloglo-dynamic-styles-css" href="/wp-content/uploads/bloglo/dynamic-styles.css?ver=1778391860" media="all">
+<script src="/wp-includes/js/jquery/jquery.min.js?ver=3.7.1" id="jquery-core-js"></script>
+<script src="/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.4.1" id="jquery-migrate-js"></script>
+<script src="/wp-content/plugins/ansar-import/public/js/ansar-import-public.js?ver=2.1.0" id="ansar-import-js"></script>
+<link rel="https://api.w.org/" href="/wp-json/"><link rel="alternate" title="JSON" type="application/json" href="/wp-json/wp/v2/posts/436"><link rel="EditURI" type="application/rsd+xml" title="RSD" href="/xmlrpc.php?rsd">
+<meta name="generator" content="WordPress 6.9.4">
+<link rel="canonical" href="/archives/436">
+<link rel="shortlink" href="/?p=436">
+<link rel="pingback" href="/xmlrpc.php">
+<meta name="theme-color" content="#FC6668"><style id="core-block-supports-inline-css">
+.wp-container-core-columns-is-layout-9d6595d7{flex-wrap:nowrap;}.wp-elements-304050a27b331b6573f425aebca13390 a:where(:not(.wp-element-button)){color:var(--wp--preset--color--white);}
+/*# sourceURL=core-block-supports-inline-css */
+</style>
+
+</head>
+
+<body class="wp-singular post-template-default single single-post postid-436 single-format-standard wp-embed-responsive wp-theme-bloglo wp-child-theme-blogmate bloglo-layout__fw-contained bloglo-header-layout-2 bloglo-menu-animation-squarebox bloglo-header__separators-none bloglo-single-title-in-content bloglo-page-title-align-left comments-open bloglo-no-sidebar entry-media-hover-style-1 bloglo-copyright-layout-1 is-section-heading-init-s2 is-footer-heading-init-s1 bloglo-input-supported validate-comment-form bloglo-menu-accessibility">
+
+
+<div id="page" class="hfeed site">
+	<a class="skip-link screen-reader-text" href="#main">Skip to content</a>
+
+	
+	
+	<header id="masthead" class="site-header" role="banner" itemtype="https://schema.org/WPHeader" itemscope="itemscope">
+		<div id="bloglo-header">
+		<div id="bloglo-header-inner">
+		
+<div class="bloglo-container bloglo-header-container">
+
+	
+<div class="bloglo-logo bloglo-header-element" itemtype="https://schema.org/Organization" itemscope="itemscope">
+	<div class="logo-inner"><span class="site-title" itemprop="name">
+					<a href="/" rel="home" itemprop="url">
+						每天一步，见证成长
+					</a>
+				</span><p class="site-description screen-reader-text" itemprop="description">
+						Steping out your comfort zone 
+					</p></div></div><!-- END .bloglo-logo -->
+
+	<span class="bloglo-header-element bloglo-mobile-nav">
+				<button class="bloglo-hamburger hamburger--spin bloglo-hamburger-bloglo-primary-nav" aria-label="Menu" aria-controls="bloglo-primary-nav" type="button">
+
+			
+			<span class="hamburger-box">
+				<span class="hamburger-inner"></span>
+			</span>
+
+		</button>
+				
+<nav class="site-navigation main-navigation bloglo-primary-nav bloglo-nav bloglo-header-element" role="navigation" itemtype="https://schema.org/SiteNavigationElement" itemscope="itemscope" aria-label="Site Navigation">
+
+<ul id="bloglo-primary-nav" class="menu"><li id="menu-item-477" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-477"><a href="/archives/category/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/c"><span>C++</span></a></li>
+<li id="menu-item-481" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-481"><a href="/archives/category/ai"><span>AI</span></a></li>
+</ul></nav><!-- END .bloglo-nav -->
+	</span>
+
+	
+<nav class="site-navigation main-navigation bloglo-primary-nav bloglo-nav bloglo-header-element" role="navigation" itemtype="https://schema.org/SiteNavigationElement" itemscope="itemscope" aria-label="Site Navigation">
+
+<ul id="bloglo-primary-nav" class="menu"><li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-477"><a href="/archives/category/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/c"><span>C++</span></a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-481"><a href="/archives/category/ai"><span>AI</span></a></li>
+</ul></nav><!-- END .bloglo-nav -->
+<div class="bloglo-header-widgets bloglo-header-element bloglo-widget-location-right"><div class="bloglo-header-widget__socials bloglo-header-widget bloglo-hide-mobile-tablet"><div class="bloglo-widget-wrapper"><nav class="bloglo-social-nav minimal-fill bloglo-large">
+			<ul id="menu-social-menu-default" class="bloglo-socials-menu">
+				<li class="menu-item">
+					<a href="https://www.facebook.com/">
+						<span class="screen-reader-text">facebook.com</span>
+						<span class="facebook">
+						<svg class="bloglo-icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewbox="0 0 32 32"><path d="M18.518 32.438V17.799h4.88l.751-5.693h-5.631V8.477c0-1.627.438-2.753 2.815-2.753h3.003V.657c-.5-.125-2.315-.25-4.379-.25-4.379 0-7.32 2.628-7.32 7.507v4.192H7.695v5.693h4.942v14.639z"></path></svg>
+						<svg class="bloglo-icon bottom-icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewbox="0 0 32 32"><path d="M18.518 32.438V17.799h4.88l.751-5.693h-5.631V8.477c0-1.627.438-2.753 2.815-2.753h3.003V.657c-.5-.125-2.315-.25-4.379-.25-4.379 0-7.32 2.628-7.32 7.507v4.192H7.695v5.693h4.942v14.639z"></path></svg>
+						</span>
+					</a>
+				</li>
+				<li class="menu-item">
+					<a href="https://twitter.com/">
+					<span class="screen-reader-text">twitter.com</span>
+						<span class="twitter">
+						<svg class="bloglo-icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewbox="0 0 24 24"><path d="M14.258 10.152 23.176 0h-2.113l-7.747 8.813L7.133 0H0l9.352 13.328L0 23.973h2.113l8.176-9.309 6.531 9.309h7.133zm-2.895 3.293-.949-1.328L2.875 1.56h3.246l6.086 8.523.945 1.328 7.91 11.078h-3.246zm0 0"></path></svg>
+						<svg class="bloglo-icon bottom-icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewbox="0 0 24 24"><path d="M14.258 10.152 23.176 0h-2.113l-7.747 8.813L7.133 0H0l9.352 13.328L0 23.973h2.113l8.176-9.309 6.531 9.309h7.133zm-2.895 3.293-.949-1.328L2.875 1.56h3.246l6.086 8.523.945 1.328 7.91 11.078h-3.246zm0 0"></path></svg>
+						</span>
+					</a>
+				</li>
+				<li class="menu-item">
+					<a href="https://t.me/">
+						<span class="screen-reader-text">t.me</span>
+						<span class="telegram">
+						<svg class="bloglo-icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="32" height="27" viewbox="0 0 32 27"><path fill-rule="evenodd" d="M24.512 26.372c.43.304.983.38 1.476.193.494-.188.857-.609.966-1.12C28.113 20 30.924 6.217 31.978 1.264a1.041 1.041 0 0 0-.347-1.01c-.293-.25-.7-.322-1.063-.187C24.979 2.136 7.762 8.596.724 11.2a1.102 1.102 0 0 0-.722 1.065c.016.472.333.882.79 1.019 3.156.944 7.299 2.257 7.299 2.257s1.936 5.847 2.945 8.82c.127.374.419.667.804.768.384.1.795-.005 1.082-.276l4.128-3.897s4.762 3.492 7.463 5.416Zm-14.68-11.57 2.24 7.385.497-4.676 13.58-12.248a.37.37 0 0 0 .043-.503.379.379 0 0 0-.5-.085L9.831 14.803Z"></path></svg>
+						<svg class="bloglo-icon bottom-icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="32" height="27" viewbox="0 0 32 27"><path fill-rule="evenodd" d="M24.512 26.372c.43.304.983.38 1.476.193.494-.188.857-.609.966-1.12C28.113 20 30.924 6.217 31.978 1.264a1.041 1.041 0 0 0-.347-1.01c-.293-.25-.7-.322-1.063-.187C24.979 2.136 7.762 8.596.724 11.2a1.102 1.102 0 0 0-.722 1.065c.016.472.333.882.79 1.019 3.156.944 7.299 2.257 7.299 2.257s1.936 5.847 2.945 8.82c.127.374.419.667.804.768.384.1.795-.005 1.082-.276l4.128-3.897s4.762 3.492 7.463 5.416Zm-14.68-11.57 2.24 7.385.497-4.676 13.58-12.248a.37.37 0 0 0 .043-.503.379.379 0 0 0-.5-.085L9.831 14.803Z"></path></svg>
+						</span>
+					</a>
+				</li>
+				<li class="menu-item">
+					<a href="https://www.instagram.com/">
+						<span class="screen-reader-text">instagram.com</span>
+						<span class="instagram">
+						<svg class="bloglo-icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewbox="0 0 32 32"><path d="M16.016 3.284c4.317 0 4.755.063 6.444.125 1.627.063 2.44.313 3.003.5.751.313 1.314.688 1.814 1.189.563.563.938 1.126 1.189 1.814.25.626.5 1.439.563 3.003.063 1.752.125 2.19.125 6.506s-.063 4.755-.125 6.444c-.063 1.627-.313 2.44-.5 3.003-.313.751-.688 1.314-1.189 1.814-.563.563-1.126.938-1.814 1.189-.626.25-1.439.5-3.003.563-1.752.063-2.19.125-6.506.125s-4.755-.063-6.444-.125c-1.627-.063-2.44-.313-3.003-.5-.751-.313-1.314-.688-1.814-1.189-.563-.563-.938-1.126-1.189-1.814-.25-.626-.5-1.439-.563-3.003-.063-1.752-.125-2.19-.125-6.506s.063-4.755.125-6.444c.063-1.627.313-2.44.5-3.003.313-.751.688-1.314 1.189-1.814.563-.563 1.126-.938 1.814-1.189.626-.25 1.439-.5 3.003-.563 1.752-.063 2.19-.125 6.506-.125m0-2.877c-4.379 0-4.88.063-6.569.125-1.752.063-2.94.313-3.879.688-1.064.438-2.002 1.001-2.878 1.877S1.251 4.911.813 5.975C.438 6.976.187 8.102.125 9.854.062 11.543 0 12.044 0 16.423s.063 4.88.125 6.569c.063 1.752.313 2.94.688 3.879.438 1.064 1.001 2.002 1.877 2.878s1.814 1.439 2.878 1.877c1.001.375 2.127.626 3.879.688 1.689.063 2.19.125 6.569.125s4.88-.063 6.569-.125c1.752-.063 2.94-.313 3.879-.688 1.064-.438 2.002-1.001 2.878-1.877s1.439-1.814 1.877-2.878c.375-1.001.626-2.127.688-3.879.063-1.689.125-2.19.125-6.569s-.063-4.88-.125-6.569c-.063-1.752-.313-2.94-.688-3.879-.438-1.064-1.001-2.002-1.877-2.878s-1.814-1.439-2.878-1.877C25.463.845 24.337.594 22.585.532c-1.689-.063-2.19-.125-6.569-.125zm0 7.757c-4.567 0-8.258 3.691-8.258 8.258s3.691 8.258 8.258 8.258c4.567 0 8.258-3.691 8.258-8.258s-3.691-8.258-8.258-8.258zm0 13.639c-2.94 0-5.38-2.44-5.38-5.38s2.44-5.38 5.38-5.38 5.38 2.44 5.38 5.38-2.44 5.38-5.38 5.38zM26.463 7.851c0 1.064-.813 1.939-1.877 1.939s-1.939-.876-1.939-1.939c0-1.064.876-1.877 1.939-1.877s1.877.813 1.877 1.877z"></path></svg>
+						<svg class="bloglo-icon bottom-icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewbox="0 0 32 32"><path d="M16.016 3.284c4.317 0 4.755.063 6.444.125 1.627.063 2.44.313 3.003.5.751.313 1.314.688 1.814 1.189.563.563.938 1.126 1.189 1.814.25.626.5 1.439.563 3.003.063 1.752.125 2.19.125 6.506s-.063 4.755-.125 6.444c-.063 1.627-.313 2.44-.5 3.003-.313.751-.688 1.314-1.189 1.814-.563.563-1.126.938-1.814 1.189-.626.25-1.439.5-3.003.563-1.752.063-2.19.125-6.506.125s-4.755-.063-6.444-.125c-1.627-.063-2.44-.313-3.003-.5-.751-.313-1.314-.688-1.814-1.189-.563-.563-.938-1.126-1.189-1.814-.25-.626-.5-1.439-.563-3.003-.063-1.752-.125-2.19-.125-6.506s.063-4.755.125-6.444c.063-1.627.313-2.44.5-3.003.313-.751.688-1.314 1.189-1.814.563-.563 1.126-.938 1.814-1.189.626-.25 1.439-.5 3.003-.563 1.752-.063 2.19-.125 6.506-.125m0-2.877c-4.379 0-4.88.063-6.569.125-1.752.063-2.94.313-3.879.688-1.064.438-2.002 1.001-2.878 1.877S1.251 4.911.813 5.975C.438 6.976.187 8.102.125 9.854.062 11.543 0 12.044 0 16.423s.063 4.88.125 6.569c.063 1.752.313 2.94.688 3.879.438 1.064 1.001 2.002 1.877 2.878s1.814 1.439 2.878 1.877c1.001.375 2.127.626 3.879.688 1.689.063 2.19.125 6.569.125s4.88-.063 6.569-.125c1.752-.063 2.94-.313 3.879-.688 1.064-.438 2.002-1.001 2.878-1.877s1.439-1.814 1.877-2.878c.375-1.001.626-2.127.688-3.879.063-1.689.125-2.19.125-6.569s-.063-4.88-.125-6.569c-.063-1.752-.313-2.94-.688-3.879-.438-1.064-1.001-2.002-1.877-2.878s-1.814-1.439-2.878-1.877C25.463.845 24.337.594 22.585.532c-1.689-.063-2.19-.125-6.569-.125zm0 7.757c-4.567 0-8.258 3.691-8.258 8.258s3.691 8.258 8.258 8.258c4.567 0 8.258-3.691 8.258-8.258s-3.691-8.258-8.258-8.258zm0 13.639c-2.94 0-5.38-2.44-5.38-5.38s2.44-5.38 5.38-5.38 5.38 2.44 5.38 5.38-2.44 5.38-5.38 5.38zM26.463 7.851c0 1.064-.813 1.939-1.877 1.939s-1.939-.876-1.939-1.939c0-1.064.876-1.877 1.939-1.877s1.877.813 1.877 1.877z"></path></svg>
+						</span>
+					</a>
+				</li>
+				<li class="menu-item">
+					<a href="https://youtube.com/">
+						<span class="screen-reader-text">youtube.com</span>
+						<span class="youtube">
+						<svg class="bloglo-icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewbox="0 0 32 32"><path d="M31.718 10.041s-.313-2.252-1.251-3.191c-1.251-1.314-2.628-1.314-3.253-1.376-4.442-.313-11.198-.313-11.198-.313s-6.757 0-11.198.313c-.626.063-2.002.063-3.253 1.376-.938.938-1.251 3.191-1.251 3.191s-.313 2.565-.313 5.13v2.44c0 2.628.313 5.193.313 5.193s.313 2.19 1.251 3.191c1.251 1.251 2.878 1.251 3.566 1.376 2.565.25 10.886.313 10.886.313s6.757 0 11.198-.313c.626-.063 2.002-.125 3.253-1.376.938-1.001 1.251-3.191 1.251-3.191s.313-2.565.313-5.193v-2.44c0-2.565-.313-5.13-.313-5.13zm-11.386 6.632l-7.57 3.941v-9.009l8.633 4.504z"></path></svg>
+						<svg class="bloglo-icon bottom-icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewbox="0 0 32 32"><path d="M31.718 10.041s-.313-2.252-1.251-3.191c-1.251-1.314-2.628-1.314-3.253-1.376-4.442-.313-11.198-.313-11.198-.313s-6.757 0-11.198.313c-.626.063-2.002.063-3.253 1.376-.938.938-1.251 3.191-1.251 3.191s-.313 2.565-.313 5.13v2.44c0 2.628.313 5.193.313 5.193s.313 2.19 1.251 3.191c1.251 1.251 2.878 1.251 3.566 1.376 2.565.25 10.886.313 10.886.313s6.757 0 11.198-.313c.626-.063 2.002-.125 3.253-1.376.938-1.001 1.251-3.191 1.251-3.191s.313-2.565.313-5.193v-2.44c0-2.565-.313-5.13-.313-5.13zm-11.386 6.632l-7.57 3.941v-9.009l8.633 4.504z"></path></svg>
+						</span>
+					</a>
+				</li>
+			</ul>
+			</nav></div></div><!-- END .bloglo-header-widget --><div class="bloglo-header-widget__darkmode bloglo-header-widget bloglo-hide-mobile-tablet"><div class="bloglo-widget-wrapper"><label class="bloglo-darkmode" for="lightdarkswitch" tabindex="0"><input type="checkbox" id="lightdarkswitch"><div class="bloglo-darkmode-toogle"></div></label></div></div><!-- END .bloglo-header-widget --><div class="bloglo-header-widget__search bloglo-header-widget bloglo-hide-mobile-tablet"><div class="bloglo-widget-wrapper">
+<div aria-haspopup="true">
+	<a href="#" class="bloglo-search">
+		<svg class="bloglo-icon" aria-label="Search" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewbox="0 0 32 32"><path d="M28.962 26.499l-4.938-4.938c1.602-2.002 2.669-4.671 2.669-7.474 0-6.673-5.339-12.012-12.012-12.012S2.669 7.414 2.669 14.087a11.962 11.962 0 0012.012 12.012c2.803 0 5.472-.934 7.474-2.669l4.938 4.938c.267.267.667.4.934.4s.667-.133.934-.4a1.29 1.29 0 000-1.868zM5.339 14.087c0-5.205 4.137-9.342 9.342-9.342s9.342 4.137 9.342 9.342c0 2.536-1.068 4.938-2.669 6.54-1.735 1.735-4.004 2.669-6.54 2.669-5.339.133-9.476-4.004-9.476-9.209z"></path></svg>	</a><!-- END .bloglo-search -->
+
+	<div class="bloglo-search-simple bloglo-search-container dropdown-item">
+		<form role="search" aria-label="Site Search" method="get" class="bloglo-search-form" action="/">
+
+			<label class="bloglo-form-label">
+				<span class="screen-reader-text">Search for:</span>
+				<input type="search" class="bloglo-input-search" placeholder="Search" value="" name="s" autocomplete="off">
+			</label><!-- END .bloglo-form-label -->
+
+			
+			<button type="submit" class="bloglo-animate-arrow right-arrow" aria-hidden="true" role="button" tabindex="0">
+				<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 25 18"><path class="arrow-handle" d="M2.511 9.007l7.185-7.221c.407-.409.407-1.071 0-1.48s-1.068-.409-1.476 0L.306 8.259a1.049 1.049 0 000 1.481l7.914 7.952c.407.408 1.068.408 1.476 0s.407-1.07 0-1.479L2.511 9.007z"></path><path class="arrow-bar" fill-rule="evenodd" clip-rule="evenodd" d="M1 8h28.001a1.001 1.001 0 010 2H1a1 1 0 110-2z"></path></svg>
+			</button>			<button type="button" class="bloglo-search-close" aria-hidden="true" role="button">
+				<svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewbox="0 0 16 16"><path d="M6.852 7.649L.399 1.195 1.445.149l6.454 6.453L14.352.149l1.047 1.046-6.454 6.454 6.454 6.453-1.047 1.047-6.453-6.454-6.454 6.454-1.046-1.047z" fill="currentColor" fill-rule="evenodd"></path></svg>
+			</button>
+
+		</form>
+	</div><!-- END .bloglo-search-simple -->
+</div>
+</div></div><!-- END .bloglo-header-widget --><div class="bloglo-header-widget__button bloglo-header-widget bloglo-hide-mobile-tablet"><div class="bloglo-widget-wrapper"><a href="#" class="btn-small bloglo-btn" target="_self" role="button"><span>Subscribe</span></a></div></div><!-- END .bloglo-header-widget --></div><!-- END .bloglo-header-widgets -->
+</div><!-- END .bloglo-container -->
+	</div><!-- END #bloglo-header-inner -->
+	</div><!-- END #bloglo-header -->
+			</header><!-- #masthead .site-header -->
+
+	
+			<div id="main" class="site-main">
+
+			<div class="bloglo-breadcrumbs"><div class="bloglo-container bloglo-text-align-left"><nav role="navigation" aria-label="Breadcrumbs" class="breadcrumb-trail breadcrumbs" itemprop="breadcrumb"><ul class="trail-items" itemscope itemtype="http://schema.org/BreadcrumbList"><meta name="numberOfItems" content="2"><meta name="itemListOrder" content="Ascending"><li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem" class="trail-item trail-begin"><a href="/" rel="home" itemprop="item"><span itemprop="name">Home</span></a><meta itemprop="position" content="1"></li><li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem" class="trail-item trail-end"><span><span itemprop="name">Vue3必学的12个JS前置知识，零基础也能懂</span></span><meta itemprop="position" content="2"></li></ul></nav></div></div>
+
+<div class="bloglo-container">
+
+	<div id="primary" class="content-area">
+
+		
+		<main id="content" class="site-content" role="main" itemscope itemtype="http://schema.org/Blog">
+
+			
+
+<article id="post-436" class="bloglo-article post-436 post type-post status-publish format-standard has-post-thumbnail hentry category-23" itemscope="" itemtype="https://schema.org/CreativeWork">
+
+	
+<div class="post-category">
+
+	<span class="cat-links"><span class="screen-reader-text">Posted in</span><span><a href="/archives/category/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80" rel="category">编程语言</a></span></span>
+</div>
+
+<header class="entry-header">
+
+	
+	<h1 class="entry-title" itemprop="headline">
+		Vue3必学的12个JS前置知识，零基础也能懂	</h1>
+
+</header>
+<div class="entry-meta"><div class="entry-meta-elements">		<span class="post-author">
+			<span class="posted-by vcard author" itemprop="author" itemscope="itemscope" itemtype="http://schema.org/Person">
+				<span class="screen-reader-text">Posted by</span>
+
+									<span class="author-avatar">
+						<img alt="" src="https://secure.gravatar.com/avatar/c99e05d9ed6235bc09d908080c0e7b9c1237879e388dd7f32d42db580e57643b?s=30&amp;d=mm&amp;r=g" srcset="https://secure.gravatar.com/avatar/c99e05d9ed6235bc09d908080c0e7b9c1237879e388dd7f32d42db580e57643b?s=60&amp;d=mm&amp;r=g 2x" class="avatar avatar-30 photo" height="30" width="30" decoding="async">					</span>
+				
+				<span>
+										By 					<a class="url fn n" title="View all posts by zdl" href="/archives/author/zdl" rel="author" itemprop="url">
+						<span class="author-name" itemprop="name">
+							zdl						</span>
+					</a>
+
+				</span>
+			</span>
+		</span>
+		<span class="posted-on"><time class="entry-date published updated" datetime="2026-05-09T19:51:00+08:00"><svg class="bloglo-icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 29.36 29.36"><path d="M14.68 0a14.68 14.68 0 1014.68 14.68A14.64 14.64 0 0014.68 0zm0 26.69a12 12 0 1112-12 12 12 0 01-12 12zm5.87-10.54L16 13.88V6.67a1.25 1.25 0 00-1.33-1.33 1.26 1.26 0 00-1.34 1.33v8a1.28 1.28 0 00.81 1.2l5.33 2.67c.14.13.27.13.54.13a1.28 1.28 0 001.2-.8 1.41 1.41 0 00-.67-1.73z"></path></svg>2026年5月9日</time></span><span class="comments-link"><a href="/archives/436#respond" class="comments-link"><svg class="bloglo-icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewbox="0 0 32 32"><path d="M25.358 2.075H6.673c-2.269 0-4.004 1.735-4.004 4.004v21.354c0 .534.267 1.068.801 1.201.133.133.4.133.534.133.4 0 .667-.133.934-.4l4.938-4.938h15.482c2.269 0 4.004-1.735 4.004-4.004V6.079c0-2.269-1.735-4.004-4.004-4.004zm1.335 17.35c0 .801-.534 1.335-1.335 1.335H9.342c-.4 0-.667.133-.934.4l-3.07 3.07V6.079c0-.801.534-1.335 1.335-1.335h18.685c.801 0 1.335.534 1.335 1.335v13.346z"></path></svg>No Comments</a></span></div></div><div class="post-thumb entry-media thumbnail"><img width="3840" height="2160" src="/wp-content/uploads/2026/05/photo-1667372393119-3d4c48d07fc9.jpg" class="attachment-full size-full wp-post-image" alt="Vue3必学的12个JS前置知识，零基础也能懂"></div>
+<div class="entry-content bloglo-entry" itemprop="text">
+	
+<div class="wp-block-columns is-layout-flex wp-container-core-columns-is-layout-9d6595d7 wp-block-columns-is-layout-flex">
+<div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow"></div>
+
+
+<div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow">
+<figure class="wp-block-embed is-type-rich is-provider-spotify wp-block-embed-spotify wp-embed-aspect-21-9 wp-has-aspect-ratio"><div class="wp-block-embed__wrapper">
+<iframe title="Spotify Embed: Lofi Study 2026" style="border-radius: 12px" width="100%" height="352" frameborder="0" allowfullscreen allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy" src="https://open.spotify.com/embed/playlist/6zCID88oNjNv9zx6puDHKj?si=2697caec55594412&amp;nd=1&amp;dlsi=1ac4dd1566274a75&amp;utm_source=oembed"></iframe>
+</div></figure>
+
+</div>
+
+</div>
+
+
+<p class="has-text-color" style="color: rgb(0, 0, 0)">现在让我们设好番茄钟放一首好听的音乐开始学习吧 🌈 😋</p>
+
+
+<hr class="wp-block-separator has-alpha-channel-opacity is-style-wide">
+
+
+<h2 class="wp-block-heading">🚀 为什么需要学Vue3？</h2>
+
+
+<p class="has-text-color" style="color: rgb(0, 0, 0)"> </p>
+
+
+<p class="has-text-color" style="color: rgb(0, 0, 0)">Vue3是目前最流行的前端框架之一，学习它有以下几个重要原因：</p>
+
+
+<p class="has-text-color" style="color: rgb(0, 0, 0)"><strong>1. 市场需求旺盛</strong></p>
+
+
+<ul class="wp-block-list">
+<li>国内大厂（阿里、腾讯、字节跳动等）广泛使用Vue3</li>
+
+
+
+<li>招聘市场对Vue3开发者需求量大，薪资待遇优厚</li>
+
+
+
+<li>中小企业也普遍采用Vue技术栈</li>
+</ul>
+
+
+<p class="has-text-color" style="color: rgb(0, 0, 0)"><strong>2. 学习曲线友好</strong></p>
+
+
+<ul class="wp-block-list">
+<li>中文文档完善，对中国开发者友好</li>
+
+
+
+<li>渐进式框架设计，可以逐步深入学习</li>
+
+
+
+<li>社区活跃，学习资源丰富</li>
+</ul>
+
+
+<p class="has-text-color" style="color: rgb(0, 0, 0)"><strong>3. 开发效率高</strong></p>
+
+
+<ul class="wp-block-list">
+<li>组合式API提高代码复用性</li>
+
+
+
+<li>响应式系统自动更新UI，无需手动操作DOM</li>
+
+
+
+<li>丰富的生态系统（Vue Router、Pinia、Element Plus等）</li>
+</ul>
+
+
+<p class="has-text-color" style="color: rgb(0, 0, 0)"><strong>4. 性能优秀</strong></p>
+
+
+<ul class="wp-block-list">
+<li>虚拟DOM优化，渲染速度快</li>
+
+
+
+<li>按需编译，打包体积小</li>
+
+
+
+<li>支持Tree-shaking，减少冗余代码</li>
+</ul>
+
+
+<p class="has-text-color" style="color: rgb(0, 0, 0)"><strong>5. 职业发展</strong></p>
+
+
+<ul class="wp-block-list">
+<li>掌握Vue3可以开发企业级应用</li>
+
+
+
+<li>为学习React、Angular等框架打下基础</li>
+
+
+
+<li>可以转向全栈开发（配合Node.js） </li>
+</ul>
+
+
+<hr class="wp-block-separator has-alpha-channel-opacity is-style-wide">
+
+
+<h2 class="wp-block-heading">💡 Vue3技术为什么会诞生？</h2>
+
+
+<p class="has-text-color" style="color: rgb(0, 0, 0)">理解Vue3的诞生背景，有助于我们更好地掌握它的设计理念和核心特性。</p>
+
+
+<h3 class="wp-block-heading">Vue2遇到的瓶颈</h3>
+
+
+<p class="has-text-color" style="color: rgb(0, 0, 0)">在Vue3诞生之前，Vue2已经非常成熟并被广泛使用。但随着前端应用越来越复杂，Vue2逐渐暴露出一些问题：</p>
+
+
+<p class="has-text-color" style="color: rgb(0, 0, 0)"><strong>1. 大型项目代码组织困难</strong></p>
+
+
+<ul class="wp-block-list">
+<li>Vue2的Options API（选项式API）按照data、methods、computed等选项组织代码</li>
+
+
+
+<li>同一个功能的逻辑被分散在不同的选项中，维护困难</li>
+
+
+
+<li>缺乏有效的代码复用机制（Mixins有命名冲突问题）</li>
+</ul>
+
+
+<p class="has-text-color" style="color: rgb(0, 0, 0)"><strong>2. TypeScript支持不够友好</strong></p>
+
+
+<ul class="wp-block-list">
+<li>Vue2使用基于类的组件实现，类型推导困难</li>
+
+
+
+<li><code class="" data-line="">this</code>的类型推导存在局限</li>
+
+
+
+<li>大型团队协作时类型安全得不到保障</li>
+</ul>
+
+
+<p class="has-text-color" style="color: rgb(0, 0, 0)"><strong>3. 性能优化空间有限</strong></p>
+
+
+<ul class="wp-block-list">
+<li>响应式系统基于Object.defineProperty，存在性能瓶颈</li>
+
+
+
+<li>无法监听数组索引和对象属性的新增/删除</li>
+
+
+
+<li>虚拟DOM的diff算法还有优化空间</li>
+
+
+
+<li>打包体积较大，不支持Tree-shaking</li>
+</ul>
+
+
+<p class="has-text-color" style="color: rgb(0, 0, 0)"><strong>4. 移动端和跨平台支持受限</strong></p>
+
+
+<ul class="wp-block-list">
+<li>对移动端性能优化不够</li>
+
+
+
+<li>难以与原生应用深度集成</li>
+</ul>
+
+
+<h3 class="wp-block-heading">Vue3的技术革新</h3>
+
+
+<p class="has-text-color" style="color: rgb(0, 0, 0)">为了解决这些问题，尤雨溪和Vue核心团队从2018年开始重写Vue，经过2年多的开发，于2020年9月发布了Vue3。</p>
+
+
+<p class="has-text-color" style="color: rgb(0, 0, 0)"><strong>核心改进：</strong></p>
+
+
+<p class="has-text-color" style="color: rgb(0, 0, 0)"><strong>1. 组合式API（Composition API）</strong></p>
+
+
+<pre class="wp-block-code"><code class="" data-line="">// Vue2 Options API - 逻辑分散
+export default {
+  data() {
+    return { count: 0, user: {} }
+  },
+  methods: {
+    increment() { this.count++ },
+    fetchUser() { /* ... */ }
+  },
+  computed: {
+    doubleCount() { return this.count * 2 }
+  }
+}
+
+// Vue3 Composition API - 逻辑聚合
+import { ref, computed } from 'vue'
+
+export default {
+  setup() {
+    // 计数器功能
+    const count = ref(0)
+    const doubleCount = computed(() =&gt; count.value * 2)
+    const increment = () =&gt; count.value++
+    
+    // 用户功能
+    const user = ref({})
+    const fetchUser = () =&gt; { /* ... */ }
+    
+    return { count, doubleCount, increment, user, fetchUser }
+  }
+}</code></pre>
+
+
+<p> </p>
+
+
+<p class="has-text-color" style="color: rgb(0, 0, 0)"><strong>2. 更好的TypeScript支持</strong></p>
+
+
+<ul class="wp-block-list">
+<li>完全用TypeScript重写</li>
+
+
+
+<li>类型推导更准确</li>
+
+
+
+<li>开发体验大幅提升</li>
+</ul>
+
+
+<p class="has-text-color" style="color: rgb(0, 0, 0)"><strong>3. 性能提升</strong></p>
+
+
+<ul class="wp-block-list">
+<li>使用Proxy重写响应式系统，性能提升约1.2-2倍</li>
+
+
+
+<li>虚拟DOM重构，更新性能提升约1.3-2倍</li>
+
+
+
+<li>编译时优化（静态提升、预字符串化等）</li>
+
+
+
+<li>打包体积减少约41%（13.5kb → 10kb）</li>
+
+
+
+<li>支持Tree-shaking，按需引入</li>
+</ul>
+
+
+<p class="has-text-color" style="color: rgb(0, 0, 0)"><strong>4. 新的核心特性</strong></p>
+
+
+<ul class="wp-block-list">
+<li>Teleport（传送门）组件</li>
+
+
+
+<li>Fragments（多根节点）</li>
+
+
+
+<li>Suspense（异步组件处理）</li>
+
+
+
+<li>更好的自定义渲染器API</li>
+</ul>
+
+
+<p class="has-text-color" style="color: rgb(0, 0, 0)"><strong>5. 生态系统升级</strong></p>
+
+
+<ul class="wp-block-list">
+<li>Vue Router 4：更好的TypeScript支持</li>
+
+
+
+<li>Pinia：替代Vuex的新一代状态管理</li>
+
+
+
+<li>Vite：极速的开发构建工具</li>
+
+
+
+<li>Vitest：快速的单元测试框架</li>
+</ul>
+
+
+<h3 class="wp-block-heading">Vue3的技术目标</h3>
+
+
+<p class="has-text-color" style="color: rgb(0, 0, 0)">Vue3的设计遵循以下原则：</p>
+
+
+<p class="has-text-color" style="color: rgb(0, 0, 0)">✅ <strong>向下兼容</strong> – 保持Vue的核心理念，降低迁移成本</p>
+
+
+<p class="has-text-color" style="color: rgb(0, 0, 0)">✅ <strong>更快更小</strong> – 性能优化和打包体积优化</p>
+
+
+<p class="has-text-color" style="color: rgb(0, 0, 0)">✅ <strong>更好的开发体验</strong> – TypeScript支持、更好的调试工具</p>
+
+
+<p class="has-text-color" style="color: rgb(0, 0, 0)">✅ <strong>面向未来</strong> – 为未来的Web标准和需求做准备</p>
+
+
+<hr class="wp-block-separator has-alpha-channel-opacity is-style-wide">
+
+
+<h2 class="wp-block-heading">📖 引言</h2>
+
+
+<p class="has-text-color" style="color: rgb(0, 0, 0)">如果你准备学习Vue3，那么扎实的JavaScript基础是必不可少的。Vue3的组合式API（Composition API）、响应式系统、组件通信等核心特性，都建立在现代JavaScript（ES6+）的基础之上。</p>
+
+
+<p class="has-text-color" style="color: rgb(0, 0, 0)">本文将系统梳理<strong>Vue3开发中高频使用的12个JavaScript核心知识点</strong>，每个知识点都配有完整的代码示例、详细解析和Vue3应用场景说明。无论你是前端新手还是想快速入门Vue3，这篇文章都能帮你打下坚实的JS基础。 🤗</p>
+
+
+<hr class="wp-block-separator has-alpha-channel-opacity is-style-wide">
+
+
+<h2 class="wp-block-heading">1️⃣ 变量和常量（let/const）</h2>
+
+
+<h3 class="wp-block-heading">核心概念</h3>
+
+
+<p class="has-text-color" style="color: rgb(0, 0, 0)">ES6引入了<code class="" data-line="">let</code>和<code class="" data-line="">const</code>来声明变量，替代传统的<code class="" data-line="">var</code>，解决了变量提升、块级作用域等问题。</p>
+
+
+<ul class="wp-block-list">
+<li><strong>let</strong>：声明可变的变量，具有块级作用域</li>
+
+
+
+<li><strong>const</strong>：声明常量，声明后不能重新赋值，也具有块级作用域</li>
+</ul>
+
+
+<h3 class="wp-block-heading">代码示例</h3>
+
+
+<pre class="wp-block-code"><code class="" data-line="">// 1. let声明的变量可以修改
+let count = 0;
+count = 1; // ✅ 可以修改
+
+// 2. const声明的常量不能重新赋值
+const MAX_COUNT = 100;
+MAX_COUNT = 200; // ❌ 报错：Assignment to constant variable
+
+// 3. 块级作用域
+if (true) {
+  let blockVar = 'block';
+  const BLOCK_CONST = 'const';
+}
+console.log(blockVar); // ❌ 报错：blockVar未定义
+
+// 4. const修饰引用类型的特性（重点）
+const user = { name: '张三', age: 25 };
+user.age = 26; // ✅ 可以修改对象的属性
+user = {}; // ❌ 报错：不能重新赋值
+
+const arr = [1, 2, 3];
+arr.push(4); // ✅ 可以修改数组内容
+arr = []; // ❌ 报错：不能重新赋值</code></pre>
+
+
+<p> </p>
+
+
+<h3 class="wp-block-heading">Vue3中的应用</h3>
+
+
+<pre class="wp-block-code"><code class="" data-line="">import { ref, reactive } from 'vue';
+
+// Vue3组合式API中大量使用const
+const count = ref(0); // 响应式引用
+const state = reactive({ name: 'Vue3' }); // 响应式对象
+
+const increment = () =&gt; {
+  count.value++; // 可以修改.value属性
+};</code></pre>
+
+
+<p> </p>
+
+
+<h3 class="wp-block-heading">🤔 思考问题</h3>
+
+
+<p class="has-text-color" style="color: rgb(0, 0, 0)"><strong>Q：为什么const声明的对象可以修改属性，但不能重新赋值？</strong></p>
+
+
+<p class="has-text-color" style="color: rgb(0, 0, 0)"><strong>A：</strong><code class="" data-line="">const</code>保证的是变量指向的内存地址不变，而不是值不变。对于引用类型（对象、数组），变量存储的是内存地址（指针），所以可以修改对象内部的属性，但不能让变量指向新的对象。</p>
+
+
+<pre class="wp-block-code"><code class="" data-line="">const obj = { a: 1 };
+// obj存储的是对象的内存地址，比如0x1234
+
+obj.a = 2; // ✅ 修改对象内部属性，内存地址0x1234不变
+obj = { a: 2 }; // ❌ 指向新对象，内存地址变了（比如0x5678），违反const约束</code></pre>
+
+
+<p> </p>
+
+
+<h3 class="wp-block-heading">⚠️ 注意事项</h3>
+
+
+<ul class="wp-block-list">
+<li>优先使用<code class="" data-line="">const</code>，只有确定变量会改变时才用<code class="" data-line="">let</code></li>
+
+
+
+<li>避免使用<code class="" data-line="">var</code>（存在变量提升和全局污染问题）</li>
+
+
+
+<li><code class="" data-line="">const</code>不代表&quot;不可变&quot;，对于引用类型要特别注意</li>
+</ul>
+
+
+<hr class="wp-block-separator has-alpha-channel-opacity is-style-wide">
+
+
+<h2 class="wp-block-heading">2️⃣ 模板字符串</h2>
+
+
+<h3 class="wp-block-heading">核心概念</h3>
+
+
+<p class="has-text-color" style="color: rgb(0, 0, 0)">模板字符串使用反引号 <code class="" data-line=""> </code>`包裹，支持嵌入表达式和多行文本，比传统字符串拼接更简洁易读。</p>
+
+
+<h3 class="wp-block-heading">代码示例</h3>
+
+
+<pre class="wp-block-code"><code class="" data-line="">// 传统字符串拼接（繁琐）
+const name = 'Vue3';
+const version = 3.4;
+const message1 = '欢迎学习 ' + name + ' 版本 ' + version;
+
+// 模板字符串（推荐）
+const message2 = `欢迎学习 ${name} 版本 ${version}`;
+
+// 多行文本
+const html = `
+  &lt;div class=&quot;container&quot;&gt;
+    &lt;h1&gt;${name}&lt;/h1&gt;
+    &lt;p&gt;版本：${version}&lt;/p&gt;
+  &lt;/div&gt;
+`;
+
+// 嵌入表达式
+const price = 100;
+const discount = 0.8;
+const finalPrice = `最终价格：${price * discount}元`; // &quot;最终价格：80元&quot;
+
+// 调用函数
+const greeting = `你好，${name.toUpperCase()}！`; // &quot;你好，VUE3！&quot;</code></pre>
+
+
+<p> </p>
+
+
+<h3 class="wp-block-heading">与普通字符串的区别</h3>
+
+
+<figure class="wp-block-table"><table><thead><tr><th>特性</th><th>普通字符串</th><th>模板字符串</th></tr></thead><tbody><tr><td>包裹符号</td><td><code class="" data-line="">'</code> 或 <code class="" data-line="">&quot;</code></td><td><code class="" data-line=""> </code>`</td></tr><tr><td>多行文本</td><td>需要用<code class="" data-line="">n</code>或字符串拼接</td><td>直接换行</td></tr><tr><td>嵌入变量</td><td>需要用<code class="" data-line="">+</code>拼接</td><td><code class="" data-line="">${变量}</code></td></tr><tr><td>嵌入表达式</td><td>不支持</td><td><code class="" data-line="">${表达式}</code></td></tr></tbody></table></figure>
+
+
+<h3 class="wp-block-heading">Vue3中的应用</h3>
+
+
+<pre class="wp-block-code"><code class="" data-line="">// 动态绑定class
+const isActive = true;
+const className = `btn ${isActive ? 'active' : ''}`;
+
+// 模板中的插值
+&lt;template&gt;
+  &lt;div&gt;{{ `用户：${user.name}，年龄：${user.age}` }}&lt;/div&gt;
+&lt;/template&gt;
+
+// 动态路由跳转
+const userId = 123;
+router.push(`/user/${userId}`);</code></pre>
+
+
+<p> </p>
+
+
+<h3 class="wp-block-heading">⚠️ 注意事项</h3>
+
+
+<ul class="wp-block-list">
+<li>模板字符串使用反引号 <code class="" data-line=""> ，不是单引号</code>'`</li>
+
+
+
+<li>模板字符串会保留空格和换行</li>
+</ul>
+
+
+<hr class="wp-block-separator has-alpha-channel-opacity is-style-wide">
+
+
+<h3 class="wp-block-heading">核心概念</h3>
+
+
+<p class="has-text-color" style="color: rgb(0, 0, 0)">对象是JavaScript中最重要的数据结构，掌握对象的取值、赋值和简写规则是必备技能。</p>
+
+
+<h3 class="wp-block-heading">3.1 点取值 vs 中括号取值</h3>
+
+
+<pre class="wp-block-code"><code class="" data-line="">const user = {
+  name: '张三',
+  age: 25,
+  'home-address': '北京'
+};
+
+// 点取值（常用）
+console.log(user.name); // &quot;张三&quot;
+
+// 中括号取值（动态属性名、包含特殊字符时使用）
+console.log(user['name']); // &quot;张三&quot;
+console.log(user['home-address']); // &quot;北京&quot;，属性名有特殊字符必须用中括号
+
+// 动态属性名（重要）
+const key = 'age';
+console.log(user[key]); // 25，key是变量
+
+// Vue3中的应用：动态访问对象属性
+const formData = { username: 'admin', password: '123456' };
+const fields = ['username', 'password'];
+fields.forEach(field =&gt; {
+  console.log(formData[field]); // 动态访问
+});</code></pre>
+
+
+<p> </p>
+
+
+<h3 class="wp-block-heading">3.2 属性和方法的简写</h3>
+
+
+<h3 class="wp-block-heading">4.1 数组解构</h3>
+
+
+<pre class="wp-block-code"><code class="" data-line="">// 基础用法
+const colors = ['red', 'green', 'blue'];
+const [first, second, third] = colors;
+console.log(first); // &quot;red&quot;
+console.log(second); // &quot;green&quot;
+
+// 跳过某些元素
+const [r, , b] = colors;
+console.log(r, b); // &quot;red&quot; &quot;blue&quot;
+
+// 剩余运算符（...rest）
+const numbers = [1, 2, 3, 4, 5];
+const [one, two, ...rest] = numbers;
+console.log(one, two); // 1 2
+console.log(rest); // [3, 4, 5]
+
+// 默认值
+const [x = 10, y = 20] = [1];
+console.log(x, y); // 1 20（y使用默认值）</code></pre>
+
+
+<p> </p>
+
+
+<h3 class="wp-block-heading">4.2 对象解构</h3>
+
+
+<pre class="wp-block-code"><code class="" data-line="">// 基础用法
+const user = { name: '张三', age: 25, city: '北京' };
+const { name, age } = user;
+console.log(name, age); // &quot;张三&quot; 25
+
+// 重命名（别名）
+const { name: userName, age: userAge } = user;
+console.log(userName, userAge); // &quot;张三&quot; 25
+
+// 默认值
+const { name, age, gender = '未知' } = user;
+console.log(gender); // &quot;未知&quot;（user中没有gender属性）
+
+// 剩余运算符
+const { name, ...rest } = user;
+console.log(rest); // { age: 25, city: '北京' }
+
+// 嵌套解构
+const student = {
+  name: '李四',
+  score: {
+    math: 90,
+    english: 85
+  }
+};
+const { name, score: { math, english } } = student;
+console.log(math, english); // 90 85</code></pre>
+
+
+<p> </p>
+
+
+<h3 class="wp-block-heading">4.3 函数参数解构</h3>
+
+
+<h3 class="wp-block-heading">核心概念</h3>
+
+
+<p class="has-text-color" style="color: rgb(0, 0, 0)">箭头函数是ES6引入的简洁函数写法，在Vue3中大量使用，尤其是在事件处理、计算属性、侦听器中。</p>
+
+
+<h3 class="wp-block-heading">语法规则</h3>
+
+
+<pre class="wp-block-code"><code class="" data-line="">// 传统函数
+function add(a, b) {
+  return a + b;
+}
+
+// 箭头函数基础语法
+const add = (a, b) =&gt; {
+  return a + b;
+};
+
+// 单个参数可省略括号
+const double = x =&gt; x * 2;
+
+// 单行return可省略return和大括号
+const add = (a, b) =&gt; a + b;
+
+// 无参数
+const greet = () =&gt; console.log('Hello');
+
+// 返回对象需要加括号（重要）
+const getUser = () =&gt; ({ name: '张三', age: 25 });
+// 如果不加括号，{ }会被识别为函数体
+const wrong = () =&gt; { name: '张三' }; // ❌ 返回undefined</code></pre>
+
+
+<p> </p>
+
+
+<pre class="wp-block-code"><code class="" data-line="">// 1. 事件处理
+&lt;template&gt;
+  &lt;button @click=&quot;() =&gt; count++&quot;&gt;点击&lt;/button&gt;
+  &lt;button @click=&quot;increment&quot;&gt;点击&lt;/button&gt;
+&lt;/template&gt;
+
+&lt;script setup&gt;
+import { ref } from 'vue';
+
+const count = ref(0);
+const increment = () =&gt; {
+  count.value++;
+};
+&lt;/script&gt;
+
+// 2. 计算属性
+const doubleCount = computed(() =&gt; count.value * 2);
+
+// 3. 侦听器
+watch(count, (newVal, oldVal) =&gt; {
+  console.log(`从${oldVal}变为${newVal}`);
+});
+
+// 4. 生命周期钩子
+onMounted(() =&gt; {
+  console.log('组件已挂载');
+});</code></pre>
+
+
+<p> </p>
+
+
+<h3 class="wp-block-heading">⚠️ 注意事项</h3>
+
+
+<ul class="wp-block-list">
+<li>箭头函数不能作为构造函数使用（不能用<code class="" data-line="">new</code>调用）</li>
+
+
+
+<li>箭头函数没有<code class="" data-line="">arguments</code>对象</li>
+
+
+
+<li>返回对象字面量时必须加括号：<code class="" data-line="">() =&gt; ({ key: value })</code></li>
+
+
+
+<li>在Vue选项式API的<code class="" data-line="">methods</code>中不要使用箭头函数</li>
+</ul>
+
+
+<hr class="wp-block-separator has-alpha-channel-opacity is-style-wide">
+
+
+<h2 class="wp-block-heading">6️⃣ 数组的重要方法</h2>
+
+
+<h3 class="wp-block-heading">6.1 修改原数组的方法</h3>
+
+
+<pre class="wp-block-code"><code class="" data-line="">// 语法：arr.push(元素1, 元素2, ...)
+// 返回值：数组新长度
+
+const arr = [1, 2, 3];
+const newLength = arr.push(4, 5);
+console.log(arr); // [1, 2, 3, 4, 5]
+console.log(newLength); // 5
+
+// Vue3应用场景：添加列表项
+const todos = ref([]);
+const addTodo = (text) =&gt; {
+  todos.value.push({ id: Date.now(), text, done: false });
+};</code></pre>
+
+
+<p> </p>
+
+
+<pre class="wp-block-code"><code class="" data-line="">// 语法：arr.unshift(元素1, 元素2, ...)
+// 返回值：数组新长度
+
+const arr = [1, 2, 3];
+arr.unshift(0);
+console.log(arr); // [0, 1, 2, 3]</code></pre>
+
+
+<p> </p>
+
+
+<pre class="wp-block-code"><code class="" data-line="">// 语法：arr.pop()
+// 返回值：被删除的元素
+
+const arr = [1, 2, 3];
+const last = arr.pop();
+console.log(arr); // [1, 2]
+console.log(last); // 3</code></pre>
+
+
+<p> </p>
+
+
+<pre class="wp-block-code"><code class="" data-line="">// 语法：arr.shift()
+// 返回值：被删除的元素
+
+const arr = [1, 2, 3];
+const first = arr.shift();
+console.log(arr); // [2, 3]
+console.log(first); // 1</code></pre>
+
+
+<p> </p>
+
+
+<pre class="wp-block-code"><code class="" data-line="">// 语法：arr.splice(起始索引, 删除个数, 插入元素...)
+// 返回值：被删除元素组成的数组
+
+const arr = [1, 2, 3, 4, 5];
+
+// 删除
+arr.splice(1, 2); // 从索引1开始删除2个元素
+console.log(arr); // [1, 4, 5]
+
+// 插入
+arr.splice(1, 0, 'a', 'b'); // 在索引1插入'a'和'b'
+console.log(arr); // [1, 'a', 'b', 4, 5]
+
+// 替换
+arr.splice(1, 2, 'x'); // 删除索引1开始的2个元素，插入'x'
+console.log(arr); // [1, 'x', 4, 5]
+
+// Vue3应用场景：删除列表项
+const deleteItem = (index) =&gt; {
+  list.value.splice(index, 1);
+};</code></pre>
+
+
+<p> </p>
+
+
+<h3 class="wp-block-heading">6.2 不修改原数组的方法</h3>
+
+
+<pre class="wp-block-code"><code class="" data-line="">// 语法：arr.includes(元素)
+// 返回值：true 或 false
+
+const arr = [1, 2, 3];
+console.log(arr.includes(2)); // true
+console.log(arr.includes(5)); // false
+
+// Vue3应用场景：判断权限
+const permissions = ['read', 'write'];
+const canDelete = permissions.includes('delete'); // false</code></pre>
+
+
+<p> </p>
+
+
+<pre class="wp-block-code"><code class="" data-line="">// 语法：arr.forEach((item, index, array) =&gt; {})
+// 返回值：undefined
+
+const arr = [1, 2, 3];
+arr.forEach((item, index) =&gt; {
+  console.log(`索引${index}：${item}`);
+});
+// 输出：
+// 索引0：1
+// 索引1：2
+// 索引2：3
+
+// ⚠️ 注意：forEach没有返回值，不能用break中断
+
+// Vue3应用场景：批量处理
+users.value.forEach(user =&gt; {
+  user.isSelected = false;
+});</code></pre>
+
+
+<p> </p>
+
+
+<pre class="wp-block-code"><code class="" data-line="">// 语法：arr.map((item, index, array) =&gt; 新值)
+// 返回值：转换后的新数组
+
+const numbers = [1, 2, 3];
+const doubled = numbers.map(n =&gt; n * 2);
+console.log(doubled); // [2, 4, 6]
+
+// 提取对象属性
+const users = [
+  { id: 1, name: '张三' },
+  { id: 2, name: '李四' }
+];
+const names = users.map(user =&gt; user.name);
+console.log(names); // ['张三', '李四']
+
+// Vue3应用场景：数据格式化
+const formattedUsers = computed(() =&gt; {
+  return users.value.map(user =&gt; ({
+    ...user,
+    fullName: `${user.firstName} ${user.lastName}`
+  }));
+});</code></pre>
+
+
+<p> </p>
+
+
+<pre class="wp-block-code"><code class="" data-line="">// 语法：arr.every((item, index, array) =&gt; 条件)
+// 返回值：true（全部满足）或 false
+
+const numbers = [2, 4, 6, 8];
+const allEven = numbers.every(n =&gt; n % 2 === 0);
+console.log(allEven); // true
+
+// Vue3应用场景：表单验证
+const allValid = formFields.every(field =&gt; field.value.trim() !== '');</code></pre>
+
+
+<p> </p>
+
+
+<pre class="wp-block-code"><code class="" data-line="">// 语法：arr.reduce((累加器, 当前值, 索引, 数组) =&gt; 返回值, 初始值)
+// 返回值：最终累加结果
+
+// 求和
+const numbers = [1, 2, 3, 4];
+const sum = numbers.reduce((acc, cur) =&gt; acc + cur, 0);
+console.log(sum); // 10
+
+// 求最大值
+const max = numbers.reduce((acc, cur) =&gt; Math.max(acc, cur));
+console.log(max); // 4
+
+// 统计出现次数
+const fruits = ['apple', 'banana', 'apple', 'orange', 'banana', 'apple'];
+const count = fruits.reduce((acc, fruit) =&gt; {
+  acc[fruit] = (acc[fruit] || 0) + 1;
+  return acc;
+}, {});
+console.log(count); // { apple: 3, banana: 2, orange: 1 }
+
+// Vue3应用场景：计算购物车总价
+const totalPrice = computed(() =&gt; {
+  return cart.value.reduce((total, item) =&gt; {
+    return total + item.price * item.quantity;
+  }, 0);
+});</code></pre>
+
+
+<p> </p>
+
+
+<h3 class="wp-block-heading">6.3 对象的重要方法</h3>
+
+
+<h3 class="wp-block-heading">Object.keys() / values() / entries()</h3>
+
+
+<pre class="wp-block-code"><code class="" data-line="">const user = {
+  name: '张三',
+  age: 25,
+  city: '北京'
+};
+
+// Object.keys() - 获取所有键
+const keys = Object.keys(user);
+console.log(keys); // ['name', 'age', 'city']
+
+// Object.values() - 获取所有值
+const values = Object.values(user);
+console.log(values); // ['张三', 25, '北京']
+
+// Object.entries() - 获取键值对数组
+const entries = Object.entries(user);
+console.log(entries); // [['name', '张三'], ['age', 25], ['city', '北京']]</code></pre>
+
+
+<p> </p>
+
+
+<h3 class="wp-block-heading">结合数组方法遍历对象</h3>
+
+
+<pre class="wp-block-code"><code class="" data-line="">const scores = {
+  math: 90,
+  english: 85,
+  chinese: 88
+};
+
+// 遍历输出
+Object.keys(scores).forEach(subject =&gt; {
+  console.log(`${subject}: ${scores[subject]}分`);
+});
+
+// 计算总分
+const total = Object.values(scores).reduce((sum, score) =&gt; sum + score, 0);
+console.log(total); // 263
+
+// 过滤高分科目
+const highScores = Object.entries(scores)
+  .filter(([subject, score]) =&gt; score &gt;= 88)
+  .map(([subject, score]) =&gt; subject);
+console.log(highScores); // ['math', 'chinese']</code></pre>
+
+
+<p> </p>
+
+
+<h3 class="wp-block-heading">Vue3应用场景</h3>
+
+
+<pre class="wp-block-code"><code class="" data-line="">// 遍历表单字段验证
+const formData = reactive({
+  username: '',
+  password: '',
+  email: ''
+});
+
+const validateForm = () =&gt; {
+  return Object.keys(formData).every(key =&gt; {
+    return formData[key].trim() !== '';
+  });
+};
+
+// 动态表格列
+const columns = {
+  name: '姓名',
+  age: '年龄',
+  city: '城市'
+};
+
+&lt;template&gt;
+  &lt;table&gt;
+    &lt;tr&gt;
+      &lt;th v-for=&quot;(key, value) in columns&quot; :key=&quot;key&quot;&gt;
+         {{value}} 
+      &lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/table&gt;
+&lt;/template&gt;</code></pre>
+
+
+<p> </p>
+
+
+<hr class="wp-block-separator has-alpha-channel-opacity is-style-wide">
+
+
+<h2 class="wp-block-heading">8️⃣ 扩展运算符（…）</h2>
+
+
+<h3 class="wp-block-heading">核心概念</h3>
+
+
+<p class="has-text-color" style="color: rgb(0, 0, 0)">扩展运算符（Spread Operator）用三个点<code class="" data-line="">...</code>表示，可以展开数组或对象，常用于复制、合并和解决引用类型赋值问题。</p>
+
+
+<h3 class="wp-block-heading">8.1 复制数组/对象</h3>
+
+
+<pre class="wp-block-code"><code class="" data-line="">// 复制数组（浅拷贝）
+const arr1 = [1, 2, 3];
+const arr2 = [...arr1];
+arr2.push(4);
+console.log(arr1); // [1, 2, 3]，不受影响
+console.log(arr2); // [1, 2, 3, 4]
+
+// 复制对象（浅拷贝）
+const user = { name: '张三', age: 25 };
+const copiedUser = { ...user };
+copiedUser.age = 26;
+console.log(user.age); // 25，不受影响</code></pre>
+
+
+<p> </p>
+
+
+<h3 class="wp-block-heading">8.2 合并数组/对象</h3>
+
+
+<pre class="wp-block-code"><code class="" data-line="">// 合并数组
+const arr1 = [1, 2];
+const arr2 = [3, 4];
+const merged = [...arr1, ...arr2];
+console.log(merged); // [1, 2, 3, 4]
+
+// 合并对象
+const defaults = { theme: 'light', lang: 'zh' };
+const userSettings = { theme: 'dark' };
+const settings = { ...defaults, ...userSettings };
+console.log(settings); // { theme: 'dark', lang: 'zh' }</code></pre>
+
+
+<p> </p>
+
+
+<h3 class="wp-block-heading">8.3 同名属性覆盖规则</h3>
+
+
+<pre class="wp-block-code"><code class="" data-line="">// 后面的属性会覆盖前面的
+const obj1 = { a: 1, b: 2 };
+const obj2 = { b: 3, c: 4 };
+const merged = { ...obj1, ...obj2 };
+console.log(merged); // { a: 1, b: 3, c: 4 }
+
+// 添加/修改属性
+const user = { name: '张三', age: 25 };
+const updatedUser = { ...user, age: 26, city: '北京' };
+console.log(updatedUser); // { name: '张三', age: 26, city: '北京' }</code></pre>
+
+
+<p> </p>
+
+
+<h3 class="wp-block-heading">8.4 解决引用类型赋值问题</h3>
+
+
+<pre class="wp-block-code"><code class="" data-line="">// ❌ 错误：直接赋值（引用）
+const obj1 = { name: '张三' };
+const obj2 = obj1; // obj2和obj1指向同一个对象
+obj2.name = '李四';
+console.log(obj1.name); // &quot;李四&quot;，被影响了
+
+// ✅ 正确：使用扩展运算符（复制）
+const obj1 = { name: '张三' };
+const obj2 = { ...obj1 }; // 创建新对象
+obj2.name = '李四';
+console.log(obj1.name); // &quot;张三&quot;，不受影响
+
+// ⚠️ 注意：扩展运算符是浅拷贝
+const user = {
+  name: '张三',
+  address: { city: '北京' }
+};
+const copiedUser = { ...user };
+copiedUser.address.city = '上海';
+console.log(user.address.city); // &quot;上海&quot;，嵌套对象被影响了</code></pre>
+
+
+<p> </p>
+
+
+<ul class="wp-block-list">
+<li><strong>核心逻辑</strong>：浅拷贝只复制对象的<strong>第一层属性</strong>，对于嵌套的对象（比如 <code class="" data-line="">address</code>），复制的依然是它的内存引用，而不是嵌套对象本身。</li>
+
+
+
+<li><strong>执行结果</strong>：<code class="" data-line="">copiedUser.address</code> 和 <code class="" data-line="">user.address</code> 指向同一个嵌套对象，修改 <code class="" data-line="">copiedUser.address.city</code> 会直接影响 <code class="" data-line="">user.address.city</code>，所以输出 &quot;上海&quot;。</li>
+
+
+
+<li>如何解决嵌套对象的深拷贝问题呢？这里有两种方法：</li>
+</ul>
+
+
+<pre class="wp-block-code"><code class="" data-line="">// 方法1：JSON 序列化（简单场景，不支持函数、Symbol等）
+const deepCopiedUser1 = JSON.parse(JSON.stringify(user));
+
+// 方法2：递归拷贝（通用场景，支持所有类型）
+function deepClone(obj) {
+  if (obj === null || typeof obj !== 'object') return obj;
+  if (obj instanceof Array) return obj.map(item =&gt; deepClone(item));
+  if (obj instanceof Object) {
+    const newObj = {};
+    for (let key in obj) {
+      if (obj.hasOwnProperty(key)) {
+        newObj[key] = deepClone(obj[key]);
+      }
+    }
+    return newObj;
+  }
+}
+const deepCopiedUser2 = deepClone(user);</code></pre>
+
+
+<p> </p>
+
+
+<h3 class="wp-block-heading">Vue3应用场景</h3>
+
+
+<pre class="wp-block-code"><code class="" data-line="">// 1. 更新响应式对象
+const state = ref({ count: 0, name: 'Vue' });
+state.value = { ...state.value, count: state.value.count + 1 };
+
+// 2. 表单重置
+const formData = reactive({ name: '', age: 0 });
+const defaultData = { name: '', age: 0 };
+const resetForm = () =&gt; {
+  Object.assign(formData, { ...defaultData });
+};
+
+// 3. 路由传参
+router.push({
+  name: 'UserDetail',
+  params: { ...user }
+});</code></pre>
+
+
+<p> </p>
+
+
+<hr class="wp-block-separator has-alpha-channel-opacity is-style-wide">
+
+
+<h2 class="wp-block-heading">9️⃣ 序列化和反序列化（JSON）</h2>
+
+
+<h3 class="wp-block-heading">核心概念</h3>
+
+
+<ul class="wp-block-list">
+<li><strong>序列化（JSON.stringify）</strong>：将JavaScript对象转换为JSON字符串</li>
+
+
+
+<li><strong>反序列化（JSON.parse）</strong>：将JSON字符串转换为JavaScript对象</li>
+</ul>
+
+
+<h3 class="wp-block-heading">代码示例</h3>
+
+
+<pre class="wp-block-code"><code class="" data-line="">// JSON.stringify() - 对象转字符串
+const user = {
+  name: '张三',
+  age: 25,
+  hobbies: ['读书', '旅游']
+};
+
+const jsonStr = JSON.stringify(user);
+console.log(jsonStr);
+// '{&quot;name&quot;:&quot;张三&quot;,&quot;age&quot;:25,&quot;hobbies&quot;:[&quot;读书&quot;,&quot;旅游&quot;]}'
+console.log(typeof jsonStr); // &quot;string&quot;
+
+// JSON.parse() - 字符串转对象
+const jsonStr = '{&quot;name&quot;:&quot;张三&quot;,&quot;age&quot;:25}';
+const obj = JSON.parse(jsonStr);
+console.log(obj); // { name: '张三', age: 25 }
+console.log(typeof obj); // &quot;object&quot;
+
+// 格式化输出（美化JSON）
+const formatted = JSON.stringify(user, null, 2);
+console.log(formatted);
+/*
+{
+  &quot;name&quot;: &quot;张三&quot;,
+  &quot;age&quot;: 25,
+  &quot;hobbies&quot;: [
+    &quot;读书&quot;,
+    &quot;旅游&quot;
+  ]
+}
+*/</code></pre>
+
+
+<p> </p>
+
+
+<h3 class="wp-block-heading">使用场景</h3>
+
+
+<pre class="wp-block-code"><code class="" data-line="">// 1. 深拷贝（简单对象）
+const obj1 = { name: '张三', age: 25 };
+const obj2 = JSON.parse(JSON.stringify(obj1));
+obj2.name = '李四';
+console.log(obj1.name); // &quot;张三&quot;，不受影响
+
+// ⚠️ 注意：JSON方法的局限性
+const obj = {
+  func: () =&gt; {},        // 函数会丢失
+  date: new Date(),      // 日期会变成字符串
+  undef: undefined,      // undefined会丢失
+  sym: Symbol('test')    // Symbol会丢失
+};
+const copied = JSON.parse(JSON.stringify(obj));
+console.log(copied); // { date: &quot;2026-02-09T...&quot; }
+
+// 2. 与Web存储结合使用
+localStorage.setItem('user', JSON.stringify(user)); // 存储
+const savedUser = JSON.parse(localStorage.getItem('user')); // 读取</code></pre>
+
+
+<p> </p>
+
+
+<h3 class="wp-block-heading">Vue3应用场景</h3>
+
+
+<pre class="wp-block-code"><code class="" data-line="">// API请求
+const createUser = async (userData) =&gt; {
+  const response = await fetch('/api/users', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(userData) // 序列化
+  });
+  const result = await response.json(); // 反序列化
+  return result;
+};</code></pre>
+
+
+<p> </p>
+
+
+<hr class="wp-block-separator has-alpha-channel-opacity is-style-wide">
+
+
+<h2 class="wp-block-heading">🔟 Web存储（localStorage/sessionStorage）</h2>
+
+
+<h3 class="wp-block-heading">核心概念</h3>
+
+
+<p class="has-text-color" style="color: rgb(0, 0, 0)">浏览器提供了两种Web存储方式：</p>
+
+
+<ul class="wp-block-list">
+<li><strong>localStorage</strong>：永久存储，除非手动清除</li>
+
+
+
+<li><strong>sessionStorage</strong>：会话存储，关闭标签页/浏览器后清除</li>
+</ul>
+
+
+<h3 class="wp-block-heading">基本用法</h3>
+
+
+<pre class="wp-block-code"><code class="" data-line="">// localStorage - 永久存储
+localStorage.setItem('username', '张三'); // 存储
+const username = localStorage.getItem('username'); // 获取
+localStorage.removeItem('username'); // 删除单个
+localStorage.clear(); // 清空所有
+
+// sessionStorage - 会话存储（用法相同）
+sessionStorage.setItem('token', 'abc123');
+const token = sessionStorage.getItem('token');</code></pre>
+
+
+<p> </p>
+
+
+<h3 class="wp-block-heading">存储引用类型</h3>
+
+
+<pre class="wp-block-code"><code class="" data-line="">// ⚠️ localStorage只能存储字符串
+const user = { name: '张三', age: 25 };
+
+// ❌ 错误：直接存储对象
+localStorage.setItem('user', user); // 会变成&quot;[object Object]&quot;
+
+// ✅ 正确：先序列化，再存储
+localStorage.setItem('user', JSON.stringify(user));
+
+// 读取时需要反序列化
+const userStr = localStorage.getItem('user');
+const user = JSON.parse(userStr);
+console.log(user); // { name: '张三', age: 25 }
+
+// 完整示例：封装存储工具
+const storage = {
+  set(key, value) {
+    localStorage.setItem(key, JSON.stringify(value));
+  },
+  get(key) {
+    const value = localStorage.getItem(key);
+    return value ? JSON.parse(value) : null;
+  },
+  remove(key) {
+    localStorage.removeItem(key);
+  },
+  clear() {
+    localStorage.clear();
+  }
+};
+
+// 使用
+storage.set('user', { name: '张三', age: 25 });
+const user = storage.get('user');</code></pre>
+
+
+<p> </p>
+
+
+<h3 class="wp-block-heading">localStorage vs sessionStorage</h3>
+
+
+<figure class="wp-block-table"><table><thead><tr><th>特性</th><th>localStorage</th><th>sessionStorage</th></tr></thead><tbody><tr><td>存储时效</td><td>永久存储，除非手动删除</td><td>关闭标签页后清除</td></tr><tr><td>作用域</td><td>同源窗口共享</td><td>仅当前标签页</td></tr><tr><td>容量限制</td><td>约5MB</td><td>约5MB</td></tr><tr><td>使用场景</td><td>用户偏好、登录状态</td><td>临时数据、表单草稿</td></tr></tbody></table></figure>
+
+
+<h3 class="wp-block-heading">Vue3应用场景</h3>
+
+
+<pre class="wp-block-code"><code class="" data-line="">// 1. 持久化用户登录状态
+const token = ref(localStorage.getItem('token') || '');
+
+const login = async (username, password) =&gt; {
+  const res = await api.login(username, password);
+  token.value = res.token;
+  localStorage.setItem('token', res.token); // 持久化
+};
+
+const logout = () =&gt; {
+  token.value = '';
+  localStorage.removeItem('token');
+};
+
+// 2. 记住用户偏好
+const theme = ref(localStorage.getItem('theme') || 'light');
+
+watch(theme, (newTheme) =&gt; {
+  localStorage.setItem('theme', newTheme);
+});
+
+// 3. 缓存列表数据
+const cacheKey = 'user-list';
+const users = ref([]);
+
+onMounted(() =&gt; {
+  const cached = localStorage.getItem(cacheKey);
+  if (cached) {
+    users.value = JSON.parse(cached);
+  } else {
+    fetchUsers();
+  }
+});
+
+const fetchUsers = async () =&gt; {
+  users.value = await api.getUsers();
+  localStorage.setItem(cacheKey, JSON.stringify(users.value));
+};</code></pre>
+
+
+<p> </p>
+
+
+<h3 class="wp-block-heading">⚠️ 注意事项</h3>
+
+
+<ul class="wp-block-list">
+<li>存储容量限制：约5MB（不同浏览器略有差异）</li>
+
+
+
+<li>只能存储字符串，对象需要序列化</li>
+
+
+
+<li>同步操作，大量数据可能阻塞主线程</li>
+
+
+
+<li>敏感信息（密码、身份证）不要存储在localStorage</li>
+</ul>
+
+
+<hr class="wp-block-separator has-alpha-channel-opacity is-style-wide">
+
+
+<h2 class="wp-block-heading">1️⃣1️⃣ Promise 与 Async/Await</h2>
+
+
+<h3 class="wp-block-heading">核心概念</h3>
+
+
+<p class="has-text-color" style="color: rgb(0, 0, 0)">异步编程是JavaScript的重点难点，Vue3中的数据请求、延时操作都基于Promise和Async/Await。</p>
+
+
+<h3 class="wp-block-heading">11.1 回调地狱问题</h3>
+
+
+<pre class="wp-block-code"><code class="" data-line="">// ❌ 回调地狱：难以维护
+getUserInfo(userId, (user) =&gt; {
+  getOrders(user.id, (orders) =&gt; {
+    getOrderDetail(orders[0].id, (detail) =&gt; {
+      console.log(detail);
+    });
+  });
+});</code></pre>
+
+
+<p> </p>
+
+
+<h3 class="wp-block-heading">11.2 Promise基础</h3>
+
+
+<pre class="wp-block-code"><code class="" data-line="">// Promise三种状态
+// pending（进行中）→ fulfilled（成功）或 rejected（失败）
+
+// 创建Promise
+const promise = new Promise((resolve, reject) =&gt; {
+  setTimeout(() =&gt; {
+    const success = true;
+    if (success) {
+      resolve('成功的数据'); // 变为fulfilled状态
+    } else {
+      reject('失败的原因'); // 变为rejected状态
+    }
+  }, 1000);
+});
+
+// 使用Promise
+promise
+  .then(data =&gt; {
+    console.log(data); // &quot;成功的数据&quot;
+    return data + '1'; // 可以返回新值
+  })
+  .then(data =&gt; {
+    console.log(data); // &quot;成功的数据1&quot;
+  })
+  .catch(error =&gt; {
+    console.error(error); // 捕获错误
+  })
+  .finally(() =&gt; {
+    console.log('无论成功失败都会执行');
+  });</code></pre>
+
+
+<p> </p>
+
+
+<h3 class="wp-block-heading">11.3 Promise链式调用消除回调地狱</h3>
+
+
+<pre class="wp-block-code"><code class="" data-line="">// 模拟异步函数
+function getUserInfo(userId) {
+  return new Promise((resolve) =&gt; {
+    setTimeout(() =&gt; resolve({ id: userId, name: '张三' }), 1000);
+  });
+}
+
+function getOrders(userId) {
+  return new Promise((resolve) =&gt; {
+    setTimeout(() =&gt; resolve([{ id: 1, name: '订单1' }]), 1000);
+  });
+}
+
+function getOrderDetail(orderId) {
+  return new Promise((resolve) =&gt; {
+    setTimeout(() =&gt; resolve({ id: orderId, price: 100 }), 1000);
+  });
+}
+
+// ✅ Promise链：清晰易读
+getUserInfo(123)
+  .then(user =&gt; {
+    console.log('用户信息：', user);
+    return getOrders(user.id);
+  })
+  .then(orders =&gt; {
+    console.log('订单列表：', orders);
+    return getOrderDetail(orders[0].id);
+  })
+  .then(detail =&gt; {
+    console.log('订单详情：', detail);
+  })
+  .catch(error =&gt; {
+    console.error('出错了：', error);
+  });</code></pre>
+
+
+<p> </p>
+
+
+<h3 class="wp-block-heading">11.4 Async/Await – 异步终极解决方案</h3>
+
+
+<pre class="wp-block-code"><code class="" data-line="">// async函数返回Promise
+async function fetchUser() {
+  return { name: '张三' }; // 自动包装成Promise
+}
+
+fetchUser().then(user =&gt; console.log(user));
+
+// await等待Promise完成
+async function getUser() {
+  const user = await getUserInfo(123); // 等待Promise完成
+  console.log(user); // { id: 123, name: '张三' }
+}
+
+// ✅ 完整示例：用同步的方式写异步代码
+async function loadData() {
+  try {
+    const user = await getUserInfo(123);
+    console.log('1. 用户信息：', user);
+    
+    const orders = await getOrders(user.id);
+    console.log('2. 订单列表：', orders);
+    
+    const detail = await getOrderDetail(orders[0].id);
+    console.log('3. 订单详情：', detail);
+    
+    return detail;
+  } catch (error) {
+    console.error('出错了：', error);
+  } finally {
+    console.log('请求完成');
+  }
+}
+
+loadData();</code></pre>
+
+
+<p> </p>
+
+
+<h3 class="wp-block-heading">Vue3应用场景</h3>
+
+
+<pre class="wp-block-code"><code class="" data-line="">// 1. 组件挂载时请求数据
+import { ref, onMounted } from 'vue';
+
+const users = ref([]);
+const loading = ref(false);
+const error = ref(null);
+
+onMounted(async () =&gt; {
+  loading.value = true;
+  try {
+    const response = await fetch('/api/users');
+    users.value = await response.json();
+  } catch (err) {
+    error.value = err.message;
+  } finally {
+    loading.value = false;
+  }
+});
+
+// 2. 提交表单
+const submitForm = async () =&gt; {
+  const valid = await validateForm();
+  if (!valid) return;
+  
+  const result = await api.createUser(formData);
+  if (result.success) {
+    ElMessage.success('创建成功');
+  }
+};
+
+// 3. 并行请求
+const loadPageData = async () =&gt; {
+  const [users, posts, comments] = await Promise.all([
+    api.getUsers(),
+    api.getPosts(),
+    api.getComments()
+  ]);
+  
+  // 三个请求同时发起，全部完成后继续
+};</code></pre>
+
+
+<p> </p>
+
+
+<h3 class="wp-block-heading">⚠️ 注意事项</h3>
+
+
+<ul class="wp-block-list">
+<li><code class="" data-line="">await</code>只能在<code class="" data-line="">async</code>函数内使用</li>
+
+
+
+<li><code class="" data-line="">async</code>函数总是返回Promise</li>
+
+
+
+<li>使用<code class="" data-line="">try/catch</code>捕获异步错误</li>
+
+
+
+<li>多个无依赖的异步操作用<code class="" data-line="">Promise.all</code>并行执行</li>
+</ul>
+
+
+<hr class="wp-block-separator has-alpha-channel-opacity is-style-wide">
+
+
+<h2 class="wp-block-heading">1️⃣2️⃣ ES6模块化</h2>
+
+
+<h3 class="wp-block-heading">核心概念</h3>
+
+
+<p class="has-text-color" style="color: rgb(0, 0, 0)">模块化可以将代码拆分成多个文件，提高可维护性和复用性。Vue3项目全部采用ES6模块化。</p>
+
+
+<h3 class="wp-block-heading">模块化的意义</h3>
+
+
+<pre class="wp-block-code"><code class="" data-line="">// ❌ 没有模块化：所有代码在一个文件
+// main.js (5000行代码...)
+function add() {}
+function subtract() {}
+// 难以维护、代码冗长
+
+// ✅ 使用模块化：拆分成多个文件
+// utils/math.js
+export function add(a, b) { return a + b; }
+export function subtract(a, b) { return a - b; }
+
+// main.js
+import { add } from './utils/math.js';</code></pre>
+
+
+<p> </p>
+
+
+<h3 class="wp-block-heading">package.json配置</h3>
+
+
+<pre class="wp-block-code"><code class="" data-line="">{
+  &quot;name&quot;: &quot;my-project&quot;,
+  &quot;type&quot;: &quot;module&quot;,
+  &quot;version&quot;: &quot;1.0.0&quot;
+}</code></pre>
+
+
+<p> </p>
+
+
+<p class="has-text-color" style="color: rgb(0, 0, 0)"><strong>⚠️ 注意</strong>：添加<code class="" data-line="">&quot;type&quot;: &quot;module&quot;</code>后，<code class="" data-line="">.js</code>文件才能使用ES6模块语法（Node.js环境）。</p>
+
+
+<h3 class="wp-block-heading">默认导出/导入</h3>
+
+
+<pre class="wp-block-code"><code class="" data-line="">// user.js - 默认导出（每个模块只能有一个）
+export default {
+  name: '张三',
+  age: 25,
+  greet() {
+    console.log(`你好，我是${this.name}`);
+  }
+};
+
+// 或者
+const user = { name: '张三', age: 25 };
+export default user;
+
+// main.js - 默认导入（名字可以自定义）
+import user from './user.js';
+import myUser from './user.js'; // 名字随意
+console.log(user.name);</code></pre>
+
+
+<p> </p>
+
+
+<h3 class="wp-block-heading">按需导出/导入</h3>
+
+
+<pre class="wp-block-code"><code class="" data-line="">// utils.js - 按需导出（可以多个）
+export const PI = 3.14;
+
+export function add(a, b) {
+  return a + b;
+}
+
+export function multiply(a, b) {
+  return a * b;
+}
+
+// 也可以统一导出
+const PI = 3.14;
+function add(a, b) { return a + b; }
+function multiply(a, b) { return a * b; }
+export { PI, add, multiply };
+
+// main.js - 按需导入（名字必须一致）
+import { PI, add } from './utils.js';
+console.log(PI); // 3.14
+console.log(add(1, 2)); // 3
+
+// 导入时重命名
+import { add as sum } from './utils.js';
+console.log(sum(1, 2)); // 3
+
+// 导入全部
+import * as utils from './utils.js';
+console.log(utils.PI); // 3.14
+console.log(utils.add(1, 2)); // 3</code></pre>
+
+
+<p> </p>
+
+
+<h3 class="wp-block-heading">混合导出</h3>
+
+
+<pre class="wp-block-code"><code class="" data-line="">// user.js - 既有默认导出，又有按需导出
+export const VERSION = '1.0.0';
+
+export function formatUser(user) {
+  return `${user.name} (${user.age}岁)`;
+}
+
+export default {
+  name: '张三',
+  age: 25
+};
+
+// main.js - 同时导入
+import user, { VERSION, formatUser } from './user.js';
+console.log(user); // { name: '张三', age: 25 }
+console.log(VERSION); // &quot;1.0.0&quot;
+console.log(formatUser(user)); // &quot;张三 (25岁)&quot;</code></pre>
+
+
+<p> </p>
+
+
+<h3 class="wp-block-heading">Vue3应用场景</h3>
+
+
+<pre class="wp-block-code"><code class="" data-line="">// 1. 导入Vue函数
+import { ref, reactive, computed, watch, onMounted } from 'vue';
+
+// 2. 导入组件
+import MyButton from './components/MyButton.vue';
+import MyInput from './components/MyInput.vue';
+
+// 3. 导入工具函数
+import { formatDate, debounce } from '@/utils/index.js';
+
+// 4. 导入API
+import * as userApi from '@/api/user.js';
+
+// 5. 组合式函数（Composables）
+// composables/useCounter.js
+import { ref } from 'vue';
+
+export function useCounter(initialValue = 0) {
+  const count = ref(initialValue);
+  const increment = () =&gt; count.value++;
+  const decrement = () =&gt; count.value--;
+  return { count, increment, decrement };
+}
+
+// 使用
+import { useCounter } from '@/composables/useCounter.js';
+const { count, increment } = useCounter(10);</code></pre>
+
+
+<p> </p>
+
+
+<hr class="wp-block-separator has-alpha-channel-opacity is-style-wide">
+
+
+<h2 class="wp-block-heading">🎯 知识点总结</h2>
+
+
+<p class="has-text-color" style="color: rgb(0, 0, 0)">恭喜你完成了Vue3前置JavaScript知识的学习！让我们回顾一下12个核心知识点：</p>
+
+
+<figure class="wp-block-table"><table><thead><tr><th>知识点</th><th>核心要点</th><th>Vue3应用频率</th></tr></thead><tbody><tr><td>1. let/const</td><td>块级作用域、const修饰引用类型</td><td>⭐⭐⭐⭐⭐</td></tr><tr><td>2. 模板字符串</td><td><code class="" data-line=""> 包裹、</code>${}`嵌入表达式</td><td>⭐⭐⭐⭐</td></tr><tr><td>3. 对象操作</td><td>点取值/中括号取值、属性方法简写</td><td>⭐⭐⭐⭐⭐</td></tr><tr><td>4. 解构赋值</td><td>数组/对象解构、剩余运算符</td><td>⭐⭐⭐⭐⭐</td></tr><tr><td>5. 箭头函数</td><td>简洁语法、this继承</td><td>⭐⭐⭐⭐⭐</td></tr><tr><td>6. 数组方法</td><td>map/filter/reduce/forEach等</td><td>⭐⭐⭐⭐⭐</td></tr><tr><td>7. Object方法</td><td>keys/values/entries</td><td>⭐⭐⭐⭐</td></tr><tr><td>8. 扩展运算符</td><td><code class="" data-line="">...</code>复制/合并</td><td>⭐⭐⭐⭐⭐</td></tr><tr><td>9. JSON序列化</td><td>stringify/parse</td><td>⭐⭐⭐</td></tr><tr><td>10. Web存储</td><td>localStorage/sessionStorage</td><td>⭐⭐⭐⭐</td></tr><tr><td>11. Promise/Await</td><td>异步编程</td><td>⭐⭐⭐⭐⭐</td></tr><tr><td>12. ES6模块化</td><td>导出/导入</td><td>⭐⭐⭐⭐⭐</td></tr></tbody></table></figure>
+
+
+<hr class="wp-block-separator has-alpha-channel-opacity is-style-wide">
+
+
+<h2 class="wp-block-heading">📚 学习建议</h2>
+
+
+<h3 class="wp-block-heading">如何实操练习</h3>
+
+
+<p class="has-text-color" style="color: rgb(0, 0, 0)"><strong>1. 搭建练习环境</strong></p>
+
+
+<ul class="wp-block-list">
+<li>方式1：浏览器Console（F12）</li>
+
+
+
+<li>方式2：在线工具（CodePen、JSFiddle）</li>
+
+
+
+<li>方式3：Node.js环境（推荐）</li>
+</ul>
+
+
+<p class="has-text-color" style="color: rgb(0, 0, 0)"><strong>2. 每日一练（2周计划）</strong></p>
+
+
+<ul class="wp-block-list">
+<li>第1-3天：let/const、模板字符串、对象操作</li>
+
+
+
+<li>第4-6天：解构赋值、箭头函数</li>
+
+
+
+<li>第7-9天：数组方法（重点练习map/filter/reduce）</li>
+
+
+
+<li>第10-11天：扩展运算符、JSON、Web存储</li>
+
+
+
+<li>第12-14天：Promise/Async/Await、ES6模块化</li>
+</ul>
+
+
+<p class="has-text-color" style="color: rgb(0, 0, 0)"><strong>3. 实战项目练习</strong></p>
+
+
+<ul class="wp-block-list">
+<li>任务清单（TodoList）：练习数组方法、localStorage</li>
+
+
+
+<li>用户管理系统：练习对象操作、Promise、模块化</li>
+
+
+
+<li>商品筛选器：练习filter、computed</li>
+</ul>
+
+
+<h3 class="wp-block-heading">重点掌握内容（Vue3高频）</h3>
+
+
+<p class="has-text-color" style="color: rgb(0, 0, 0)"><strong>必须熟练掌握（⭐⭐⭐⭐⭐）</strong>：</p>
+
+
+<ul class="wp-block-list">
+<li>const/let的使用</li>
+
+
+
+<li>对象解构赋值</li>
+
+
+
+<li>箭头函数</li>
+
+
+
+<li>数组方法：map、filter、forEach</li>
+
+
+
+<li>扩展运算符</li>
+
+
+
+<li>Async/Await</li>
+
+
+
+<li>ES6模块化</li>
+</ul>
+
+
+<p class="has-text-color" style="color: rgb(0, 0, 0)"><strong>需要理解（⭐⭐⭐⭐）</strong>：</p>
+
+
+<ul class="wp-block-list">
+<li>模板字符串</li>
+
+
+
+<li>对象方法（Object.keys等）</li>
+
+
+
+<li>Promise链式调用</li>
+
+
+
+<li>localStorage存储</li>
+</ul>
+
+
+<h3 class="wp-block-heading">下一步：开始学Vue3</h3>
+
+
+<p class="has-text-color" style="color: rgb(0, 0, 0)">完成这些前置知识后，你已经具备了学习Vue3的基础。建议按以下顺序学习：</p>
+
+
+<p class="has-text-color" style="color: rgb(0, 0, 0)"><strong>1. Vue3基础</strong></p>
+
+
+<ul class="wp-block-list">
+<li>组合式API（setup、ref、reactive）</li>
+
+
+
+<li>模板语法（插值、指令）</li>
+
+
+
+<li>计算属性和侦听器</li>
+</ul>
+
+
+<p class="has-text-color" style="color: rgb(0, 0, 0)"><strong>2. Vue3组件</strong></p>
+
+
+<ul class="wp-block-list">
+<li>组件注册和使用</li>
+
+
+
+<li>Props和Emits</li>
+
+
+
+<li>插槽（Slots）</li>
+</ul>
+
+
+<p class="has-text-color" style="color: rgb(0, 0, 0)"><strong>3. Vue3进阶</strong></p>
+
+
+<ul class="wp-block-list">
+<li>组合式函数（Composables）</li>
+
+
+
+<li>生命周期钩子</li>
+
+
+
+<li>路由（Vue Router）</li>
+
+
+
+<li>状态管理（Pinia）</li>
+</ul>
+
+
+<p class="has-text-color" style="color: rgb(0, 0, 0)">💡 <strong>推荐资源</strong>：</p>
+
+
+<ul class="wp-block-list">
+<li><a href="https://cn.vuejs.org/">Vue3官方文档</a>（中文，写得非常好）</li>
+
+
+
+<li><a href="https://www.bilibili.com/">Vue3视频教程</a>（B站搜索&quot;Vue3教程&quot;）</li>
+</ul>
+
+
+<hr class="wp-block-separator has-alpha-channel-opacity is-style-wide">
+
+
+<h2 class="wp-block-heading">🚀 结语</h2>
+
+
+<p class="has-text-color" style="color: rgb(0, 0, 0)">JavaScript是前端开发的基石，而这12个知识点是Vue3开发的&quot;高频词汇&quot;。不要追求一次性全部掌握，而是要在实践中反复练习，遇到不懂的就回来复习。</p>
+
+
+<p class="has-text-color" style="color: rgb(0, 0, 0)">记住：<strong>看懂代码 ≠ 会写代码</strong>。动手练习才是王道！</p>
+
+
+<p class="has-text-color" style="color: rgb(0, 0, 0)">祝你学习顺利，早日成为Vue3高手！💪</p>
+
+</div>
+
+
+
+
+<div class="entry-footer">
+
+	<span class="last-updated bloglo-iflex-center"><svg class="bloglo-icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewbox="0 0 32 32"><path d="M4.004 23.429h5.339c.4 0 .667-.133.934-.4L24.958 8.348a1.29 1.29 0 000-1.868l-5.339-5.339a1.29 1.29 0 00-1.868 0L3.07 15.822c-.267.267-.4.534-.4.934v5.339c0 .801.534 1.335 1.335 1.335zm1.335-6.139L18.685 3.944l3.47 3.47L8.809 20.76h-3.47v-3.47zm22.688 10.143H4.004c-.801 0-1.335.534-1.335 1.335s.534 1.335 1.335 1.335h24.023c.801 0 1.335-.534 1.335-1.335s-.534-1.335-1.335-1.335z"></path></svg><time class="entry-date updated" datetime="2026-05-10T12:49:19+08:00">Last updated on 2026年5月10日</time></span>
+</div>
+
+
+<section class="author-box" itemprop="author" itemscope="itemscope" itemtype="http://schema.org/Person">
+
+	<div class="author-box-avatar">
+		<img alt="" src="https://secure.gravatar.com/avatar/c99e05d9ed6235bc09d908080c0e7b9c1237879e388dd7f32d42db580e57643b?s=75&amp;d=mm&amp;r=g" srcset="https://secure.gravatar.com/avatar/c99e05d9ed6235bc09d908080c0e7b9c1237879e388dd7f32d42db580e57643b?s=150&amp;d=mm&amp;r=g 2x" class="avatar avatar-75 photo" height="75" width="75" decoding="async">	</div>
+
+	<div class="author-box-meta">
+		<div class="h4 author-box-title">
+							<a href="/archives/author/zdl" class="url fn n" rel="author" itemprop="url">
+				zdl	
+				</a>
+						</div>
+
+		
+		
+		<div class="author-box-content" itemprop="description">
+					</div>
+
+		
+<div class="more-posts-button">
+	<a href="/archives/author/zdl" class="bloglo-btn btn-text-1" role="button"><span>View All Posts</span></a>
+</div>
+	</div><!-- END .author-box-meta -->
+
+</section>
+
+<section class="post-nav" role="navigation">
+	<h2 class="screen-reader-text">Post navigation</h2>
+
+	<div class="nav-previous"><h6 class="nav-title">Previous Post</h6><a href="/archives/431" rel="prev"><div class="nav-content"><img width="75" height="50" src="/wp-content/uploads/2026/05/photo-1642367340318-96fdbc5d30f5.jpg" class="attachment-75x75 size-75x75 wp-post-image" alt="go语言快速入门，基础语法一学就会" itemprop="image" decoding="async" loading="lazy"> <span>go语言快速入门，基础语法一学就会</span></div></a></div><div class="nav-next"><h6 class="nav-title">Next Post</h6><a href="/archives/471" rel="next"><div class="nav-content"><span>怎么将Qt程序打包为安装包？</span> <img width="75" height="50" src="/wp-content/uploads/2026/05/photo-1556228841-7c69921649bb.jpg" class="attachment-75x75 size-75x75 wp-post-image" alt="怎么将Qt程序打包为安装包？" itemprop="image" decoding="async" loading="lazy"></div></a></div>
+</section>
+
+</article><!-- #post-436 -->
+
+<section id="comments" class="comments-area">
+
+	<div class="comments-title-wrapper center-text">
+		<h3 class="comments-title">
+			Comments		</h3><!-- END .comments-title -->
+
+					<p class="no-comments">No comments yet. Why don’t you start the discussion?</p>
+			</div>
+
+	<ol class="comment-list">
+			</ol>
+
+	
+	
+		<div id="respond" class="comment-respond">
+		<h3 id="reply-title" class="comment-reply-title">发表回复 <small><a rel="nofollow" id="cancel-comment-reply-link" href="/archives/436#respond" style="display:none;">取消回复</a></small></h3><form action="/wp-comments-post.php" method="post" id="commentform" class="comment-form"><p class="comment-notes"><span id="email-notes">您的邮箱地址不会被公开。</span> <span class="required-field-message">必填项已用 <span class="required">*</span> 标注</span></p><p class="comment-textarea"><textarea name="comment" id="comment" cols="44" rows="8" class="textarea-comment" placeholder="Write a comment…" required="required"></textarea></p><p class="comment-form-author"><label for="author">显示名称 <span class="required">*</span></label> <input id="author" name="author" type="text" value="" size="30" maxlength="245" autocomplete="name" required="required"></p>
+<p class="comment-form-email"><label for="email">邮箱 <span class="required">*</span></label> <input id="email" name="email" type="text" value="" size="30" maxlength="100" aria-describedby="email-notes" autocomplete="email" required="required"></p>
+<p class="comment-form-url"><label for="url">网站</label> <input id="url" name="url" type="text" value="" size="30" maxlength="200" autocomplete="url"></p>
+<p class="comment-form-cookies-consent"><input id="wp-comment-cookies-consent" name="wp-comment-cookies-consent" type="checkbox" value="yes"> <label for="wp-comment-cookies-consent">在此浏览器中保存我的显示名称、邮箱地址和网站地址，以便下次评论时使用。</label></p>
+<p class="form-submit"><span class="bloglo-submit-form-button"><input name="submit" type="submit" id="comment-submit" class="bloglo-btn primary-button" value="发表评论"></span> <input type="hidden" name="comment_post_ID" value="436" id="comment_post_ID">
+<input type="hidden" name="comment_parent" id="comment_parent" value="0">
+</p></form>	</div><!-- #respond -->
+	
+</section><!-- #comments -->
+
+		</main><!-- #content .site-content -->
+
+		
+	</div><!-- #primary .content-area -->
+
+	
+</div><!-- END .bloglo-container -->
+
+
+		
+	</div><!-- #main .site-main -->
+	
+	
+			<footer id="colophon" class="site-footer" role="contentinfo" itemtype="http://schema.org/WPFooter" itemscope="itemscope">
+
+			
+<div id="bloglo-footer">
+	<div class="bloglo-container">
+		<div class="bloglo-flex-row" id="bloglo-footer-widgets">
+
+							<div class="bloglo-footer-column col-xs-12 col-sm-6 stretch-xs col-md-4">
+					<div id="block-9" class="bloglo-footer-widget bloglo-widget bloglo-entry widget widget_block">
+<div class="wp-block-group"><div class="wp-block-group__inner-container is-layout-flow wp-block-group-is-layout-flow">
+<h5 class="wp-block-heading has-white-color has-text-color has-link-color wp-elements-304050a27b331b6573f425aebca13390">Follow Us</h5>
+</div></div>
+</div>				</div>
+								<div class="bloglo-footer-column col-xs-12 col-sm-6 stretch-xs col-md-4">
+									</div>
+								<div class="bloglo-footer-column col-xs-12 col-sm-6 stretch-xs col-md-4">
+									</div>
+				
+		</div><!-- END .bloglo-flex-row -->
+	</div><!-- END .bloglo-container -->
+</div><!-- END #bloglo-footer -->
+
+<div id="bloglo-copyright" class="fw-separator">
+	<div class="bloglo-container">
+		<div class="bloglo-flex-row">
+
+			<div class="col-xs-12 center-xs col-md flex-basis-auto start-md"><div class="bloglo-copyright-widget__text bloglo-copyright-widget bloglo-all"><span>Copyright 2026 — 每天一步，见证成长. All rights reserved. <a href="https://wordpress.org/themes/bloglo/" class="imprint" target="_blank" rel="noopener noreferrer">Bloglo WordPress Theme</a></span></div><!-- END .bloglo-copyright-widget --></div>
+			<div class="col-xs-12 center-xs col-md flex-basis-auto end-md"></div>
+
+		</div><!-- END .bloglo-flex-row -->
+	</div>
+</div><!-- END #bloglo-copyright -->
+
+		</footer><!-- #colophon .site-footer -->
+	
+	
+</div><!-- END #page -->
+
+<a href="#" id="bloglo-scroll-top" class="bloglo-smooth-scroll" title="Scroll to Top">
+	<span class="bloglo-scroll-icon" aria-hidden="true">
+		<svg class="bloglo-icon top-icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewbox="0 0 32 32"><path d="M24.958 18.491l-8.008-8.008a1.29 1.29 0 00-1.868 0l-8.008 8.008c-.534.534-.534 1.335 0 1.868s1.335.534 1.868 0l7.074-7.074 7.074 7.074c.267.267.667.4.934.4s.667-.133.934-.4a1.29 1.29 0 000-1.868z"></path></svg>		<svg class="bloglo-icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewbox="0 0 32 32"><path d="M24.958 18.491l-8.008-8.008a1.29 1.29 0 00-1.868 0l-8.008 8.008c-.534.534-.534 1.335 0 1.868s1.335.534 1.868 0l7.074-7.074 7.074 7.074c.267.267.667.4.934.4s.667-.133.934-.4a1.29 1.29 0 000-1.868z"></path></svg>	</span>
+	<span class="screen-reader-text">Scroll to Top</span>
+</a><!-- END #bloglo-scroll-to-top -->
+<script type="speculationrules">
+{"prefetch":[{"source":"document","where":{"and":[{"href_matches":"/*"},{"not":{"href_matches":["/wp-*.php","/wp-admin/*","/wp-content/uploads/*","/wp-content/*","/wp-content/plugins/*","/wp-content/themes/blogmate/*","/wp-content/themes/bloglo/*","/*\\?(.+)"]}},{"not":{"selector_matches":"a[rel~=\"nofollow\"]"}},{"not":{"selector_matches":".no-prefetch, .no-prefetch a"}}]},"eagerness":"conservative"}]}
+</script>
+		<script>
+			! function() {
+				var e = -1 < navigator.userAgent.toLowerCase().indexOf("webkit"),
+					t = -1 < navigator.userAgent.toLowerCase().indexOf("opera"),
+					n = -1 < navigator.userAgent.toLowerCase().indexOf("msie");
+				(e || t || n) && document.getElementById && window.addEventListener && window.addEventListener("hashchange", function() {
+					var e, t = location.hash.substring(1);
+					/^[A-z0-9_-]+$/.test(t) && (e = document.getElementById(t)) && (/^(?:a|select|input|button|textarea)$/i.test(e.tagName) || (e.tabIndex = -1), e.focus())
+				}, !1)
+			}();
+		</script>
+		<script src="/wp-includes/js/comment-reply.min.js?ver=6.9.4" id="comment-reply-js" async data-wp-strategy="async" fetchpriority="low"></script>
+<script src="/wp-includes/js/imagesloaded.min.js?ver=5.0.0" id="imagesloaded-js"></script>
+<script id="bloglo-js-extra">
+var bloglo_vars = {"ajaxurl":"/wp-admin/admin-ajax.php","nonce":"23a6fc71c3","responsive-breakpoint":"1024","sticky-header":{"enabled":false,"hide_on":[""]},"dark_mode":"","strings":{"comments_toggle_show":"Leave a Comment","comments_toggle_hide":"Hide Comments"}};
+//# sourceURL=bloglo-js-extra
+</script>
+<script src="/wp-content/themes/bloglo/assets/js/bloglo.min.js?ver=1.1.23" id="bloglo-js"></script>
+<script id="wp-emoji-settings" type="application/json">
+{"baseUrl":"https://s.w.org/images/core/emoji/17.0.2/72x72/","ext":".png","svgUrl":"https://s.w.org/images/core/emoji/17.0.2/svg/","svgExt":".svg","source":{"concatemoji":"/wp-includes/js/wp-emoji-release.min.js?ver=6.9.4"}}
+</script>
+<script type="module">
+/*! This file is auto-generated */
+const a=JSON.parse(document.getElementById("wp-emoji-settings").textContent),o=(window._wpemojiSettings=a,"wpEmojiSettingsSupports"),s=["flag","emoji"];function i(e){try{var t={supportTests:e,timestamp:(new Date).valueOf()};sessionStorage.setItem(o,JSON.stringify(t))}catch(e){}}function c(e,t,n){e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(t,0,0);t=new Uint32Array(e.getImageData(0,0,e.canvas.width,e.canvas.height).data);e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(n,0,0);const a=new Uint32Array(e.getImageData(0,0,e.canvas.width,e.canvas.height).data);return t.every((e,t)=>e===a[t])}function p(e,t){e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(t,0,0);var n=e.getImageData(16,16,1,1);for(let e=0;e<n.data.length;e++)if(0!==n.data[e])return!1;return!0}function u(e,t,n,a){switch(t){case"flag":return n(e,"\ud83c\udff3\ufe0f\u200d\u26a7\ufe0f","\ud83c\udff3\ufe0f\u200b\u26a7\ufe0f")?!1:!n(e,"\ud83c\udde8\ud83c\uddf6","\ud83c\udde8\u200b\ud83c\uddf6")&&!n(e,"\ud83c\udff4\udb40\udc67\udb40\udc62\udb40\udc65\udb40\udc6e\udb40\udc67\udb40\udc7f","\ud83c\udff4\u200b\udb40\udc67\u200b\udb40\udc62\u200b\udb40\udc65\u200b\udb40\udc6e\u200b\udb40\udc67\u200b\udb40\udc7f");case"emoji":return!a(e,"\ud83e\u1fac8")}return!1}function f(e,t,n,a){let r;const o=(r="undefined"!=typeof WorkerGlobalScope&&self instanceof WorkerGlobalScope?new OffscreenCanvas(300,150):document.createElement("canvas")).getContext("2d",{willReadFrequently:!0}),s=(o.textBaseline="top",o.font="600 32px Arial",{});return e.forEach(e=>{s[e]=t(o,e,n,a)}),s}function r(e){var t=document.createElement("script");t.src=e,t.defer=!0,document.head.appendChild(t)}a.supports={everything:!0,everythingExceptFlag:!0},new Promise(t=>{let n=function(){try{var e=JSON.parse(sessionStorage.getItem(o));if("object"==typeof e&&"number"==typeof e.timestamp&&(new Date).valueOf()<e.timestamp+604800&&"object"==typeof e.supportTests)return e.supportTests}catch(e){}return null}();if(!n){if("undefined"!=typeof Worker&&"undefined"!=typeof OffscreenCanvas&&"undefined"!=typeof URL&&URL.createObjectURL&&"undefined"!=typeof Blob)try{var e="postMessage("+f.toString()+"("+[JSON.stringify(s),u.toString(),c.toString(),p.toString()].join(",")+"));",a=new Blob([e],{type:"text/javascript"});const r=new Worker(URL.createObjectURL(a),{name:"wpTestEmojiSupports"});return void(r.onmessage=e=>{i(n=e.data),r.terminate(),t(n)})}catch(e){}i(n=f(s,u,c,p))}t(n)}).then(e=>{for(const n in e)a.supports[n]=e[n],a.supports.everything=a.supports.everything&&a.supports[n],"flag"!==n&&(a.supports.everythingExceptFlag=a.supports.everythingExceptFlag&&a.supports[n]);var t;a.supports.everythingExceptFlag=a.supports.everythingExceptFlag&&!a.supports.flag,a.supports.everything||((t=a.source||{}).concatemoji?r(t.concatemoji):t.wpemoji&&t.twemoji&&(r(t.twemoji),r(t.wpemoji)))});
+//# sourceURL=/wp-includes/js/wp-emoji-loader.min.js
+</script>
+
+<div class="bloglo-waves-wrapper">
+	<div class="squares">
+		<div class="square"></div>
+		<div class="square"></div>
+		<div class="square"></div>
+		<div class="square"></div>
+		<div class="square"></div>
+		<div class="square"></div>
+		<div class="square"></div>
+		<div class="square"></div>
+		<div class="square"></div>
+		<div class="square"></div>
+	</div>
+	<div class="triangles">
+		<div class="triangle"></div>
+		<div class="triangle"></div>
+		<div class="triangle"></div>
+		<div class="triangle"></div>
+		<div class="triangle"></div>
+	</div>
+	<div class="circles">
+		<div class="circle"></div>
+		<div class="circle"></div>
+		<div class="circle"></div>
+		<div class="circle"></div>
+		<div class="circle"></div>
+	</div>
+</div>
+
+
+</body>
+</html>

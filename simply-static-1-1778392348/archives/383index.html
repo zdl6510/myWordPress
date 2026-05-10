@@ -1,0 +1,1005 @@
+<!DOCTYPE html>
+<html lang="zh-Hans" itemscope itemtype="http://schema.org/WebPage">
+<head><meta charset="UTF-8">
+	
+	<link rel="profile" href="http://gmpg.org/xfn/11">
+	<title>C++17 Standards （下） – 每天一步，见证成长</title>
+<meta name="robots" content="max-image-preview:large">
+<meta name="viewport" content="width=device-width, initial-scale=1"><link rel="dns-prefetch" href="//fonts.googleapis.com">
+<link rel="alternate" type="application/rss+xml" title="每天一步，见证成长 » Feed" href="/feed">
+<link rel="alternate" type="application/rss+xml" title="每天一步，见证成长 » 评论 Feed" href="/comments/feed">
+<link rel="alternate" type="application/rss+xml" title="每天一步，见证成长 » C++17 Standards （下） 评论 Feed" href="/archives/383/feed">
+<link rel="alternate" title="oEmbed (JSON)" type="application/json+oembed" href="/wp-json/oembed/1.0/embed?url=%2Farchives%2F383">
+<link rel="alternate" title="oEmbed (XML)" type="text/xml+oembed" href="/wp-json/oembed/1.0/embed?url=%2Farchives%2F383&amp;format=xml">
+<style id="wp-img-auto-sizes-contain-inline-css">
+img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
+/*# sourceURL=wp-img-auto-sizes-contain-inline-css */
+</style>
+<style id="wp-emoji-styles-inline-css">
+
+	img.wp-smiley, img.emoji {
+		display: inline !important;
+		border: none !important;
+		box-shadow: none !important;
+		height: 1em !important;
+		width: 1em !important;
+		margin: 0 0.07em !important;
+		vertical-align: -0.1em !important;
+		background: none !important;
+		padding: 0 !important;
+	}
+/*# sourceURL=wp-emoji-styles-inline-css */
+</style>
+<style id="wp-block-library-inline-css">
+:root{--wp-block-synced-color:#7a00df;--wp-block-synced-color--rgb:122,0,223;--wp-bound-block-color:var(--wp-block-synced-color);--wp-editor-canvas-background:#ddd;--wp-admin-theme-color:#007cba;--wp-admin-theme-color--rgb:0,124,186;--wp-admin-theme-color-darker-10:#006ba1;--wp-admin-theme-color-darker-10--rgb:0,107,160.5;--wp-admin-theme-color-darker-20:#005a87;--wp-admin-theme-color-darker-20--rgb:0,90,135;--wp-admin-border-width-focus:2px}@media (min-resolution:192dpi){:root{--wp-admin-border-width-focus:1.5px}}.wp-element-button{cursor:pointer}:root .has-very-light-gray-background-color{background-color:#eee}:root .has-very-dark-gray-background-color{background-color:#313131}:root .has-very-light-gray-color{color:#eee}:root .has-very-dark-gray-color{color:#313131}:root .has-vivid-green-cyan-to-vivid-cyan-blue-gradient-background{background:linear-gradient(135deg,#00d084,#0693e3)}:root .has-purple-crush-gradient-background{background:linear-gradient(135deg,#34e2e4,#4721fb 50%,#ab1dfe)}:root .has-hazy-dawn-gradient-background{background:linear-gradient(135deg,#faaca8,#dad0ec)}:root .has-subdued-olive-gradient-background{background:linear-gradient(135deg,#fafae1,#67a671)}:root .has-atomic-cream-gradient-background{background:linear-gradient(135deg,#fdd79a,#004a59)}:root .has-nightshade-gradient-background{background:linear-gradient(135deg,#330968,#31cdcf)}:root .has-midnight-gradient-background{background:linear-gradient(135deg,#020381,#2874fc)}:root{--wp--preset--font-size--normal:16px;--wp--preset--font-size--huge:42px}.has-regular-font-size{font-size:1em}.has-larger-font-size{font-size:2.625em}.has-normal-font-size{font-size:var(--wp--preset--font-size--normal)}.has-huge-font-size{font-size:var(--wp--preset--font-size--huge)}.has-text-align-center{text-align:center}.has-text-align-left{text-align:left}.has-text-align-right{text-align:right}.has-fit-text{white-space:nowrap!important}#end-resizable-editor-section{display:none}.aligncenter{clear:both}.items-justified-left{justify-content:flex-start}.items-justified-center{justify-content:center}.items-justified-right{justify-content:flex-end}.items-justified-space-between{justify-content:space-between}.screen-reader-text{border:0;clip-path:inset(50%);height:1px;margin:-1px;overflow:hidden;padding:0;position:absolute;width:1px;word-wrap:normal!important}.screen-reader-text:focus{background-color:#ddd;clip-path:none;color:#444;display:block;font-size:1em;height:auto;left:5px;line-height:normal;padding:15px 23px 14px;text-decoration:none;top:5px;width:auto;z-index:100000}html :where(.has-border-color){border-style:solid}html :where([style*=border-top-color]){border-top-style:solid}html :where([style*=border-right-color]){border-right-style:solid}html :where([style*=border-bottom-color]){border-bottom-style:solid}html :where([style*=border-left-color]){border-left-style:solid}html :where([style*=border-width]){border-style:solid}html :where([style*=border-top-width]){border-top-style:solid}html :where([style*=border-right-width]){border-right-style:solid}html :where([style*=border-bottom-width]){border-bottom-style:solid}html :where([style*=border-left-width]){border-left-style:solid}html :where(img[class*=wp-image-]){height:auto;max-width:100%}:where(figure){margin:0 0 1em}html :where(.is-position-sticky){--wp-admin--admin-bar--position-offset:var(--wp-admin--admin-bar--height,0px)}@media screen and (max-width:600px){html :where(.is-position-sticky){--wp-admin--admin-bar--position-offset:0px}}
+
+/*# sourceURL=wp-block-library-inline-css */
+</style>
+<style id="wp-block-heading-inline-css">
+h1:where(.wp-block-heading).has-background,h2:where(.wp-block-heading).has-background,h3:where(.wp-block-heading).has-background,h4:where(.wp-block-heading).has-background,h5:where(.wp-block-heading).has-background,h6:where(.wp-block-heading).has-background{padding:1.25em 2.375em}h1.has-text-align-left[style*=writing-mode]:where([style*=vertical-lr]),h1.has-text-align-right[style*=writing-mode]:where([style*=vertical-rl]),h2.has-text-align-left[style*=writing-mode]:where([style*=vertical-lr]),h2.has-text-align-right[style*=writing-mode]:where([style*=vertical-rl]),h3.has-text-align-left[style*=writing-mode]:where([style*=vertical-lr]),h3.has-text-align-right[style*=writing-mode]:where([style*=vertical-rl]),h4.has-text-align-left[style*=writing-mode]:where([style*=vertical-lr]),h4.has-text-align-right[style*=writing-mode]:where([style*=vertical-rl]),h5.has-text-align-left[style*=writing-mode]:where([style*=vertical-lr]),h5.has-text-align-right[style*=writing-mode]:where([style*=vertical-rl]),h6.has-text-align-left[style*=writing-mode]:where([style*=vertical-lr]),h6.has-text-align-right[style*=writing-mode]:where([style*=vertical-rl]){rotate:180deg}
+/*# sourceURL=/wp-includes/blocks/heading/style.min.css */
+</style>
+<style id="wp-block-image-inline-css">
+.wp-block-image>a,.wp-block-image>figure>a{display:inline-block}.wp-block-image img{box-sizing:border-box;height:auto;max-width:100%;vertical-align:bottom}@media not (prefers-reduced-motion){.wp-block-image img.hide{visibility:hidden}.wp-block-image img.show{animation:show-content-image .4s}}.wp-block-image[style*=border-radius] img,.wp-block-image[style*=border-radius]>a{border-radius:inherit}.wp-block-image.has-custom-border img{box-sizing:border-box}.wp-block-image.aligncenter{text-align:center}.wp-block-image.alignfull>a,.wp-block-image.alignwide>a{width:100%}.wp-block-image.alignfull img,.wp-block-image.alignwide img{height:auto;width:100%}.wp-block-image .aligncenter,.wp-block-image .alignleft,.wp-block-image .alignright,.wp-block-image.aligncenter,.wp-block-image.alignleft,.wp-block-image.alignright{display:table}.wp-block-image .aligncenter>figcaption,.wp-block-image .alignleft>figcaption,.wp-block-image .alignright>figcaption,.wp-block-image.aligncenter>figcaption,.wp-block-image.alignleft>figcaption,.wp-block-image.alignright>figcaption{caption-side:bottom;display:table-caption}.wp-block-image .alignleft{float:left;margin:.5em 1em .5em 0}.wp-block-image .alignright{float:right;margin:.5em 0 .5em 1em}.wp-block-image .aligncenter{margin-left:auto;margin-right:auto}.wp-block-image :where(figcaption){margin-bottom:1em;margin-top:.5em}.wp-block-image.is-style-circle-mask img{border-radius:9999px}@supports ((-webkit-mask-image:none) or (mask-image:none)) or (-webkit-mask-image:none){.wp-block-image.is-style-circle-mask img{border-radius:0;-webkit-mask-image:url('data:image/svg+xml;utf8,<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><circle cx="50" cy="50" r="50"/></svg>');mask-image:url('data:image/svg+xml;utf8,<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><circle cx="50" cy="50" r="50"/></svg>');mask-mode:alpha;-webkit-mask-position:center;mask-position:center;-webkit-mask-repeat:no-repeat;mask-repeat:no-repeat;-webkit-mask-size:contain;mask-size:contain}}:root :where(.wp-block-image.is-style-rounded img,.wp-block-image .is-style-rounded img){border-radius:9999px}.wp-block-image figure{margin:0}.wp-lightbox-container{display:flex;flex-direction:column;position:relative}.wp-lightbox-container img{cursor:zoom-in}.wp-lightbox-container img:hover+button{opacity:1}.wp-lightbox-container button{align-items:center;backdrop-filter:blur(16px) saturate(180%);background-color:#5a5a5a40;border:none;border-radius:4px;cursor:zoom-in;display:flex;height:20px;justify-content:center;opacity:0;padding:0;position:absolute;right:16px;text-align:center;top:16px;width:20px;z-index:100}@media not (prefers-reduced-motion){.wp-lightbox-container button{transition:opacity .2s ease}}.wp-lightbox-container button:focus-visible{outline:3px auto #5a5a5a40;outline:3px auto -webkit-focus-ring-color;outline-offset:3px}.wp-lightbox-container button:hover{cursor:pointer;opacity:1}.wp-lightbox-container button:focus{opacity:1}.wp-lightbox-container button:focus,.wp-lightbox-container button:hover,.wp-lightbox-container button:not(:hover):not(:active):not(.has-background){background-color:#5a5a5a40;border:none}.wp-lightbox-overlay{box-sizing:border-box;cursor:zoom-out;height:100vh;left:0;overflow:hidden;position:fixed;top:0;visibility:hidden;width:100%;z-index:100000}.wp-lightbox-overlay .close-button{align-items:center;cursor:pointer;display:flex;justify-content:center;min-height:40px;min-width:40px;padding:0;position:absolute;right:calc(env(safe-area-inset-right) + 16px);top:calc(env(safe-area-inset-top) + 16px);z-index:5000000}.wp-lightbox-overlay .close-button:focus,.wp-lightbox-overlay .close-button:hover,.wp-lightbox-overlay .close-button:not(:hover):not(:active):not(.has-background){background:none;border:none}.wp-lightbox-overlay .lightbox-image-container{height:var(--wp--lightbox-container-height);left:50%;overflow:hidden;position:absolute;top:50%;transform:translate(-50%,-50%);transform-origin:top left;width:var(--wp--lightbox-container-width);z-index:9999999999}.wp-lightbox-overlay .wp-block-image{align-items:center;box-sizing:border-box;display:flex;height:100%;justify-content:center;margin:0;position:relative;transform-origin:0 0;width:100%;z-index:3000000}.wp-lightbox-overlay .wp-block-image img{height:var(--wp--lightbox-image-height);min-height:var(--wp--lightbox-image-height);min-width:var(--wp--lightbox-image-width);width:var(--wp--lightbox-image-width)}.wp-lightbox-overlay .wp-block-image figcaption{display:none}.wp-lightbox-overlay button{background:none;border:none}.wp-lightbox-overlay .scrim{background-color:#fff;height:100%;opacity:.9;position:absolute;width:100%;z-index:2000000}.wp-lightbox-overlay.active{visibility:visible}@media not (prefers-reduced-motion){.wp-lightbox-overlay.active{animation:turn-on-visibility .25s both}.wp-lightbox-overlay.active img{animation:turn-on-visibility .35s both}.wp-lightbox-overlay.show-closing-animation:not(.active){animation:turn-off-visibility .35s both}.wp-lightbox-overlay.show-closing-animation:not(.active) img{animation:turn-off-visibility .25s both}.wp-lightbox-overlay.zoom.active{animation:none;opacity:1;visibility:visible}.wp-lightbox-overlay.zoom.active .lightbox-image-container{animation:lightbox-zoom-in .4s}.wp-lightbox-overlay.zoom.active .lightbox-image-container img{animation:none}.wp-lightbox-overlay.zoom.active .scrim{animation:turn-on-visibility .4s forwards}.wp-lightbox-overlay.zoom.show-closing-animation:not(.active){animation:none}.wp-lightbox-overlay.zoom.show-closing-animation:not(.active) .lightbox-image-container{animation:lightbox-zoom-out .4s}.wp-lightbox-overlay.zoom.show-closing-animation:not(.active) .lightbox-image-container img{animation:none}.wp-lightbox-overlay.zoom.show-closing-animation:not(.active) .scrim{animation:turn-off-visibility .4s forwards}}@keyframes show-content-image{0%{visibility:hidden}99%{visibility:hidden}to{visibility:visible}}@keyframes turn-on-visibility{0%{opacity:0}to{opacity:1}}@keyframes turn-off-visibility{0%{opacity:1;visibility:visible}99%{opacity:0;visibility:visible}to{opacity:0;visibility:hidden}}@keyframes lightbox-zoom-in{0%{transform:translate(calc((-100vw + var(--wp--lightbox-scrollbar-width))/2 + var(--wp--lightbox-initial-left-position)),calc(-50vh + var(--wp--lightbox-initial-top-position))) scale(var(--wp--lightbox-scale))}to{transform:translate(-50%,-50%) scale(1)}}@keyframes lightbox-zoom-out{0%{transform:translate(-50%,-50%) scale(1);visibility:visible}99%{visibility:visible}to{transform:translate(calc((-100vw + var(--wp--lightbox-scrollbar-width))/2 + var(--wp--lightbox-initial-left-position)),calc(-50vh + var(--wp--lightbox-initial-top-position))) scale(var(--wp--lightbox-scale));visibility:hidden}}
+/*# sourceURL=/wp-includes/blocks/image/style.min.css */
+</style>
+<style id="wp-block-image-theme-inline-css">
+:root :where(.wp-block-image figcaption){color:#555;font-size:13px;text-align:center}.is-dark-theme :root :where(.wp-block-image figcaption){color:#ffffffa6}.wp-block-image{margin:0 0 1em}
+/*# sourceURL=/wp-includes/blocks/image/theme.min.css */
+</style>
+<style id="wp-block-list-inline-css">
+ol,ul{box-sizing:border-box}:root :where(.wp-block-list.has-background){padding:1.25em 2.375em}
+/*# sourceURL=/wp-includes/blocks/list/style.min.css */
+</style>
+<style id="wp-block-code-inline-css">
+.wp-block-code{box-sizing:border-box}.wp-block-code code{
+  /*!rtl:begin:ignore*/direction:ltr;display:block;font-family:inherit;overflow-wrap:break-word;text-align:initial;white-space:pre-wrap
+  /*!rtl:end:ignore*/}
+/*# sourceURL=/wp-includes/blocks/code/style.min.css */
+</style>
+<style id="wp-block-code-theme-inline-css">
+.wp-block-code{border:1px solid #ccc;border-radius:4px;font-family:Menlo,Consolas,monaco,monospace;padding:.8em 1em}
+/*# sourceURL=/wp-includes/blocks/code/theme.min.css */
+</style>
+<style id="wp-block-columns-inline-css">
+.wp-block-columns{box-sizing:border-box;display:flex;flex-wrap:wrap!important}@media (min-width:782px){.wp-block-columns{flex-wrap:nowrap!important}}.wp-block-columns{align-items:normal!important}.wp-block-columns.are-vertically-aligned-top{align-items:flex-start}.wp-block-columns.are-vertically-aligned-center{align-items:center}.wp-block-columns.are-vertically-aligned-bottom{align-items:flex-end}@media (max-width:781px){.wp-block-columns:not(.is-not-stacked-on-mobile)>.wp-block-column{flex-basis:100%!important}}@media (min-width:782px){.wp-block-columns:not(.is-not-stacked-on-mobile)>.wp-block-column{flex-basis:0;flex-grow:1}.wp-block-columns:not(.is-not-stacked-on-mobile)>.wp-block-column[style*=flex-basis]{flex-grow:0}}.wp-block-columns.is-not-stacked-on-mobile{flex-wrap:nowrap!important}.wp-block-columns.is-not-stacked-on-mobile>.wp-block-column{flex-basis:0;flex-grow:1}.wp-block-columns.is-not-stacked-on-mobile>.wp-block-column[style*=flex-basis]{flex-grow:0}:where(.wp-block-columns){margin-bottom:1.75em}:where(.wp-block-columns.has-background){padding:1.25em 2.375em}.wp-block-column{flex-grow:1;min-width:0;overflow-wrap:break-word;word-break:break-word}.wp-block-column.is-vertically-aligned-top{align-self:flex-start}.wp-block-column.is-vertically-aligned-center{align-self:center}.wp-block-column.is-vertically-aligned-bottom{align-self:flex-end}.wp-block-column.is-vertically-aligned-stretch{align-self:stretch}.wp-block-column.is-vertically-aligned-bottom,.wp-block-column.is-vertically-aligned-center,.wp-block-column.is-vertically-aligned-top{width:100%}
+/*# sourceURL=/wp-includes/blocks/columns/style.min.css */
+</style>
+<style id="wp-block-details-inline-css">
+.wp-block-details{box-sizing:border-box}.wp-block-details summary{cursor:pointer}
+/*# sourceURL=/wp-includes/blocks/details/style.min.css */
+</style>
+<style id="wp-block-embed-inline-css">
+.wp-block-embed.alignleft,.wp-block-embed.alignright,.wp-block[data-align=left]>[data-type="core/embed"],.wp-block[data-align=right]>[data-type="core/embed"]{max-width:360px;width:100%}.wp-block-embed.alignleft .wp-block-embed__wrapper,.wp-block-embed.alignright .wp-block-embed__wrapper,.wp-block[data-align=left]>[data-type="core/embed"] .wp-block-embed__wrapper,.wp-block[data-align=right]>[data-type="core/embed"] .wp-block-embed__wrapper{min-width:280px}.wp-block-cover .wp-block-embed{min-height:240px;min-width:320px}.wp-block-embed{overflow-wrap:break-word}.wp-block-embed :where(figcaption){margin-bottom:1em;margin-top:.5em}.wp-block-embed iframe{max-width:100%}.wp-block-embed__wrapper{position:relative}.wp-embed-responsive .wp-has-aspect-ratio .wp-block-embed__wrapper:before{content:"";display:block;padding-top:50%}.wp-embed-responsive .wp-has-aspect-ratio iframe{bottom:0;height:100%;left:0;position:absolute;right:0;top:0;width:100%}.wp-embed-responsive .wp-embed-aspect-21-9 .wp-block-embed__wrapper:before{padding-top:42.85%}.wp-embed-responsive .wp-embed-aspect-18-9 .wp-block-embed__wrapper:before{padding-top:50%}.wp-embed-responsive .wp-embed-aspect-16-9 .wp-block-embed__wrapper:before{padding-top:56.25%}.wp-embed-responsive .wp-embed-aspect-4-3 .wp-block-embed__wrapper:before{padding-top:75%}.wp-embed-responsive .wp-embed-aspect-1-1 .wp-block-embed__wrapper:before{padding-top:100%}.wp-embed-responsive .wp-embed-aspect-9-16 .wp-block-embed__wrapper:before{padding-top:177.77%}.wp-embed-responsive .wp-embed-aspect-1-2 .wp-block-embed__wrapper:before{padding-top:200%}
+/*# sourceURL=/wp-includes/blocks/embed/style.min.css */
+</style>
+<style id="wp-block-embed-theme-inline-css">
+.wp-block-embed :where(figcaption){color:#555;font-size:13px;text-align:center}.is-dark-theme .wp-block-embed :where(figcaption){color:#ffffffa6}.wp-block-embed{margin:0 0 1em}
+/*# sourceURL=/wp-includes/blocks/embed/theme.min.css */
+</style>
+<style id="wp-block-group-inline-css">
+.wp-block-group{box-sizing:border-box}:where(.wp-block-group.wp-block-group-is-layout-constrained){position:relative}
+/*# sourceURL=/wp-includes/blocks/group/style.min.css */
+</style>
+<style id="wp-block-group-theme-inline-css">
+:where(.wp-block-group.has-background){padding:1.25em 2.375em}
+/*# sourceURL=/wp-includes/blocks/group/theme.min.css */
+</style>
+<style id="wp-block-paragraph-inline-css">
+.is-small-text{font-size:.875em}.is-regular-text{font-size:1em}.is-large-text{font-size:2.25em}.is-larger-text{font-size:3em}.has-drop-cap:not(:focus):first-letter{float:left;font-size:8.4em;font-style:normal;font-weight:100;line-height:.68;margin:.05em .1em 0 0;text-transform:uppercase}body.rtl .has-drop-cap:not(:focus):first-letter{float:none;margin-left:.1em}p.has-drop-cap.has-background{overflow:hidden}:root :where(p.has-background){padding:1.25em 2.375em}:where(p.has-text-color:not(.has-link-color)) a{color:inherit}p.has-text-align-left[style*="writing-mode:vertical-lr"],p.has-text-align-right[style*="writing-mode:vertical-rl"]{rotate:180deg}
+/*# sourceURL=/wp-includes/blocks/paragraph/style.min.css */
+</style>
+<style id="wp-block-separator-inline-css">
+@charset "UTF-8";.wp-block-separator{border:none;border-top:2px solid}:root :where(.wp-block-separator.is-style-dots){height:auto;line-height:1;text-align:center}:root :where(.wp-block-separator.is-style-dots):before{color:currentColor;content:"···";font-family:serif;font-size:1.5em;letter-spacing:2em;padding-left:2em}.wp-block-separator.is-style-dots{background:none!important;border:none!important}
+/*# sourceURL=/wp-includes/blocks/separator/style.min.css */
+</style>
+<style id="wp-block-separator-theme-inline-css">
+.wp-block-separator.has-css-opacity{opacity:.4}.wp-block-separator{border:none;border-bottom:2px solid;margin-left:auto;margin-right:auto}.wp-block-separator.has-alpha-channel-opacity{opacity:1}.wp-block-separator:not(.is-style-wide):not(.is-style-dots){width:100px}.wp-block-separator.has-background:not(.is-style-dots){border-bottom:none;height:1px}.wp-block-separator.has-background:not(.is-style-wide):not(.is-style-dots){height:2px}
+/*# sourceURL=/wp-includes/blocks/separator/theme.min.css */
+</style>
+<style id="wp-block-table-inline-css">
+.wp-block-table{overflow-x:auto}.wp-block-table table{border-collapse:collapse;width:100%}.wp-block-table thead{border-bottom:3px solid}.wp-block-table tfoot{border-top:3px solid}.wp-block-table td,.wp-block-table th{border:1px solid;padding:.5em}.wp-block-table .has-fixed-layout{table-layout:fixed;width:100%}.wp-block-table .has-fixed-layout td,.wp-block-table .has-fixed-layout th{word-break:break-word}.wp-block-table.aligncenter,.wp-block-table.alignleft,.wp-block-table.alignright{display:table;width:auto}.wp-block-table.aligncenter td,.wp-block-table.aligncenter th,.wp-block-table.alignleft td,.wp-block-table.alignleft th,.wp-block-table.alignright td,.wp-block-table.alignright th{word-break:break-word}.wp-block-table .has-subtle-light-gray-background-color{background-color:#f3f4f5}.wp-block-table .has-subtle-pale-green-background-color{background-color:#e9fbe5}.wp-block-table .has-subtle-pale-blue-background-color{background-color:#e7f5fe}.wp-block-table .has-subtle-pale-pink-background-color{background-color:#fcf0ef}.wp-block-table.is-style-stripes{background-color:initial;border-collapse:inherit;border-spacing:0}.wp-block-table.is-style-stripes tbody tr:nth-child(odd){background-color:#f0f0f0}.wp-block-table.is-style-stripes.has-subtle-light-gray-background-color tbody tr:nth-child(odd){background-color:#f3f4f5}.wp-block-table.is-style-stripes.has-subtle-pale-green-background-color tbody tr:nth-child(odd){background-color:#e9fbe5}.wp-block-table.is-style-stripes.has-subtle-pale-blue-background-color tbody tr:nth-child(odd){background-color:#e7f5fe}.wp-block-table.is-style-stripes.has-subtle-pale-pink-background-color tbody tr:nth-child(odd){background-color:#fcf0ef}.wp-block-table.is-style-stripes td,.wp-block-table.is-style-stripes th{border-color:#0000}.wp-block-table.is-style-stripes{border-bottom:1px solid #f0f0f0}.wp-block-table .has-border-color td,.wp-block-table .has-border-color th,.wp-block-table .has-border-color tr,.wp-block-table .has-border-color>*{border-color:inherit}.wp-block-table table[style*=border-top-color] tr:first-child,.wp-block-table table[style*=border-top-color] tr:first-child td,.wp-block-table table[style*=border-top-color] tr:first-child th,.wp-block-table table[style*=border-top-color]>*,.wp-block-table table[style*=border-top-color]>* td,.wp-block-table table[style*=border-top-color]>* th{border-top-color:inherit}.wp-block-table table[style*=border-top-color] tr:not(:first-child){border-top-color:initial}.wp-block-table table[style*=border-right-color] td:last-child,.wp-block-table table[style*=border-right-color] th,.wp-block-table table[style*=border-right-color] tr,.wp-block-table table[style*=border-right-color]>*{border-right-color:inherit}.wp-block-table table[style*=border-bottom-color] tr:last-child,.wp-block-table table[style*=border-bottom-color] tr:last-child td,.wp-block-table table[style*=border-bottom-color] tr:last-child th,.wp-block-table table[style*=border-bottom-color]>*,.wp-block-table table[style*=border-bottom-color]>* td,.wp-block-table table[style*=border-bottom-color]>* th{border-bottom-color:inherit}.wp-block-table table[style*=border-bottom-color] tr:not(:last-child){border-bottom-color:initial}.wp-block-table table[style*=border-left-color] td:first-child,.wp-block-table table[style*=border-left-color] th,.wp-block-table table[style*=border-left-color] tr,.wp-block-table table[style*=border-left-color]>*{border-left-color:inherit}.wp-block-table table[style*=border-style] td,.wp-block-table table[style*=border-style] th,.wp-block-table table[style*=border-style] tr,.wp-block-table table[style*=border-style]>*{border-style:inherit}.wp-block-table table[style*=border-width] td,.wp-block-table table[style*=border-width] th,.wp-block-table table[style*=border-width] tr,.wp-block-table table[style*=border-width]>*{border-style:inherit;border-width:inherit}
+/*# sourceURL=/wp-includes/blocks/table/style.min.css */
+</style>
+<style id="wp-block-table-theme-inline-css">
+.wp-block-table{margin:0 0 1em}.wp-block-table td,.wp-block-table th{word-break:normal}.wp-block-table :where(figcaption){color:#555;font-size:13px;text-align:center}.is-dark-theme .wp-block-table :where(figcaption){color:#ffffffa6}
+/*# sourceURL=/wp-includes/blocks/table/theme.min.css */
+</style>
+
+<style id="classic-theme-styles-inline-css">
+/*! This file is auto-generated */
+.wp-block-button__link{color:#fff;background-color:#32373c;border-radius:9999px;box-shadow:none;text-decoration:none;padding:calc(.667em + 2px) calc(1.333em + 2px);font-size:1.125em}.wp-block-file__button{background:#32373c;color:#fff;text-decoration:none}
+/*# sourceURL=/wp-includes/css/classic-themes.min.css */
+</style>
+<style id="global-styles-inline-css">
+:root{--wp--preset--aspect-ratio--square: 1;--wp--preset--aspect-ratio--4-3: 4/3;--wp--preset--aspect-ratio--3-4: 3/4;--wp--preset--aspect-ratio--3-2: 3/2;--wp--preset--aspect-ratio--2-3: 2/3;--wp--preset--aspect-ratio--16-9: 16/9;--wp--preset--aspect-ratio--9-16: 9/16;--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgb(6,147,227) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgb(252,185,0) 0%,rgb(255,105,0) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgb(255,105,0) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;--wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);--wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);--wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);--wp--preset--shadow--outlined: 6px 6px 0px -3px rgb(255, 255, 255), 6px 6px rgb(0, 0, 0);--wp--preset--shadow--crisp: 6px 6px 0px rgb(0, 0, 0);}:where(.is-layout-flex){gap: 0.5em;}:where(.is-layout-grid){gap: 0.5em;}body .is-layout-flex{display: flex;}.is-layout-flex{flex-wrap: wrap;align-items: center;}.is-layout-flex > :is(*, div){margin: 0;}body .is-layout-grid{display: grid;}.is-layout-grid > :is(*, div){margin: 0;}:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}
+/*# sourceURL=global-styles-inline-css */
+</style>
+
+<link rel="stylesheet" id="ansar-import-css" href="/wp-content/plugins/ansar-import/public/css/ansar-import-public.css?ver=2.1.0" media="all">
+<link rel="stylesheet" id="parent-style-css" href="/wp-content/themes/bloglo/style.css?ver=6.9.4" media="all">
+<link rel="stylesheet" id="child-style-css" href="/wp-content/themes/blogmate/style.css?ver=6.9.4" media="all">
+<link rel="stylesheet" id="FontAwesome-css" href="/wp-content/themes/bloglo/assets/css/all.min.css?ver=5.15.4" media="all">
+<link rel="stylesheet" id="bloglo-styles-css" href="/wp-content/themes/bloglo/assets/css/style.min.css?ver=1.1.23" media="all">
+<link rel="stylesheet" id="bloglo-google-fonts-css" href="//fonts.googleapis.com/css?family=Be+Vietnam+Pro%3A400%7CPlayfair+Display%3A400%2C400i%7CPlus+Jakarta+Sans%3A500&amp;display=swap&amp;subsets=latin&amp;ver=1.1.23" media="">
+<link rel="stylesheet" id="bloglo-dynamic-styles-css" href="/wp-content/uploads/bloglo/dynamic-styles.css?ver=1778391860" media="all">
+<script src="/wp-includes/js/jquery/jquery.min.js?ver=3.7.1" id="jquery-core-js"></script>
+<script src="/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.4.1" id="jquery-migrate-js"></script>
+<script src="/wp-content/plugins/ansar-import/public/js/ansar-import-public.js?ver=2.1.0" id="ansar-import-js"></script>
+<link rel="https://api.w.org/" href="/wp-json/"><link rel="alternate" title="JSON" type="application/json" href="/wp-json/wp/v2/posts/383"><link rel="EditURI" type="application/rsd+xml" title="RSD" href="/xmlrpc.php?rsd">
+<meta name="generator" content="WordPress 6.9.4">
+<link rel="canonical" href="/archives/383">
+<link rel="shortlink" href="/?p=383">
+<link rel="pingback" href="/xmlrpc.php">
+<meta name="theme-color" content="#FC6668"><style id="core-block-supports-inline-css">
+.wp-container-core-columns-is-layout-9d6595d7{flex-wrap:nowrap;}.wp-elements-304050a27b331b6573f425aebca13390 a:where(:not(.wp-element-button)){color:var(--wp--preset--color--white);}
+/*# sourceURL=core-block-supports-inline-css */
+</style>
+
+</head>
+
+<body class="wp-singular post-template-default single single-post postid-383 single-format-standard wp-embed-responsive wp-theme-bloglo wp-child-theme-blogmate bloglo-layout__fw-contained bloglo-header-layout-2 bloglo-menu-animation-squarebox bloglo-header__separators-none bloglo-single-title-in-content bloglo-page-title-align-left comments-open bloglo-no-sidebar entry-media-hover-style-1 bloglo-copyright-layout-1 is-section-heading-init-s2 is-footer-heading-init-s1 bloglo-input-supported validate-comment-form bloglo-menu-accessibility">
+
+
+<div id="page" class="hfeed site">
+	<a class="skip-link screen-reader-text" href="#main">Skip to content</a>
+
+	
+	
+	<header id="masthead" class="site-header" role="banner" itemtype="https://schema.org/WPHeader" itemscope="itemscope">
+		<div id="bloglo-header">
+		<div id="bloglo-header-inner">
+		
+<div class="bloglo-container bloglo-header-container">
+
+	
+<div class="bloglo-logo bloglo-header-element" itemtype="https://schema.org/Organization" itemscope="itemscope">
+	<div class="logo-inner"><span class="site-title" itemprop="name">
+					<a href="/" rel="home" itemprop="url">
+						每天一步，见证成长
+					</a>
+				</span><p class="site-description screen-reader-text" itemprop="description">
+						Steping out your comfort zone 
+					</p></div></div><!-- END .bloglo-logo -->
+
+	<span class="bloglo-header-element bloglo-mobile-nav">
+				<button class="bloglo-hamburger hamburger--spin bloglo-hamburger-bloglo-primary-nav" aria-label="Menu" aria-controls="bloglo-primary-nav" type="button">
+
+			
+			<span class="hamburger-box">
+				<span class="hamburger-inner"></span>
+			</span>
+
+		</button>
+				
+<nav class="site-navigation main-navigation bloglo-primary-nav bloglo-nav bloglo-header-element" role="navigation" itemtype="https://schema.org/SiteNavigationElement" itemscope="itemscope" aria-label="Site Navigation">
+
+<ul id="bloglo-primary-nav" class="menu"><li id="menu-item-477" class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-477"><a href="/archives/category/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/c"><span>C++</span></a></li>
+<li id="menu-item-481" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-481"><a href="/archives/category/ai"><span>AI</span></a></li>
+</ul></nav><!-- END .bloglo-nav -->
+	</span>
+
+	
+<nav class="site-navigation main-navigation bloglo-primary-nav bloglo-nav bloglo-header-element" role="navigation" itemtype="https://schema.org/SiteNavigationElement" itemscope="itemscope" aria-label="Site Navigation">
+
+<ul id="bloglo-primary-nav" class="menu"><li class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-477"><a href="/archives/category/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/c"><span>C++</span></a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-481"><a href="/archives/category/ai"><span>AI</span></a></li>
+</ul></nav><!-- END .bloglo-nav -->
+<div class="bloglo-header-widgets bloglo-header-element bloglo-widget-location-right"><div class="bloglo-header-widget__socials bloglo-header-widget bloglo-hide-mobile-tablet"><div class="bloglo-widget-wrapper"><nav class="bloglo-social-nav minimal-fill bloglo-large">
+			<ul id="menu-social-menu-default" class="bloglo-socials-menu">
+				<li class="menu-item">
+					<a href="https://www.facebook.com/">
+						<span class="screen-reader-text">facebook.com</span>
+						<span class="facebook">
+						<svg class="bloglo-icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewbox="0 0 32 32"><path d="M18.518 32.438V17.799h4.88l.751-5.693h-5.631V8.477c0-1.627.438-2.753 2.815-2.753h3.003V.657c-.5-.125-2.315-.25-4.379-.25-4.379 0-7.32 2.628-7.32 7.507v4.192H7.695v5.693h4.942v14.639z"></path></svg>
+						<svg class="bloglo-icon bottom-icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewbox="0 0 32 32"><path d="M18.518 32.438V17.799h4.88l.751-5.693h-5.631V8.477c0-1.627.438-2.753 2.815-2.753h3.003V.657c-.5-.125-2.315-.25-4.379-.25-4.379 0-7.32 2.628-7.32 7.507v4.192H7.695v5.693h4.942v14.639z"></path></svg>
+						</span>
+					</a>
+				</li>
+				<li class="menu-item">
+					<a href="https://twitter.com/">
+					<span class="screen-reader-text">twitter.com</span>
+						<span class="twitter">
+						<svg class="bloglo-icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewbox="0 0 24 24"><path d="M14.258 10.152 23.176 0h-2.113l-7.747 8.813L7.133 0H0l9.352 13.328L0 23.973h2.113l8.176-9.309 6.531 9.309h7.133zm-2.895 3.293-.949-1.328L2.875 1.56h3.246l6.086 8.523.945 1.328 7.91 11.078h-3.246zm0 0"></path></svg>
+						<svg class="bloglo-icon bottom-icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewbox="0 0 24 24"><path d="M14.258 10.152 23.176 0h-2.113l-7.747 8.813L7.133 0H0l9.352 13.328L0 23.973h2.113l8.176-9.309 6.531 9.309h7.133zm-2.895 3.293-.949-1.328L2.875 1.56h3.246l6.086 8.523.945 1.328 7.91 11.078h-3.246zm0 0"></path></svg>
+						</span>
+					</a>
+				</li>
+				<li class="menu-item">
+					<a href="https://t.me/">
+						<span class="screen-reader-text">t.me</span>
+						<span class="telegram">
+						<svg class="bloglo-icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="32" height="27" viewbox="0 0 32 27"><path fill-rule="evenodd" d="M24.512 26.372c.43.304.983.38 1.476.193.494-.188.857-.609.966-1.12C28.113 20 30.924 6.217 31.978 1.264a1.041 1.041 0 0 0-.347-1.01c-.293-.25-.7-.322-1.063-.187C24.979 2.136 7.762 8.596.724 11.2a1.102 1.102 0 0 0-.722 1.065c.016.472.333.882.79 1.019 3.156.944 7.299 2.257 7.299 2.257s1.936 5.847 2.945 8.82c.127.374.419.667.804.768.384.1.795-.005 1.082-.276l4.128-3.897s4.762 3.492 7.463 5.416Zm-14.68-11.57 2.24 7.385.497-4.676 13.58-12.248a.37.37 0 0 0 .043-.503.379.379 0 0 0-.5-.085L9.831 14.803Z"></path></svg>
+						<svg class="bloglo-icon bottom-icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="32" height="27" viewbox="0 0 32 27"><path fill-rule="evenodd" d="M24.512 26.372c.43.304.983.38 1.476.193.494-.188.857-.609.966-1.12C28.113 20 30.924 6.217 31.978 1.264a1.041 1.041 0 0 0-.347-1.01c-.293-.25-.7-.322-1.063-.187C24.979 2.136 7.762 8.596.724 11.2a1.102 1.102 0 0 0-.722 1.065c.016.472.333.882.79 1.019 3.156.944 7.299 2.257 7.299 2.257s1.936 5.847 2.945 8.82c.127.374.419.667.804.768.384.1.795-.005 1.082-.276l4.128-3.897s4.762 3.492 7.463 5.416Zm-14.68-11.57 2.24 7.385.497-4.676 13.58-12.248a.37.37 0 0 0 .043-.503.379.379 0 0 0-.5-.085L9.831 14.803Z"></path></svg>
+						</span>
+					</a>
+				</li>
+				<li class="menu-item">
+					<a href="https://www.instagram.com/">
+						<span class="screen-reader-text">instagram.com</span>
+						<span class="instagram">
+						<svg class="bloglo-icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewbox="0 0 32 32"><path d="M16.016 3.284c4.317 0 4.755.063 6.444.125 1.627.063 2.44.313 3.003.5.751.313 1.314.688 1.814 1.189.563.563.938 1.126 1.189 1.814.25.626.5 1.439.563 3.003.063 1.752.125 2.19.125 6.506s-.063 4.755-.125 6.444c-.063 1.627-.313 2.44-.5 3.003-.313.751-.688 1.314-1.189 1.814-.563.563-1.126.938-1.814 1.189-.626.25-1.439.5-3.003.563-1.752.063-2.19.125-6.506.125s-4.755-.063-6.444-.125c-1.627-.063-2.44-.313-3.003-.5-.751-.313-1.314-.688-1.814-1.189-.563-.563-.938-1.126-1.189-1.814-.25-.626-.5-1.439-.563-3.003-.063-1.752-.125-2.19-.125-6.506s.063-4.755.125-6.444c.063-1.627.313-2.44.5-3.003.313-.751.688-1.314 1.189-1.814.563-.563 1.126-.938 1.814-1.189.626-.25 1.439-.5 3.003-.563 1.752-.063 2.19-.125 6.506-.125m0-2.877c-4.379 0-4.88.063-6.569.125-1.752.063-2.94.313-3.879.688-1.064.438-2.002 1.001-2.878 1.877S1.251 4.911.813 5.975C.438 6.976.187 8.102.125 9.854.062 11.543 0 12.044 0 16.423s.063 4.88.125 6.569c.063 1.752.313 2.94.688 3.879.438 1.064 1.001 2.002 1.877 2.878s1.814 1.439 2.878 1.877c1.001.375 2.127.626 3.879.688 1.689.063 2.19.125 6.569.125s4.88-.063 6.569-.125c1.752-.063 2.94-.313 3.879-.688 1.064-.438 2.002-1.001 2.878-1.877s1.439-1.814 1.877-2.878c.375-1.001.626-2.127.688-3.879.063-1.689.125-2.19.125-6.569s-.063-4.88-.125-6.569c-.063-1.752-.313-2.94-.688-3.879-.438-1.064-1.001-2.002-1.877-2.878s-1.814-1.439-2.878-1.877C25.463.845 24.337.594 22.585.532c-1.689-.063-2.19-.125-6.569-.125zm0 7.757c-4.567 0-8.258 3.691-8.258 8.258s3.691 8.258 8.258 8.258c4.567 0 8.258-3.691 8.258-8.258s-3.691-8.258-8.258-8.258zm0 13.639c-2.94 0-5.38-2.44-5.38-5.38s2.44-5.38 5.38-5.38 5.38 2.44 5.38 5.38-2.44 5.38-5.38 5.38zM26.463 7.851c0 1.064-.813 1.939-1.877 1.939s-1.939-.876-1.939-1.939c0-1.064.876-1.877 1.939-1.877s1.877.813 1.877 1.877z"></path></svg>
+						<svg class="bloglo-icon bottom-icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewbox="0 0 32 32"><path d="M16.016 3.284c4.317 0 4.755.063 6.444.125 1.627.063 2.44.313 3.003.5.751.313 1.314.688 1.814 1.189.563.563.938 1.126 1.189 1.814.25.626.5 1.439.563 3.003.063 1.752.125 2.19.125 6.506s-.063 4.755-.125 6.444c-.063 1.627-.313 2.44-.5 3.003-.313.751-.688 1.314-1.189 1.814-.563.563-1.126.938-1.814 1.189-.626.25-1.439.5-3.003.563-1.752.063-2.19.125-6.506.125s-4.755-.063-6.444-.125c-1.627-.063-2.44-.313-3.003-.5-.751-.313-1.314-.688-1.814-1.189-.563-.563-.938-1.126-1.189-1.814-.25-.626-.5-1.439-.563-3.003-.063-1.752-.125-2.19-.125-6.506s.063-4.755.125-6.444c.063-1.627.313-2.44.5-3.003.313-.751.688-1.314 1.189-1.814.563-.563 1.126-.938 1.814-1.189.626-.25 1.439-.5 3.003-.563 1.752-.063 2.19-.125 6.506-.125m0-2.877c-4.379 0-4.88.063-6.569.125-1.752.063-2.94.313-3.879.688-1.064.438-2.002 1.001-2.878 1.877S1.251 4.911.813 5.975C.438 6.976.187 8.102.125 9.854.062 11.543 0 12.044 0 16.423s.063 4.88.125 6.569c.063 1.752.313 2.94.688 3.879.438 1.064 1.001 2.002 1.877 2.878s1.814 1.439 2.878 1.877c1.001.375 2.127.626 3.879.688 1.689.063 2.19.125 6.569.125s4.88-.063 6.569-.125c1.752-.063 2.94-.313 3.879-.688 1.064-.438 2.002-1.001 2.878-1.877s1.439-1.814 1.877-2.878c.375-1.001.626-2.127.688-3.879.063-1.689.125-2.19.125-6.569s-.063-4.88-.125-6.569c-.063-1.752-.313-2.94-.688-3.879-.438-1.064-1.001-2.002-1.877-2.878s-1.814-1.439-2.878-1.877C25.463.845 24.337.594 22.585.532c-1.689-.063-2.19-.125-6.569-.125zm0 7.757c-4.567 0-8.258 3.691-8.258 8.258s3.691 8.258 8.258 8.258c4.567 0 8.258-3.691 8.258-8.258s-3.691-8.258-8.258-8.258zm0 13.639c-2.94 0-5.38-2.44-5.38-5.38s2.44-5.38 5.38-5.38 5.38 2.44 5.38 5.38-2.44 5.38-5.38 5.38zM26.463 7.851c0 1.064-.813 1.939-1.877 1.939s-1.939-.876-1.939-1.939c0-1.064.876-1.877 1.939-1.877s1.877.813 1.877 1.877z"></path></svg>
+						</span>
+					</a>
+				</li>
+				<li class="menu-item">
+					<a href="https://youtube.com/">
+						<span class="screen-reader-text">youtube.com</span>
+						<span class="youtube">
+						<svg class="bloglo-icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewbox="0 0 32 32"><path d="M31.718 10.041s-.313-2.252-1.251-3.191c-1.251-1.314-2.628-1.314-3.253-1.376-4.442-.313-11.198-.313-11.198-.313s-6.757 0-11.198.313c-.626.063-2.002.063-3.253 1.376-.938.938-1.251 3.191-1.251 3.191s-.313 2.565-.313 5.13v2.44c0 2.628.313 5.193.313 5.193s.313 2.19 1.251 3.191c1.251 1.251 2.878 1.251 3.566 1.376 2.565.25 10.886.313 10.886.313s6.757 0 11.198-.313c.626-.063 2.002-.125 3.253-1.376.938-1.001 1.251-3.191 1.251-3.191s.313-2.565.313-5.193v-2.44c0-2.565-.313-5.13-.313-5.13zm-11.386 6.632l-7.57 3.941v-9.009l8.633 4.504z"></path></svg>
+						<svg class="bloglo-icon bottom-icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewbox="0 0 32 32"><path d="M31.718 10.041s-.313-2.252-1.251-3.191c-1.251-1.314-2.628-1.314-3.253-1.376-4.442-.313-11.198-.313-11.198-.313s-6.757 0-11.198.313c-.626.063-2.002.063-3.253 1.376-.938.938-1.251 3.191-1.251 3.191s-.313 2.565-.313 5.13v2.44c0 2.628.313 5.193.313 5.193s.313 2.19 1.251 3.191c1.251 1.251 2.878 1.251 3.566 1.376 2.565.25 10.886.313 10.886.313s6.757 0 11.198-.313c.626-.063 2.002-.125 3.253-1.376.938-1.001 1.251-3.191 1.251-3.191s.313-2.565.313-5.193v-2.44c0-2.565-.313-5.13-.313-5.13zm-11.386 6.632l-7.57 3.941v-9.009l8.633 4.504z"></path></svg>
+						</span>
+					</a>
+				</li>
+			</ul>
+			</nav></div></div><!-- END .bloglo-header-widget --><div class="bloglo-header-widget__darkmode bloglo-header-widget bloglo-hide-mobile-tablet"><div class="bloglo-widget-wrapper"><label class="bloglo-darkmode" for="lightdarkswitch" tabindex="0"><input type="checkbox" id="lightdarkswitch"><div class="bloglo-darkmode-toogle"></div></label></div></div><!-- END .bloglo-header-widget --><div class="bloglo-header-widget__search bloglo-header-widget bloglo-hide-mobile-tablet"><div class="bloglo-widget-wrapper">
+<div aria-haspopup="true">
+	<a href="#" class="bloglo-search">
+		<svg class="bloglo-icon" aria-label="Search" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewbox="0 0 32 32"><path d="M28.962 26.499l-4.938-4.938c1.602-2.002 2.669-4.671 2.669-7.474 0-6.673-5.339-12.012-12.012-12.012S2.669 7.414 2.669 14.087a11.962 11.962 0 0012.012 12.012c2.803 0 5.472-.934 7.474-2.669l4.938 4.938c.267.267.667.4.934.4s.667-.133.934-.4a1.29 1.29 0 000-1.868zM5.339 14.087c0-5.205 4.137-9.342 9.342-9.342s9.342 4.137 9.342 9.342c0 2.536-1.068 4.938-2.669 6.54-1.735 1.735-4.004 2.669-6.54 2.669-5.339.133-9.476-4.004-9.476-9.209z"></path></svg>	</a><!-- END .bloglo-search -->
+
+	<div class="bloglo-search-simple bloglo-search-container dropdown-item">
+		<form role="search" aria-label="Site Search" method="get" class="bloglo-search-form" action="/">
+
+			<label class="bloglo-form-label">
+				<span class="screen-reader-text">Search for:</span>
+				<input type="search" class="bloglo-input-search" placeholder="Search" value="" name="s" autocomplete="off">
+			</label><!-- END .bloglo-form-label -->
+
+			
+			<button type="submit" class="bloglo-animate-arrow right-arrow" aria-hidden="true" role="button" tabindex="0">
+				<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 25 18"><path class="arrow-handle" d="M2.511 9.007l7.185-7.221c.407-.409.407-1.071 0-1.48s-1.068-.409-1.476 0L.306 8.259a1.049 1.049 0 000 1.481l7.914 7.952c.407.408 1.068.408 1.476 0s.407-1.07 0-1.479L2.511 9.007z"></path><path class="arrow-bar" fill-rule="evenodd" clip-rule="evenodd" d="M1 8h28.001a1.001 1.001 0 010 2H1a1 1 0 110-2z"></path></svg>
+			</button>			<button type="button" class="bloglo-search-close" aria-hidden="true" role="button">
+				<svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewbox="0 0 16 16"><path d="M6.852 7.649L.399 1.195 1.445.149l6.454 6.453L14.352.149l1.047 1.046-6.454 6.454 6.454 6.453-1.047 1.047-6.453-6.454-6.454 6.454-1.046-1.047z" fill="currentColor" fill-rule="evenodd"></path></svg>
+			</button>
+
+		</form>
+	</div><!-- END .bloglo-search-simple -->
+</div>
+</div></div><!-- END .bloglo-header-widget --><div class="bloglo-header-widget__button bloglo-header-widget bloglo-hide-mobile-tablet"><div class="bloglo-widget-wrapper"><a href="#" class="btn-small bloglo-btn" target="_self" role="button"><span>Subscribe</span></a></div></div><!-- END .bloglo-header-widget --></div><!-- END .bloglo-header-widgets -->
+</div><!-- END .bloglo-container -->
+	</div><!-- END #bloglo-header-inner -->
+	</div><!-- END #bloglo-header -->
+			</header><!-- #masthead .site-header -->
+
+	
+			<div id="main" class="site-main">
+
+			<div class="bloglo-breadcrumbs"><div class="bloglo-container bloglo-text-align-left"><nav role="navigation" aria-label="Breadcrumbs" class="breadcrumb-trail breadcrumbs" itemprop="breadcrumb"><ul class="trail-items" itemscope itemtype="http://schema.org/BreadcrumbList"><meta name="numberOfItems" content="2"><meta name="itemListOrder" content="Ascending"><li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem" class="trail-item trail-begin"><a href="/" rel="home" itemprop="item"><span itemprop="name">Home</span></a><meta itemprop="position" content="1"></li><li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem" class="trail-item trail-end"><span><span itemprop="name">C++17 Standards （下）</span></span><meta itemprop="position" content="2"></li></ul></nav></div></div>
+
+<div class="bloglo-container">
+
+	<div id="primary" class="content-area">
+
+		
+		<main id="content" class="site-content" role="main" itemscope itemtype="http://schema.org/Blog">
+
+			
+
+<article id="post-383" class="bloglo-article post-383 post type-post status-publish format-standard has-post-thumbnail hentry category-c category-23 tag-27 tag-28" itemscope="" itemtype="https://schema.org/CreativeWork">
+
+	
+<div class="post-category">
+
+	<span class="cat-links"><span class="screen-reader-text">Posted in</span><span><a href="/archives/category/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/c" rel="category">C++</a> <a href="/archives/category/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80" rel="category">编程语言</a></span></span>
+</div>
+
+<header class="entry-header">
+
+	
+	<h1 class="entry-title" itemprop="headline">
+		C++17 Standards （下）	</h1>
+
+</header>
+<div class="entry-meta"><div class="entry-meta-elements">		<span class="post-author">
+			<span class="posted-by vcard author" itemprop="author" itemscope="itemscope" itemtype="http://schema.org/Person">
+				<span class="screen-reader-text">Posted by</span>
+
+									<span class="author-avatar">
+						<img alt="" src="https://secure.gravatar.com/avatar/c99e05d9ed6235bc09d908080c0e7b9c1237879e388dd7f32d42db580e57643b?s=30&amp;d=mm&amp;r=g" srcset="https://secure.gravatar.com/avatar/c99e05d9ed6235bc09d908080c0e7b9c1237879e388dd7f32d42db580e57643b?s=60&amp;d=mm&amp;r=g 2x" class="avatar avatar-30 photo" height="30" width="30" decoding="async">					</span>
+				
+				<span>
+										By 					<a class="url fn n" title="View all posts by zdl" href="/archives/author/zdl" rel="author" itemprop="url">
+						<span class="author-name" itemprop="name">
+							zdl						</span>
+					</a>
+
+				</span>
+			</span>
+		</span>
+		<span class="posted-on"><time class="entry-date published updated" datetime="2026-05-09T19:51:00+08:00"><svg class="bloglo-icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 29.36 29.36"><path d="M14.68 0a14.68 14.68 0 1014.68 14.68A14.64 14.64 0 0014.68 0zm0 26.69a12 12 0 1112-12 12 12 0 01-12 12zm5.87-10.54L16 13.88V6.67a1.25 1.25 0 00-1.33-1.33 1.26 1.26 0 00-1.34 1.33v8a1.28 1.28 0 00.81 1.2l5.33 2.67c.14.13.27.13.54.13a1.28 1.28 0 001.2-.8 1.41 1.41 0 00-.67-1.73z"></path></svg>2026年5月9日</time></span><span class="comments-link"><a href="/archives/383#respond" class="comments-link"><svg class="bloglo-icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewbox="0 0 32 32"><path d="M25.358 2.075H6.673c-2.269 0-4.004 1.735-4.004 4.004v21.354c0 .534.267 1.068.801 1.201.133.133.4.133.534.133.4 0 .667-.133.934-.4l4.938-4.938h15.482c2.269 0 4.004-1.735 4.004-4.004V6.079c0-2.269-1.735-4.004-4.004-4.004zm1.335 17.35c0 .801-.534 1.335-1.335 1.335H9.342c-.4 0-.667.133-.934.4l-3.07 3.07V6.079c0-.801.534-1.335 1.335-1.335h18.685c.801 0 1.335.534 1.335 1.335v13.346z"></path></svg>No Comments</a></span></div></div><div class="post-thumb entry-media thumbnail"><img width="4928" height="3264" src="/wp-content/uploads/2026/05/photo-1598520106864-72ed7919100b.jpg" class="attachment-full size-full wp-post-image" alt="C++17 Standards （下）"></div>
+<div class="entry-content bloglo-entry" itemprop="text">
+	
+<div class="wp-block-columns is-layout-flex wp-container-core-columns-is-layout-9d6595d7 wp-block-columns-is-layout-flex">
+<div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow"></div>
+
+
+<div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow">
+<figure class="wp-block-embed is-type-rich is-provider-spotify wp-block-embed-spotify wp-embed-aspect-21-9 wp-has-aspect-ratio"><div class="wp-block-embed__wrapper">
+https://open.spotify.com/playlist/6zCID88oNjNv9zx6puDHKj?si=2697caec55594412&amp;nd=1&amp;dlsi=1ac4dd1566274a75
+</div></figure>
+
+</div>
+
+</div>
+
+
+<p class="has-text-color" style="color: rgb(0, 0, 0)">现在让我们设好番茄钟放一首好听的音乐开始学习吧 🌈 😋</p>
+
+
+<hr class="wp-block-separator has-alpha-channel-opacity is-style-wide">
+
+
+<h1 class="wp-block-heading">1. 新的求值顺序</h1>
+
+
+<p class="has-text-color" style="color: rgb(0, 0, 0)">🌐参考网站资料：</p>
+
+
+<ul class="wp-block-list">
+<li>在<code class="" data-line="">C++17</code>之前，很多表达式的求值顺序都是为指定的（<code class="" data-line="">unspecified</code>）,这意味着编译器可以自由选择求值顺序，这导致了不确定性和潜在的<code class="" data-line="">bug</code>， <code class="" data-line="">C++17</code>的求值顺序规则大大的提高了代码的可预测性和安全性，消除了许多的历史遗留下来的未定义行为问题。</li>
+
+
+
+<li>建议还是不要依赖未指定的求值顺序，即使<code class="" data-line="">C++17</code>修复了一些问题，最好还是写出不依赖特定求职顺序的代码，否则代码的可维护性和可读性都会变差，建议将负责的表达式成分分解为多个简单的语句。</li>
+</ul>
+
+
+<figure class="wp-block-table"><table><tbody><tr><td>表达式类型</td><td>C++17之前</td><td>C++17之后</td></tr><tr><td>a = b</td><td>未指定</td><td>先求值b,在求值a</td></tr><tr><td>a += b, a -=b</td><td>未定义</td><td>先求值b, 在求值a</td></tr><tr><td>a &lt;&lt; b, a &gt;&gt; b</td><td>未指定</td><td>从左到求值</td></tr><tr><td>a[b]</td><td>未定义</td><td>先求值a, 在求值b</td></tr><tr><td>a → b</td><td>未定义</td><td>先求值a, 再求值b</td></tr><tr><td>f(a, b, c)</td><td>未定义</td><td>参数求值顺序仍然为指定，但都在函数调用之前✅</td></tr><tr><td>new Type(a, b)</td><td>未定义</td><td>先求职所有参数，在分配内存</td></tr></tbody></table></figure>
+
+
+<pre class="wp-block-code"><code class="" data-line="">// import std;
+#include &lt;iostream&gt;
+void process(int a, int b) {
+	std::cout &lt;&lt; &quot;a = &quot; &lt;&lt; a &lt;&lt; &quot;, b = &quot; &lt;&lt; b &lt;&lt; std::endl;
+}
+int main() {
+	int x = 0;
+	// C++17 前：未指定⾏为！
+	process(x++, x++); // 可能输出(0, 1)或(1, 0)
+	int i = 0;
+	int j = 0;
+
+	// C++17 前：未定义⾏为！
+	// C++17 后：明确先求值右边(i++)，再求值左边(i)
+	i = i++; // 现在明确：i = 1
+	std::map&lt;int, int&gt; m = { {1, 10}, {2, 20} };
+	auto it = m.begin();
+
+	// C++17 前：未定义⾏为！it++和it-&gt;second的求值顺序不确定
+	// C++17 后：明确先求值it-&gt;second，再求值it++
+	int value = it++-&gt;second; // 安全：value = 10, it指向第⼆个元素
+	std::cout &lt;&lt; value &lt;&lt; std::endl;
+	return 0;
+}</code></pre>
+
+
+<p> </p>
+
+
+<h1 class="wp-block-heading">2. <code class="" data-line="">std::optional</code></h1>
+
+
+<h2 class="wp-block-heading">什么是 <code class="" data-line="">std::optional</code></h2>
+
+
+<p class="has-text-color" style="color: rgb(0, 0, 0)">🌐网站资料介绍:  </p>
+
+
+<p class="has-text-color" style="color: rgb(0, 0, 0)"><code class="" data-line="">std::optional&lt;T&gt;</code>是是一个类模板，他表示一个可能包含一个类型为<code class="" data-line="">T</code>的值，也可能不包含任何的值（即为空状态）.他是一种类型安全的方式，用来代替诸如<strong>“返回特殊值（-1, </strong><code class="" data-line="">&lt;strong&gt;nullptr， EOF&lt;/strong&gt;</code><strong>）”或者是“输出型参数”等传统模式。</strong><code class="" data-line="">&lt;strong&gt;std::optional&lt;/strong&gt;</code><strong>是</strong>一个简单却及其有用的工具，他极大的提高了代码的可读性和安全性。</p>
+
+
+<h2 class="wp-block-heading">为什么需要<code class="" data-line="">std::optional</code></h2>
+
+
+<p class="has-text-color" style="color: rgb(0, 0, 0)"><code class="" data-line="">std::optional</code>解决了这些问题，他将值（或有或无）包装在一个类型中，强调调用者处理</p>
+
+
+<h2 class="wp-block-heading">常见接口</h2>
+
+
+<figure class="wp-block-table"><table><tbody><tr><td>特性</td><td>说明</td><td>代码示例</td></tr><tr><td>创建空</td><td>表示无值</td><td><code class="" data-line="">std::optioanal&lt;int&gt;empty; auto empty = std::nullpot</code></td></tr><tr><td>创建有值</td><td>包装一个值</td><td><code class="" data-line="">std::optional&lt;int&gt; opt = 5;</code>
+<code class="" data-line="">auto opt = std::make_optional(5)</code> </td></tr><tr><td>检查</td><td>判断是否包含值</td><td><code class="" data-line="">if(opt.has_value()){ ... }</code> 
+<code class="" data-line="">if(opt){ ... }</code></td></tr><tr><td>安全取值</td><td>有值返回值，无值抛异常</td><td><code class="" data-line="">int x = opt.value()</code></td></tr><tr><td>安全取值（带默认）</td><td>无值时返回默认值</td><td><code class="" data-line="">int x = opt.value_or(0)</code>; </td></tr><tr><td>不安全取值</td><td>使其变为空</td><td><code class="" data-line="">opt.reset(); opt = std::nullopt</code>; </td></tr></tbody></table></figure>
+
+
+<p class="has-text-color" style="color: rgb(0, 0, 0)">下面我们那我就结合文档，写写示例代码：</p>
+
+
+<pre class="wp-block-code"><code class="" data-line="">void test_example1()
+{
+	// 1、定义optional对象
+
+	std::optional&lt;int&gt; maybeInt;
+	// 初始为空
+
+	std::optional&lt;std::string&gt; maybeString = &quot;Hello&quot;; // 初始有值
+
+	std::optional&lt;double&gt; empty = std::nullopt; // 显式设置为空
+
+	// 2、检查是否有值
+
+	if (maybeInt.has_value()) {
+		std::cout &lt;&lt; &quot;has_value1&quot; &lt;&lt; std::endl;
+	}
+	// 或者更简洁的写法
+
+	if (maybeString) {
+		std::cout &lt;&lt; &quot;has_value2&quot; &lt;&lt; *maybeString &lt;&lt; std::endl;
+	}
+	//访问值
+
+	// 安全访问-⽆值时抛出
+	//std::bad_optional_access
+	try {
+		int value = maybeInt.value();
+	}
+	catch (const std::bad_optional_access&amp; e) {
+		std::cout &lt;&lt; e.what() &lt;&lt; std::endl;
+	}
+	maybeInt = 1;
+	// 不安全但快速的访问-⽆值时⾏为未定义
+
+	int value1 = *maybeInt;
+	// 带默认值的访问
+
+	int value2 = maybeInt.value_or(2); // ⽆值时返回
+	std::cout &lt;&lt; value2 &lt;&lt; std::endl;
+	//     、修改值
+
+	maybeInt = 42;
+	//  赋新值
+
+	maybeInt = std::nullopt; // 设为空
+
+	maybeInt.reset();
+}
+// 设为空
+
+// optional实践中的使⽤场景
+
+void test_example2()
+{
+	// 查找⼀个顶点对应的下标编号
+
+	std::map&lt;std::string, int&gt; indexMap = { {&quot;张庄&quot;,1}, {&quot;王村&quot;,2}, {&quot;李家村&quot;,3}, {&quot;王家坪&quot;,3} };
+	auto findIndex = [&amp;indexMap](const std::string&amp; str)-&gt;std::optional&lt;int&gt;
+		{
+			auto it = indexMap.find(str);
+			if (it != indexMap.end())
+			{
+				return it-&gt;second;
+			}
+			else
+			{
+				return std::nullopt;
+			}
+		};
+	std::string x;
+	std::cin &gt;&gt; x;
+	std::optional&lt;int&gt; index = findIndex(x);
+	if (index)
+	{
+		std::cout &lt;&lt; x &lt;&lt; &quot;对应的编号为:&quot; &lt;&lt; *index &lt;&lt; std::endl;
+	}
+	else
+	{
+		std::cout &lt;&lt; x &lt;&lt; &quot;是⾮法顶点&quot; &lt;&lt; std::endl;
+	}
+	std::vector&lt;std::string&gt; v = { &quot;张庄&quot;, &quot;李庄&quot;, &quot;&quot; };
+	auto access = [&amp;v](int i)-&gt; std::optional&lt;std::string&gt;
+		{
+			if (i &lt; v.size())
+			{
+				return v[i];
+			}
+			else
+			{
+				// 以前的语法这⾥函数只能⽤抛异常或者断⾔⽅式处理i越界的情况
+				// i越界不能返回&quot;&quot;，因为正常数据可能就是&quot;&quot;,⽆法区分std::nullopt;
+			}
+		};
+}
+
+int main()
+{
+	test_example1();
+	test_example2();
+	return 0;
+}
+</code></pre>
+
+
+<p> </p>
+
+
+<p class="has-text-color" style="color: rgb(0, 0, 0)"> </p>
+
+
+<h1 class="wp-block-heading">3. <code class="" data-line="">std::variant</code></h1>
+
+
+<p class="has-text-color" style="color: rgb(0, 0, 0)">🌐网页资料：</p>
+
+
+<p class="has-text-color" style="color: rgb(0, 0, 0)"><code class="" data-line="">std::varaint</code>是<code class="" data-line="">C++17</code>标准库加入的一个类模板，它代表了一个类型安全的联合体（<code class="" data-line="">union</code>）.它可以持有其模板参数列表中指定的任何一种类型的值</p>
+
+
+<p class="has-text-color" style="color: rgb(0, 0, 0)">传统的联合体的问题：<code class="" data-line="">C</code>风格或者是<code class="" data-line="">C++</code>的普通的<code class="" data-line="">unoin</code>不是类型安全的。你需要自己记住当前存储的是哪些类型，如果访问错了，（比如在一个存储了<code class="" data-line="">int</code>的<code class="" data-line="">union</code>上读取<code class="" data-line="">float</code>）<code class="" data-line="">，</code>会导致未定义行为，而且他无法处理非平凡类型（如<code class="" data-line="">std::string</code>）。<code class="" data-line="">std::variant</code> 的优势是解决了这些所有问题。他自己知道当前存储的是哪种类型，确保对象被正确的构造和析构，我们可以把它想象成一个<strong>“智能的、类型丰富的”</strong><code class="" data-line="">&lt;strong&gt;union&lt;/strong&gt;</code></p>
+
+
+<h2 class="wp-block-heading">定义修改和赋值</h2>
+
+
+<p class="has-text-color" style="color: rgb(0, 0, 0)">我们直接看下面的代码，展示一下基本的使用：</p>
+
+
+<pre class="wp-block-code"><code class="" data-line="">#include &lt;variant&gt;
+#include &lt;string&gt;
+#include &lt;iostream&gt;
+//union
+//⽰例1:定义和赋值
+
+int main() {
+	// 定义⼀个variant，它可以存储⼀个int,⼀个double,或⼀个std::string
+	std::variant&lt;int, double, std::string&gt; v;
+	v = 42;  // 现在持有int
+	std::cout &lt;&lt; &quot;int: &quot; &lt;&lt; std::get&lt;int&gt;(v) &lt;&lt; std::endl;
+	v = 3.14;  // 现在持有double
+	std::cout &lt;&lt; &quot;double: &quot; &lt;&lt; std::get&lt;double&gt;(v) &lt;&lt; std::endl;
+	v = &quot;hello&quot;;  // 现在持有std::string
+	std::cout &lt;&lt; &quot;string: &quot; &lt;&lt; std::get&lt;std::string&gt;(v) &lt;&lt; std::endl;
+	// std::cout &lt;&lt; &quot;int 2 : &quot; &lt;&lt; std::get&lt;int&gt;(v) &lt;&lt; std::endl; // 报错，现在variant持有的时std::string类型，variant在一个状态下只能存储一种类型的值！
+	// 赋值时如果找不到对应类型的值则报错
+	// v = std::pair&lt;int, int&gt;{}; // Error
+	// 访问值使⽤index()获取当前持有的类型索引
+	std::cout &lt;&lt; &quot;Current index: &quot; &lt;&lt; v.index() &lt;&lt; std::endl;
+	std::variant&lt;std::string, std::string&gt; v2;
+	//v2 = &quot;abc&quot;; // Error
+}</code></pre>
+
+
+<p> </p>
+
+
+<h2 class="wp-block-heading">访问值</h2>
+
+
+<h3 class="wp-block-heading"><code class="" data-line="">std::get&lt;Type/Index&gt;</code> </h3>
+
+
+<p class="has-text-color" style="color: rgb(0, 0, 0)">使用<code class="" data-line="">std::variant&lt;Type&gt;</code>或者是<code class="" data-line="">std::get&lt;index&gt;</code>你可以通过类型或者是索引来直接获取值。但是如果当前<code class="" data-line="">variant</code>存储的不是你请求的类型或者是索引，他就会抛异常<code class="" data-line="">std::bad_variant_access</code></p>
+
+
+<pre class="wp-block-code"><code class="" data-line="">int main(){
+	std::variant&lt;int, double&gt; v = 42;
+	try{
+		std::cout &lt;&lt; std::get&lt;int&gt;(v) &lt;&lt; std::endl;
+		std::cout &lt;&lt; std::get&lt;0&gt;(v) &lt;&lt; std::endl;
+		std::cout &lt;&lt; std::get&lt;double&gt;(v) &lt;&lt; std::endl; // 抛出异常
+	}catch(const std::bad_variant_access&amp; e){
+		std::cout &lt;&lt; &quot;Error: &quot; &lt;&lt; e.what() &lt;&lt; std::endl;
+	}
+	return 0;
+}</code></pre>
+
+
+<p> </p>
+
+
+<h3 class="wp-block-heading"><code class="" data-line="">std::get_if&lt;Type&gt;</code></h3>
+
+
+<ul class="wp-block-list">
+<li><code class="" data-line="">std::gte_if&lt;Type&gt;</code> 不会抛出异常。他<strong>接受一个指针参数，如果</strong><code class="" data-line="">&lt;strong&gt;variant&lt;/strong&gt;</code><strong>当前存储的是制定类型，则返回一个执行该值的指针；否则返回</strong><code class="" data-line="">&lt;strong&gt;nullptr&lt;/strong&gt;</code></li>
+</ul>
+
+
+<pre class="wp-block-code"><code class="" data-line="">int main(){
+	std::variant&lt;int, double, std::string&gt; v = &quot;hello&quot;;
+	
+	// 使用std::get_if尝试获取值
+	if (auto pval = std::get_if&lt;int&gt;(&amp;v)){
+		std::cout &lt;&lt; &quot;int value: &quot; &lt;&lt; *pval &lt;&lt; endl;
+	}
+	else if (auto pval = std::get_if&lt;double&gt;(&amp;v)){
+		std::cout &lt;&lt; &quot;double value: &quot; &lt;&lt; *pval &lt;&lt; std::endl;
+	}
+	else if (auto pval = std::get_if&lt;std::string&gt;(&amp;v)){
+		std::cout &lt;&lt; *pval &lt;&lt; std::endl;
+	}
+}</code></pre>
+
+
+<p> </p>
+
+
+<h3 class="wp-block-heading"><code class="" data-line="">std::visit</code></h3>
+
+
+<p class="has-text-color" style="color: rgb(0, 0, 0)"><code class="" data-line="">std::visit</code>是最安全和强大的方式，所以也是最推荐的方式，<code class="" data-line="">std::visit</code>允许你提供一个访问者（<code class="" data-line="">visitor</code>）来根据当前存储的类型执行相关的操作，这个是类型安全、最为清晰的方式。第一个参数访问这是一个可调用对象，通常是重载了一个<code class="" data-line="">operator()</code>的类（<strong>或者是使用</strong><code class="" data-line="">&lt;strong&gt;lambda&lt;/strong&gt;</code><strong>表达式结合</strong><code class="" data-line="">&lt;strong&gt;overloaded&lt;/strong&gt;</code><strong>技巧</strong>），<code class="" data-line="">std::visit</code>会把<code class="" data-line="">std::variant</code> 对象的值取出来，作为参数传给<code class="" data-line="">visitor</code>可调用处理</p>
+
+
+<pre class="wp-block-code"><code class="" data-line="">
+#include &lt;iomanip&gt;
+#include &lt;iostream&gt;
+#include &lt;string&gt;
+#include &lt;type_traits&gt;
+#include &lt;variant&gt;
+#include &lt;vector&gt;
+
+// the variant to visit
+using value_t = std::variant&lt;int, double, std::string&gt;;
+struct VisitorOP {
+    void operator()(int i) const {
+        std::cout &lt;&lt; &quot;int: &quot; &lt;&lt; i &lt;&lt; 'n';
+    }
+    void operator()(double d) const {
+        std::cout &lt;&lt; &quot;double: &quot; &lt;&lt; d &lt;&lt; 'n';
+    }
+    void operator()(const std::string&amp; s) const {
+        std::cout &lt;&lt; &quot;string: &quot; &lt;&lt; s &lt;&lt; 'n';
+    }
+};
+// helper type for the visitor #4
+template&lt;class... Ts&gt;
+struct overloaded : Ts... { using Ts::operator()...; };
+// explicit deduction guide (not needed as of C++20)
+template&lt;class... Ts&gt;
+overloaded(Ts...) -&gt; overloaded&lt;Ts...&gt;;
+
+int main()
+{
+    std::vector&lt;value_t&gt; vec = { 10, 1.5, &quot;hello&quot; };
+    for (auto&amp; v : vec)
+    {
+        std::visit(VisitorOP(), v);
+    }
+    std::cout &lt;&lt; 'n';
+    for (auto&amp; v : vec)
+    {
+        // 1. void visitor, only called for side-effects (here, for I/O)
+        std::visit([](auto&amp;&amp; arg) { std::cout &lt;&lt; arg; }, v);
+        // 2. value-returning visitor, demonstrates the idiom of returning another variant
+            value_t w = std::visit([](auto&amp;&amp; arg) -&gt; value_t { return arg + arg;
+                }, v);
+        // 3. type-matching visitor: a lambda that handles each type differently
+           std::cout &lt;&lt; &quot;. After doubling, variant holds &quot;;
+        std::visit([](auto&amp;&amp; arg)
+            {
+                using T = std::decay_t&lt;decltype(arg)&gt;;
+                if constexpr (std::is_same_v&lt;T, int&gt;)
+                    std::cout &lt;&lt; &quot;int with value &quot; &lt;&lt; arg &lt;&lt; 'n';
+                else if constexpr (std::is_same_v&lt;T, double&gt;)
+                    std::cout &lt;&lt; &quot;double with value &quot; &lt;&lt; arg &lt;&lt; 'n';
+                else if constexpr (std::is_same_v&lt;T, std::string&gt;)
+                    std::cout &lt;&lt; &quot;std::string with value &quot; &lt;&lt; std::quoted(arg)
+                    &lt;&lt; 'n';
+                else
+                    static_assert(false, &quot;non-exhaustive visitor!&quot;);
+            }, w);
+    }
+    std::cout &lt;&lt; 'n';
+    for (auto&amp; v : vec)
+    {
+        // 4. another type-matching visitor: a class with 3 overloaded operator()'s
+            std::visit(overloaded{
+                [](int arg) { std::cout &lt;&lt; arg &lt;&lt; ' '; },
+                [](double arg) { std::cout &lt;&lt; arg &lt;&lt; ' '; },
+                [](const std::string&amp; arg) { std::cout &lt;&lt; arg &lt;&lt; ' '; }
+                }, v);
+    }
+}</code></pre>
+
+
+<p> </p>
+
+
+<h1 class="wp-block-heading">4. <code class="" data-line="">std::any</code></h1>
+
+
+<p class="has-text-color" style="color: rgb(0, 0, 0)">🌐资料网站：</p>
+
+
+<p class="has-text-color" style="color: rgb(0, 0, 0)"><code class="" data-line="">std::any</code>是一个可以存储任意类型<strong>(必须时可拷贝构造的)单个值的容器。</strong>当你从<code class="" data-line="">any</code>中取出值，你必须知道其原始的类型，并通过<code class="" data-line="">std::any_cast</code>进行安全得转换。如果类型不匹配会抛出异常或者是返回空指针。</p>
+
+
+<ul class="wp-block-list">
+<li>与原始得<code class="" data-line="">void*</code>不同，<code class="" data-line="">any</code>会记录类型信息，并在<code class="" data-line="">any_cast</code>时进行检查，其次他们管理着自己内部的对象生命周期（<strong>构造、拷贝、析构）</strong>，为了避免为小对象进行频繁的内存堆栈分配，许多实现会使用一个小缓存区优化（<code class="" data-line="">SBO, Small Buffer Optimization</code>), <code class="" data-line="">MSVC</code>下的<code class="" data-line="">std::string</code>就使用了这个优化。</li>
+
+
+
+<li><code class="" data-line="">std::any</code>的接口非常的简介，主要是使用的函数：</li>
+</ul>
+
+
+<figure class="wp-block-table"><table><tbody><tr><td>函数</td><td>作用</td></tr><tr><td>构造函数</td><td><code class="" data-line="">std::any any_value = 42;
+std::any any_value = std::string(&quot;hello&quot;);</code></td></tr><tr><td><code class="" data-line="">operator=</code></td><td>可以赋值任意类型修改</td></tr><tr><td><code class="" data-line="">&lt;strong&gt;emplace&lt;T&gt;(args...)&lt;/strong&gt;</code></td><td>原地构造一个类型为T的对象，参数<code class="" data-line="">args</code>传递给T的构造函数</td></tr><tr><td><code class="" data-line="">reset()</code></td><td>销毁内部包含的对象，使<code class="" data-line="">any</code>变为空</td></tr><tr><td><code class="" data-line="">&lt;strong&gt;has_value()&lt;/strong&gt;</code></td><td>返回一个<code class="" data-line="">bool </code>值，判断<code class="" data-line="">any</code>对象是否有值</td></tr><tr><td><code class="" data-line="">type()</code></td><td>返回一个<code class="" data-line="">std::typw_info const&amp;</code>，表示当前包含值得类型。如果<code class="" data-line="">any</code>为空，则返回<code class="" data-line="">typeid(void)</code></td></tr><tr><td><code class="" data-line="">std::any_cast&lt;T&gt;</code></td><td>最重要的函数！用于从<code class="" data-line="">any</code>对象中提取值。如果转换失败，会抛出<code class="" data-line="">std::bad_any_cast</code>异常</td></tr></tbody></table></figure>
+
+
+<h2 class="wp-block-heading">构造和赋值</h2>
+
+
+<p class="has-text-color" style="color: rgb(0, 0, 0)">现在我们看一下这段示例代码：</p>
+
+
+<pre class="wp-block-code"><code class="" data-line="">
+#include &lt;any&gt;
+#include &lt;string&gt;
+#include &lt;iostream&gt;
+
+int main() {
+	//  存放int
+	std::any a1 = 42;
+	// 存放double
+	std::any a2 = 3.14;
+
+	std::any a3 = std::string(&quot;Hello&quot;); // 存放std::string
+	std::any a4;
+	a4 = std::pair&lt;std::string, std::string&gt;(&quot;xxxx&quot;, &quot;yyyy&quot;);
+
+
+	std::cout &lt;&lt; sizeof(a1) &lt;&lt; 'n';
+	std::cout &lt;&lt; sizeof(a4) &lt;&lt; 'n';
+	// 检查是否有值
+	// 使⽤emplace原地构造
+	a3.emplace&lt;std::string&gt;(&quot;World&quot;); //  现在a3包含&quot;World&quot;，之前的&quot;Hello&quot;被销毁！
+	if (a3.has_value()) {
+		std::cout &lt;&lt; &quot;a has value&quot; &lt;&lt; std::endl;
+		// 获取类型信息
+		const std::type_info&amp; ti = a1.type();
+		std::cout &lt;&lt; &quot;a type: &quot; &lt;&lt; ti.name() &lt;&lt; std::endl;
+		std::cout &lt;&lt; std::any_cast&lt;std::string&gt;(a3) &lt;&lt; std::endl;
+	}
+}</code></pre>
+
+
+<p> </p>
+
+
+<h2 class="wp-block-heading"><code class="" data-line="">any_cast</code>的三种取值方式</h2>
+
+
+<p class="has-text-color" style="color: rgb(0, 0, 0)">🌐</p>
+
+
+<p class="has-text-color" style="color: rgb(0, 0, 0)">这里我峨嵋你直接看看下面的代码，聪明如你相信很快就可以明白<code class="" data-line="">any_cast&lt;T&gt;</code>的是使用方法</p>
+
+
+<pre class="wp-block-code"><code class="" data-line="">#include &lt;iostream&gt;
+#include &lt;any&gt;
+#include &lt;string&gt;
+#include &lt;vector&gt;
+#include &lt;assert.h&gt;
+// vector中存储any类型
+
+void anyVector() {
+	std::string str(&quot;hello world&quot;);
+	std::vector&lt;std::any&gt; v = { 1.1, 2, str };
+	for (const auto&amp; item : v) {
+		if (item.type() == typeid(int)) {
+			std::cout &lt;&lt; &quot;整数配置: &quot; &lt;&lt; std::any_cast&lt;int&gt;(item) &lt;&lt; 'n';
+		}
+		else if (item.type() == typeid(double)) {
+			std::cout &lt;&lt; &quot; 浮点配置 : &quot; &lt;&lt; std::any_cast&lt;double&gt;(item) &lt;&lt; 'n';
+		}
+		else if (item.type() == typeid(std::string)) {
+			std::cout &lt;&lt; &quot;字符串配置: &quot; &lt;&lt; std::any_cast&lt;std::string&amp;&gt;(item) &lt;&lt; 'n';
+		}
+		else
+		{
+			assert(false);
+		}
+	}
+}
+int main() {
+	std::any a1 = 42;                   // 存放int
+	std::any a2 = 3.14;                 // 存放double
+	std::any a3 = std::string(&quot;Hello&quot;); // 存放 std::string
+
+	// ⽅式⼀：转换为值的类型（如果类型不匹配，抛出std::bad_any_cast）
+
+	try {
+		int int_value = std::any_cast&lt;int&gt;(a1); // 正确，a1存放的是int
+		std::cout &lt;&lt; &quot;Value: &quot; &lt;&lt; int_value &lt;&lt; 'n';
+		double double_value = std::any_cast&lt;double&gt;(a1); // 错误！抛出异常
+
+	}
+	catch (const std::bad_any_cast&amp; e) {
+		std::cout &lt;&lt; &quot;Cast failed: &quot; &lt;&lt; e.what() &lt;&lt; 'n';
+	}
+	//  ⽅式⼆：转换为值和转换为值的引⽤
+
+		// 这⾥any_cast返回的是a3存储对象的拷⻉，要尽量避免这样使⽤
+
+	std::string str_ref1 = std::any_cast&lt;std::string&gt;(a3);
+	str_ref1[0]++;
+	std::cout &lt;&lt; std::any_cast&lt;std::string&gt;(a3) &lt;&lt; 'n';
+	std::string&amp; str_ref2 = std::any_cast&lt;std::string&amp;&gt;(a3);
+	str_ref2[0]++;
+	std::cout &lt;&lt; std::any_cast&lt;std::string&amp;&gt;(a3) &lt;&lt; 'n';
+	std::string&amp;&amp; str_ref3 = std::any_cast&lt;std::string&amp;&amp;&gt;(move(a3));
+	str_ref3[0]++;
+	std::cout &lt;&lt; std::any_cast&lt;std::string&amp;&gt;(a3) &lt;&lt; 'n';
+	std::string str_ref4 = std::any_cast&lt;std::string&amp;&amp;&gt;(move(a3));
+	str_ref4[0]++;
+	std::cout &lt;&lt; std::any_cast&lt;std::string&amp;&gt;(a3) &lt;&lt; 'n';
+	// ⽅式三：转换为指针（如果类型不匹配，返回nullptr，不会抛出异常）
+
+	if (auto ptr = std::any_cast&lt;int&gt;(&amp;a1)) { // 传递指针，返回指针
+
+		std::cout &lt;&lt; &quot;Value via pointer: &quot; &lt;&lt; *ptr &lt;&lt; 'n';
+	}
+	else {
+		std::cout &lt;&lt; &quot;Not an int or is empty.n&quot;;
+	}
+	anyVector();
+}</code></pre>
+
+
+<p> </p>
+
+
+<h2 class="wp-block-heading"><code class="" data-line="">std::any</code>和<code class="" data-line="">std::variant</code>对比</h2>
+
+
+<details class="wp-block-details is-layout-flow wp-block-details-is-layout-flow"><summary>🧭对比</summary>
+<ul class="wp-block-list">
+<li>功能角度，他们都是用于<strong>储存多种不同类型的的类型安全的单值容器，使用方法上也有诸多的相似</strong></li>
+
+
+
+<li>使用角度：<code class="" data-line="">&lt;strong&gt;std::variant&lt;/strong&gt;</code><strong>在编译时就知道了所有已知的类型。</strong><code class="" data-line="">&lt;strong&gt;std::any&lt;/strong&gt;</code><strong>运行时才知道具体的类型。他们都可以在构造初始化或者是赋值。</strong>底层自动管理，非常的简单，访问值得时候：<code class="" data-line="">&lt;strong&gt;std::any&lt;/strong&gt;</code><strong>需要使用</strong><code class="" data-line="">&lt;strong&gt;std::any_cast&lt;/strong&gt;</code><strong>进行转换， </strong><code class="" data-line="">&lt;strong&gt;std::variant&lt;/strong&gt;</code><strong>通过</strong><code class="" data-line="">&lt;strong&gt;std::get&lt;/strong&gt;</code><strong>和</strong><code class="" data-line="">&lt;strong&gt;std::vist&lt;/strong&gt;</code><strong>访问器访问。</strong></li>
+
+
+
+<li>底层角度：<code class="" data-line="">std::varaint</code><strong>直接存储对象</strong>，<code class="" data-line="">std::any</code><strong>小对象存储在对象中，大对象存储在堆上，所以</strong><code class="" data-line="">&lt;u&gt;&lt;strong&gt;std::any&lt;/strong&gt;&lt;/u&gt;</code><u><strong>存储对象得成本会更高一些。</strong></u><code class="" data-line="">&lt;strong&gt;std::varaint&lt;/strong&gt;</code><strong>使用</strong><code class="" data-line="">&lt;strong&gt;std::visit&lt;/strong&gt;</code><strong>访问通常被表面一起优化为一个高效的跳表。而</strong><code class="" data-line="">&lt;strong&gt;std::any&lt;/strong&gt;</code><strong>需要访问运行时类型查询或尝试转换，</strong>者通过一系列的<code class="" data-line="">if_else</code>进行比较会比较麻烦<strong>，比</strong><code class="" data-line="">&lt;strong&gt;std::varaint&lt;/strong&gt;</code><strong>得跳转表慢。</strong><u>所以存储和访问角度</u><code class="" data-line="">&lt;u&gt;std::varaint&lt;/u&gt;</code><u>的效率都会更高一些</u><span style="color: rgba(51, 126, 169, 1);"><u><strong>一般情况下建议使用</strong></u></span><span style="color: rgba(51, 126, 169, 1);"><code class="" data-line="">&lt;u&gt;&lt;strong&gt;std::varaint&lt;/strong&gt;&lt;/u&gt;</code></span><span style="color: rgba(51, 126, 169, 1);"><u><strong>除非是一些可能存储的类型很多或者是无法确认需要存储的类型时使用</strong></u></span><span style="color: rgba(51, 126, 169, 1);"><code class="" data-line="">&lt;u&gt;&lt;strong&gt;std::any&lt;/strong&gt;&lt;/u&gt;</code></span></li>
+</ul>
+</details>
+
+
+<h1 class="wp-block-heading">5. <code class="" data-line="">std::string_view</code></h1>
+
+
+<p class="has-text-color" style="color: rgb(0, 0, 0)">🌐资料网站：</p>
+
+
+<p class="has-text-color" style="color: rgb(0, 0, 0)"><code class="" data-line="">std::string_view</code>是<code class="" data-line="">C++17</code>标准库引入的一个费用有的字符串视图类,他提供了一种轻量的方式来<strong>查看一个已有的字符串（或者是字符串数组）</strong>而无需赋值其内容。你可以将它看作是一个观察字符串的“<u>文档”</u>本省不需要管理内存</p>
+
+
+<ul class="wp-block-list">
+<li><code class="" data-line="">std::string_view</code>和<code class="" data-line="">std::string</code>拥有完全类似的接口，查看文档上我们也可以得知，<span style="color: rgba(51, 126, 169, 1);"><strong>他主要提供</strong></span><span style="color: rgba(51, 126, 169, 1);"><code class="" data-line="">&lt;strong&gt;string&lt;/strong&gt;</code></span><span style="color: rgba(51, 126, 169, 1);"><strong>读相关的接口，不提供写接口，另外他自身支持一些移动视图位置的接口。</strong></span></li>
+
+
+
+<li><code class="" data-line="">std::string_view</code>设计思路是<strong>非拥有空间和数据</strong>，底层不分配内存，<strong>只保留原始字符串的指针和长度； 无所有权，不负责字符串的生命周期管理；</strong><code class="" data-line="">&lt;strong&gt;const&lt;/strong&gt;</code><strong>视图只能观察，不能修改底层字符</strong></li>
+</ul>
+
+
+<h2 class="wp-block-heading"><code class="" data-line="">std::string_view</code>的构造方式</h2>
+
+
+<p class="has-text-color" style="color: rgb(0, 0, 0)">看看下面的代码，我们了解一下<code class="" data-line="">std::string_view</code>的几种主要的构造方法：</p>
+
+
+<pre class="wp-block-code"><code class="" data-line="">
+#include &lt;iostream&gt;
+#include &lt;string&gt;
+#include &lt;string_view&gt;
+
+void print(std::string_view sv) {
+	std::cout &lt;&lt; &quot;String view: &quot; &lt;&lt; sv &lt;&lt; &quot;n&quot;;
+	std::cout &lt;&lt; &quot;Length: &quot; &lt;&lt; sv.size() &lt;&lt; &quot;n&quot;;
+	for (size_t i = 0; i &lt; sv.size(); ++i)
+	{
+		std::cout &lt;&lt; sv[i] &lt;&lt; &quot; &quot;;
+	}
+	std::cout &lt;&lt; &quot;n&quot;;
+	for (auto ch : sv)
+	{
+		std::cout &lt;&lt; ch &lt;&lt; &quot; &quot;;
+	}
+	std::cout &lt;&lt; &quot;n&quot;;
+}
+int main() {
+	// 从C⻛格字符串构造
+
+	std::string_view sv1(&quot;Hello, world!&quot;);
+	print(sv1);
+	//从std::string构造
+
+	std::string str = &quot;C++17 string_view&quot;;
+	std::string_view sv2(str);
+	print(sv2);
+	// 从部分字符串构造
+
+	std::string_view sv3(str.c_str() + 6, 6);
+	print(sv3);
+	// 从字⾯量构造
+
+	using namespace std::literals;
+	std::string_view sv4 = &quot;Literal&quot;sv;
+	print(sv4);
+}</code></pre>
+
+
+<p> </p>
+
+
+<figure class="wp-block-image size-large"><img decoding="async" src="/wp-content/uploads/2026/05/image-18.png" alt=""></figure>
+
+
+<h2 class="wp-block-heading"><code class="" data-line="">std::string_view</code>的特点</h2>
+
+
+<ul class="wp-block-list">
+<li><code class="" data-line="">std::string_view</code> <strong>几乎就是零开销，</strong><span style="color: rgba(193, 76, 138, 1);"><strong>他不会复制字符串，构造和析构的成本极低。</strong></span><strong>并且提供了与</strong><code class="" data-line="">&lt;strong&gt;std::string&lt;/strong&gt;</code><strong>相似的接口（几乎所有的读操作接口），兼容性强，可以高效的从</strong><code class="" data-line="">&lt;strong&gt;std::string&lt;/strong&gt;</code><strong>字符串字面量</strong><code class="" data-line="">&lt;strong&gt;char*&lt;/strong&gt;</code><strong>等任何字符序列构造而来。这样的场景下可以减少很多的拷贝和构造，有可以利用和</strong><code class="" data-line="">&lt;strong&gt;string&lt;/strong&gt;</code><strong>相关的接口来处理。拷贝和构造，又可以利用</strong><code class="" data-line="">&lt;strong&gt;string&lt;/strong&gt;</code><strong>类似的接口来处理。</strong></li>
+</ul>
+
+
+<pre class="wp-block-code"><code class="" data-line="">#include &lt;iostream&gt;
+#include &lt;string&gt;
+#include &lt;string_view&gt;
+#include &lt;vector&gt;
+// 使⽤场景：const std::string &amp;做形参，下⾯传字⾯量串会构造⼀个临时对象
+
+// std::string_view做形参，下⾯不会构造临时对象。
+
+// void process_string(const std::string&amp; s)
+void process_string(std::string_view sv)
+{
+	// 处理字符串，⽆需关⼼原始类型
+
+}
+// 使⽤场景：解析字符串处理，使⽤std::string_view做为参数和返回值，零拷⻉
+
+// 如果使⽤std::string那么在传参和传值返回都要构造对象
+std::string_view extract_str(std::string_view input, char delimiter) {
+	size_t pos = input.find(delimiter);
+	return input.substr(0, pos);
+}
+// 继续切分字符串
+
+std::vector&lt;std::string_view&gt; split(std::string_view str, char delimiter) {
+	std::vector&lt;std::string_view&gt; result;
+	size_t start = 0;
+	size_t end = str.find(delimiter);
+	while (end != std::string_view::npos) {
+		result.push_back(str.substr(start, end - start));
+		start = end + 1;
+		end = str.find(delimiter, start);
+	}
+	result.push_back(str.substr(start));
+	return result;
+}
+int main() {
+	// 可以接受各种字符串类型
+
+	process_string(&quot;C-string&quot;);
+	std::string s(&quot;std::string&quot;);
+	process_string(s);
+	const char* str = &quot;https://chat.deepseek.com/a/chat/s/4ae60e97-d7b0-45aadd-5f82d76e74e7&quot;;
+	std::string_view sv = extract_str(str, ':');
+	std::cout &lt;&lt; sv &lt;&lt; std::endl;
+	auto v = split(str + 9, '/');
+
+	for (auto e : v)
+	{
+		std::cout &lt;&lt; e &lt;&lt; std::endl;
+	}
+	std::cout &lt;&lt; std::endl;
+	return 0;
+}
+</code></pre>
+
+
+<p> </p>
+
+
+<ul class="wp-block-list">
+<li>在使用<code class="" data-line="">std::string_view</code>的时候一定要注意生命周期管理，<code class="" data-line="">std::string_view</code><strong>对象的生命周期不要超过指向的</strong><code class="" data-line="">&lt;strong&gt;std::string&lt;/strong&gt;</code><strong>对象的声明周期</strong></li>
+
+
+
+<li><span style="color: rgba(212, 76, 71, 1);"><strong>不一定以空字符串</strong></span><span style="color: rgba(212, 76, 71, 1);"><code class="" data-line="">&lt;strong&gt;'</code></span></li></ul></div></article></main></div></div></div></div></body></html>
